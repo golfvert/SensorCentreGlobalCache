@@ -1,0 +1,49 @@
+{
+    "name": "SensorGlobalCache",
+    "description": "A tool based on NodeRed to create metrics for assessing WIS2 Global Cache",
+    "version": "0.9.1",
+    "dependencies": {
+        "node-red": "4.0.8",
+        "@golfvert/node-red-redis": "1.1.0",
+        "node-red-contrib-msg-speed": "2.1.0",
+        "node-red-contrib-prometheus-exporter": "1.0.5",
+        "@zigasebenik/node-red-log-io": "1.1.6"
+    },
+    "node-red": {
+        "settings": {
+            "flowFile": "flows.json",
+            "credentialsFile": "flows_cred.json"
+        }
+    },
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/node-red/node-red-docker.git"
+    },
+    "main": "node_modules/node-red/red/red.js",
+    "scripts": {
+        "start": "node $NODE_OPTIONS node_modules/node-red/red.js $FLOWS",
+        "debug": "node --inspect=0.0.0.0:9229 $NODE_OPTIONS node_modules/node-red/red.js $FLOWS",
+        "debug_brk": "node --inspect=0.0.0.0:9229 --inspect-brk $NODE_OPTIONS node_modules/node-red/red.js $FLOWS"
+    },
+    "contributors": [
+        {
+            "name": "Dave Conway-Jones"
+        },
+        {
+            "name": "Nick O'Leary"
+        },
+        {
+            "name": "James Thomas"
+        },
+        {
+            "name": "Raymond Mouthaan"
+        },
+	{
+	    "name": "Remy Giraud"
+	}
+    ],
+    "engines": {
+        "node": ">=18"
+    }
+}

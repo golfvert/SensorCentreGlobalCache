@@ -1,0 +1,4669 @@
+[
+    {
+        "id": "9fcb3dc635318115",
+        "type": "tab",
+        "label": "Sensor Global Cache",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "218b5b0dabe0e4cb",
+        "type": "subflow",
+        "name": "Monitor",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 80,
+                "y": 220,
+                "wires": [
+                    {
+                        "id": "b792d5af2f910c10"
+                    }
+                ]
+            }
+        ],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "bd6837434fd7b3cb",
+        "type": "redis-config",
+        "name": "Redis",
+        "options": "REDIS_URL",
+        "cluster": false,
+        "optionsType": "env"
+    },
+    {
+        "id": "8af16e9d551a61eb",
+        "type": "mqtt-broker",
+        "name": "GB",
+        "broker": "\"\"",
+        "port": " ",
+        "clientid": "",
+        "autoConnect": false,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a7877619083a1ee3",
+        "type": "prometheus-metric-config",
+        "name": "wmo_wis2_scgc_cache_delay_seconds",
+        "help": "Delay to get the data in the cache",
+        "labels": "global_cache,centre_id",
+        "mtype": "gauge"
+    },
+    {
+        "id": "5ff96cf14749d4c6",
+        "type": "prometheus-metric-config",
+        "name": "wmo_wis2_scgc_messages_cached_delay_total",
+        "help": "Message cached",
+        "labels": "global_cache,delay,centre_id",
+        "mtype": "counter"
+    },
+    {
+        "id": "5899a7a7d75907f7",
+        "type": "mqtt-broker",
+        "name": "GC2",
+        "broker": "\"\"",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": false,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "085383537e4479a7",
+        "type": "mqtt-broker",
+        "name": "GC3",
+        "broker": "\"\"",
+        "port": "",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": false,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "d6314b59f8ceda2f",
+        "type": "mqtt-broker",
+        "name": "GC4",
+        "broker": "\"\"",
+        "port": "",
+        "clientid": "",
+        "autoConnect": false,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "65157bf97529f3dd",
+        "type": "mqtt-broker",
+        "name": "GC5",
+        "broker": "\"\"",
+        "port": "",
+        "clientid": "",
+        "autoConnect": false,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "87cae6509a425ee7",
+        "type": "prometheus-metric-config",
+        "name": "wmo_wis2_scgc_messages_missed_total",
+        "help": "Not in globalcache",
+        "labels": "global_cache,centre_id",
+        "mtype": "counter"
+    },
+    {
+        "id": "84cd0deea504b109",
+        "type": "prometheus-metric-config",
+        "name": "wmo_wis2_scgc_messages_missed_all_total",
+        "help": "Not in any cache",
+        "labels": "centre_id",
+        "mtype": "counter"
+    },
+    {
+        "id": "18635c819fe0c4ee",
+        "type": "mqtt-broker",
+        "name": "GC1",
+        "broker": "\"\"",
+        "port": "",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": false,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "e0abf69e68f5655a",
+        "type": "mqtt-broker",
+        "name": "GC6",
+        "broker": "\"\"",
+        "port": "",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": false,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "86bd07697c1bc039",
+        "type": "mqtt-broker",
+        "name": "GC7",
+        "broker": "\"\"",
+        "port": "",
+        "clientid": "",
+        "autoConnect": false,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "0b07d12b43fc3df1",
+        "type": "mqtt-broker",
+        "name": "GC8",
+        "broker": "\"\"",
+        "port": "",
+        "clientid": "",
+        "autoConnect": false,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f2c97bcad433a95c",
+        "type": "mqtt-broker",
+        "name": "GC9",
+        "broker": "\"\"",
+        "port": "",
+        "clientid": "",
+        "autoConnect": false,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "92fcc20085a38a9d",
+        "type": "mqtt-broker",
+        "name": "GC10",
+        "broker": "\"\"",
+        "port": "",
+        "clientid": "",
+        "autoConnect": false,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "1d0ef4c6483c7efe",
+        "type": "prometheus-metric-config",
+        "name": "wmo_wis2_scgc_messages_published_total",
+        "help": "Messages from origin",
+        "labels": "centre_id",
+        "mtype": "counter"
+    },
+    {
+        "id": "5742725833a2549a",
+        "type": "logIO-logger",
+        "name": "Log",
+        "logLevel": "info",
+        "isTimestampUTC": true,
+        "logMeta": "none",
+        "logMetaOptions": "",
+        "logOutput": "file",
+        "fileFileName": "logIO-%DATE%.log",
+        "fileDirName": "",
+        "fileDatePattern": "YYYY",
+        "fileIsJsonFormat": true,
+        "fileZippedArchive": false,
+        "fileMaxSize": "100",
+        "fileMaxSizeUnit": "m",
+        "fileMaxFiles": "5",
+        "fileMaxFilesUnit": "",
+        "consoleIsJsonFormat": false,
+        "elkUrl": "http://localhost:9200",
+        "elkIndex": "node-red"
+    },
+    {
+        "id": "ab2e2f87fc8b78d4",
+        "type": "prometheus-metric-config",
+        "name": "wmo_wis2_scgc_messages_duplicates_total",
+        "help": "Number of messages with identical data_id and no \"rel=update\"",
+        "labels": "centre_id",
+        "mtype": "counter"
+    },
+    {
+        "id": "37e01b07c3e8a037",
+        "type": "switch",
+        "z": "218b5b0dabe0e4cb",
+        "name": "Delay to cache",
+        "property": "($millis() - $number(msg.payload)) / 1000",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "$parent.delay1",
+                "vt": "flow"
+            },
+            {
+                "t": "lte",
+                "v": "$parent.delay2",
+                "vt": "flow"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 760,
+        "y": 320,
+        "wires": [
+            [
+                "12689335dc7f840c"
+            ],
+            [
+                "b0d1cc2019c31ab7"
+            ],
+            [
+                "e320c4a0bf5d15a7"
+            ]
+        ]
+    },
+    {
+        "id": "12689335dc7f840c",
+        "type": "change",
+        "z": "218b5b0dabe0e4cb",
+        "name": "Prometheus - 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"delay\": $flowContext(\"$parent.delay1\"),\t      \"centre_id\":  $flowContext(\"centreid\")\t   },\t   \"val\":1 \t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 280,
+        "wires": [
+            [
+                "cc3ad656b9afece1"
+            ]
+        ]
+    },
+    {
+        "id": "f054d467a665124e",
+        "type": "change",
+        "z": "218b5b0dabe0e4cb",
+        "name": "Get",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cache",
+                "pt": "flow",
+                "to": "cache",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "centreid",
+                "pt": "flow",
+                "to": "$split(topic,\"/\")[3]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "$flowContext(\"cache\") & \"#\" & $flowContext(\"centreid\") & \"#\" & payload.properties.data_id & \"#\" & payload.properties.pubtime",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "hset",
+                "pt": "msg",
+                "to": "[\t   \"data#\" & $flowContext(\"centreid\") & \"#\" & payload.properties.data_id & \"#\" & payload.properties.pubtime,\t   $flowContext(\"cache\"),\t   $millis()\t]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 220,
+        "wires": [
+            [
+                "fe20b670574db962"
+            ]
+        ]
+    },
+    {
+        "id": "36c8e0768df24445",
+        "type": "change",
+        "z": "218b5b0dabe0e4cb",
+        "name": "Del",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "topic",
+                "tot": "msg",
+                "dc": true
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 220,
+        "wires": [
+            [
+                "e9640af2fdcbe681"
+            ]
+        ]
+    },
+    {
+        "id": "f41c5ab8fb94e076",
+        "type": "change",
+        "z": "218b5b0dabe0e4cb",
+        "name": "Prometheus",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"op\":\"set\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"centre_id\":  $flowContext(\"centreid\")\t   },\t   \"val\": ( ($millis() - $number(msg.payload)) / 1000 )\t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 180,
+        "wires": [
+            [
+                "ce363774ca216391"
+            ]
+        ]
+    },
+    {
+        "id": "bf048482180d33c6",
+        "type": "switch",
+        "z": "218b5b0dabe0e4cb",
+        "name": "Expired ?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 580,
+        "y": 220,
+        "wires": [
+            [
+                "36c8e0768df24445",
+                "f41c5ab8fb94e076",
+                "37e01b07c3e8a037",
+                "a934bf4a57f5ab75"
+            ]
+        ]
+    },
+    {
+        "id": "b0d1cc2019c31ab7",
+        "type": "change",
+        "z": "218b5b0dabe0e4cb",
+        "name": "Prometheus - 2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"delay\": $flowContext(\"$parent.delay2\"),\t      \"centre_id\":  $flowContext(\"centreid\")\t   },\t   \"val\":1 \t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 320,
+        "wires": [
+            [
+                "cc3ad656b9afece1"
+            ]
+        ]
+    },
+    {
+        "id": "e320c4a0bf5d15a7",
+        "type": "change",
+        "z": "218b5b0dabe0e4cb",
+        "name": "Prometheus - 3",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"delay\": $flowContext(\"$parent.timeout_cache\"),\t      \"centre_id\":  $flowContext(\"centreid\")\t   },\t   \"val\":1 \t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 360,
+        "wires": [
+            [
+                "cc3ad656b9afece1"
+            ]
+        ]
+    },
+    {
+        "id": "b792d5af2f910c10",
+        "type": "delay",
+        "z": "218b5b0dabe0e4cb",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 180,
+        "y": 220,
+        "wires": [
+            [
+                "f054d467a665124e"
+            ]
+        ]
+    },
+    {
+        "id": "a934bf4a57f5ab75",
+        "type": "change",
+        "z": "218b5b0dabe0e4cb",
+        "name": "Hset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "hset",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 140,
+        "wires": [
+            [
+                "32b9c74a6b4358be"
+            ]
+        ]
+    },
+    {
+        "id": "e9640af2fdcbe681",
+        "type": "redis-command",
+        "z": "218b5b0dabe0e4cb",
+        "server": "bd6837434fd7b3cb",
+        "command": "DEL",
+        "name": "",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 860,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fe20b670574db962",
+        "type": "redis-command",
+        "z": "218b5b0dabe0e4cb",
+        "server": "bd6837434fd7b3cb",
+        "command": "GET",
+        "name": "",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 440,
+        "y": 220,
+        "wires": [
+            [
+                "bf048482180d33c6"
+            ]
+        ]
+    },
+    {
+        "id": "32b9c74a6b4358be",
+        "type": "redis-command",
+        "z": "218b5b0dabe0e4cb",
+        "server": "bd6837434fd7b3cb",
+        "command": "HSET",
+        "name": "",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 870,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ce363774ca216391",
+        "type": "prometheus-exporter",
+        "z": "218b5b0dabe0e4cb",
+        "name": "Delay",
+        "metric": "a7877619083a1ee3",
+        "x": 890,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "cc3ad656b9afece1",
+        "type": "prometheus-exporter",
+        "z": "218b5b0dabe0e4cb",
+        "name": "Cached",
+        "metric": "5ff96cf14749d4c6",
+        "x": 1140,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "568c765b12630d5a",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "Which ?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "regex",
+                "v": "^orig#.*",
+                "vt": "str",
+                "case": false
+            },
+            {
+                "t": "regex",
+                "v": "^wnm#.*",
+                "vt": "str",
+                "case": false
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 480,
+        "y": 2040,
+        "wires": [
+            [
+                "5c23a20c1171293c"
+            ],
+            [],
+            [
+                "b26fc71e5e4b963d"
+            ]
+        ]
+    },
+    {
+        "id": "b26fc71e5e4b963d",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Prometheus",
+        "rules": [
+            {
+                "t": "set",
+                "p": "centreid",
+                "pt": "msg",
+                "to": "$split(payload,\"#\")[1]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "globalcache",
+                "pt": "msg",
+                "to": "$split(payload,\"#\")[0]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "dataid",
+                "pt": "msg",
+                "to": "$split(payload,\"#\")[2]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": globalcache,\t      \"centre_id\":  centreid\t    },\t   \"val\":1 \t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 2060,
+        "wires": [
+            [
+                "571f740a66401f2c"
+            ]
+        ]
+    },
+    {
+        "id": "b310c4753946b7db",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Init",
+        "rules": [
+            {
+                "t": "set",
+                "p": "delay1",
+                "pt": "flow",
+                "to": "$number($env(\"CACHE_DELAY_LOW\"))",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "delay2",
+                "pt": "flow",
+                "to": "$number($env(\"CACHE_DELAY_MED\"))",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "timeout_cache",
+                "pt": "flow",
+                "to": "$number($env(\"CACHE_DELAY_MAX\"))",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "timeout_orig",
+                "pt": "flow",
+                "to": "$number($env(\"CACHE_DELAY_MAX\")) + 10",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "flow",
+                "to": "MQTT_TOPIC",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "log",
+                "pt": "flow",
+                "to": "$length($env(\"WNM_LOGGING\")) = 0 ? false : $env(\"WNM_LOGGING\")",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b6486169011447a9",
+        "type": "inject",
+        "z": "9fcb3dc635318115",
+        "name": "Subscription",
+        "props": [
+            {
+                "p": "action",
+                "v": "subscribe",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "v": "\"cache/a/wis2/\" & $flowContext(\"topic\")",
+                "vt": "jsonata"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "10",
+        "topic": "",
+        "x": 170,
+        "y": 1460,
+        "wires": [
+            [
+                "123646dccc919b37",
+                "30f45b658646e599",
+                "d48ec981c342ed1c",
+                "4408d5f578e56d68",
+                "5b98ae300a97518c",
+                "2cd05ca1d5130ce7",
+                "fc62a75f12c05585",
+                "62d5e95bf30eab6b",
+                "2178334fc1068644",
+                "172b7f8e1604278d",
+                "b7e003bf5ca40a88"
+            ]
+        ]
+    },
+    {
+        "id": "86fe39df4ac6bb3a",
+        "type": "mqtt in",
+        "z": "9fcb3dc635318115",
+        "name": "GC 2",
+        "topic": "",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "5899a7a7d75907f7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 490,
+        "y": 1360,
+        "wires": [
+            [
+                "d236be8daa824d52"
+            ]
+        ]
+    },
+    {
+        "id": "3335b84a9d04f571",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Cache",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cache",
+                "pt": "msg",
+                "to": "gc[1]",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 1360,
+        "wires": [
+            [
+                "1b6822f80f612616"
+            ]
+        ]
+    },
+    {
+        "id": "1b6822f80f612616",
+        "type": "subflow:218b5b0dabe0e4cb",
+        "z": "9fcb3dc635318115",
+        "name": "Monitor",
+        "x": 860,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "22e263de01f5f52f",
+        "type": "inject",
+        "z": "9fcb3dc635318115",
+        "name": "Get Notifications",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[\"set\",\"notify-keyspace-events\",\"KEx\"]",
+        "payloadType": "json",
+        "x": 210,
+        "y": 60,
+        "wires": [
+            [
+                "cff5e351d6a01d18"
+            ]
+        ]
+    },
+    {
+        "id": "6a6c03791ac454a9",
+        "type": "mqtt in",
+        "z": "9fcb3dc635318115",
+        "name": "GC 3",
+        "topic": "",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "085383537e4479a7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 490,
+        "y": 1420,
+        "wires": [
+            [
+                "770ce9fbe6d1fb6b"
+            ]
+        ]
+    },
+    {
+        "id": "cac7494512e7c688",
+        "type": "subflow:218b5b0dabe0e4cb",
+        "z": "9fcb3dc635318115",
+        "name": "Monitor",
+        "x": 860,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "8ef58f2fa857ad2b",
+        "type": "mqtt in",
+        "z": "9fcb3dc635318115",
+        "name": "GC 4",
+        "topic": "",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "d6314b59f8ceda2f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 490,
+        "y": 1480,
+        "wires": [
+            [
+                "9b72a24e04539dfd"
+            ]
+        ]
+    },
+    {
+        "id": "1f2479d86f2bb5de",
+        "type": "subflow:218b5b0dabe0e4cb",
+        "z": "9fcb3dc635318115",
+        "name": "Monitor",
+        "x": 860,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "5c23a20c1171293c",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Key - Orig",
+        "rules": [
+            {
+                "t": "set",
+                "p": "centreid",
+                "pt": "msg",
+                "to": "$split(payload,\"#\")[1]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "\"data#\" & $substringAfter(payload,\"orig#\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "orig",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 2020,
+        "wires": [
+            [
+                "443ca97e3b2a6192"
+            ]
+        ]
+    },
+    {
+        "id": "ef52aac7153a7cd5",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "In a cache ?",
+        "property": "$count($filter($flowContext(\"gc\"), function($v, $i, $a) {   $v in payload  }))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 990,
+        "y": 1980,
+        "wires": [
+            [
+                "d972d19f8d20ee7d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "568dfc3eeca101c6",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Del Payload",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 2020,
+        "wires": [
+            [
+                "403a1066f87bedb1"
+            ]
+        ]
+    },
+    {
+        "id": "d972d19f8d20ee7d",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Prometheus",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"centre_id\": centreid\t    },\t   \"val\":1 \t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1150,
+        "y": 1980,
+        "wires": [
+            [
+                "3c682df2ec8a4bbe"
+            ]
+        ]
+    },
+    {
+        "id": "b259769af0885bde",
+        "type": "mqtt in",
+        "z": "9fcb3dc635318115",
+        "name": "GC 5",
+        "topic": "",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "65157bf97529f3dd",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 490,
+        "y": 1540,
+        "wires": [
+            [
+                "c9597b1485e6a1db"
+            ]
+        ]
+    },
+    {
+        "id": "e90f3c5e7aa6db59",
+        "type": "subflow:218b5b0dabe0e4cb",
+        "z": "9fcb3dc635318115",
+        "name": "Monitor",
+        "x": 860,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "9e28b01962ba1f2e",
+        "type": "redis-in",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "psubscribe",
+        "name": "",
+        "topic": "__keyevent@0__:expired",
+        "obj": true,
+        "timeout": 0,
+        "x": 160,
+        "y": 2040,
+        "wires": [
+            [
+                "568c765b12630d5a"
+            ]
+        ]
+    },
+    {
+        "id": "cff5e351d6a01d18",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "CONFIG",
+        "name": "Config",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 370,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "443ca97e3b2a6192",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "HGETALL",
+        "name": "",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 800,
+        "y": 2020,
+        "wires": [
+            [
+                "ef52aac7153a7cd5",
+                "568dfc3eeca101c6",
+                "c2cfa8d7adb26eae"
+            ]
+        ]
+    },
+    {
+        "id": "403a1066f87bedb1",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "DEL",
+        "name": "",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1140,
+        "y": 2020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "571f740a66401f2c",
+        "type": "prometheus-exporter",
+        "z": "9fcb3dc635318115",
+        "name": "Not cached",
+        "metric": "87cae6509a425ee7",
+        "x": 790,
+        "y": 2060,
+        "wires": []
+    },
+    {
+        "id": "3c682df2ec8a4bbe",
+        "type": "prometheus-exporter",
+        "z": "9fcb3dc635318115",
+        "name": "Not cached at all",
+        "metric": "84cd0deea504b109",
+        "x": 1330,
+        "y": 1980,
+        "wires": []
+    },
+    {
+        "id": "d236be8daa824d52",
+        "type": "msg-speed",
+        "z": "9fcb3dc635318115",
+        "name": "Speed",
+        "frequency": "sec",
+        "interval": "10",
+        "estimation": false,
+        "ignore": false,
+        "pauseAtStartup": false,
+        "topicDependent": false,
+        "x": 610,
+        "y": 1360,
+        "wires": [
+            [],
+            [
+                "3335b84a9d04f571"
+            ]
+        ]
+    },
+    {
+        "id": "770ce9fbe6d1fb6b",
+        "type": "msg-speed",
+        "z": "9fcb3dc635318115",
+        "name": "Speed",
+        "frequency": "sec",
+        "interval": "10",
+        "estimation": false,
+        "ignore": false,
+        "pauseAtStartup": false,
+        "topicDependent": false,
+        "x": 610,
+        "y": 1420,
+        "wires": [
+            [],
+            [
+                "996d7d67e8aa735d"
+            ]
+        ]
+    },
+    {
+        "id": "9b72a24e04539dfd",
+        "type": "msg-speed",
+        "z": "9fcb3dc635318115",
+        "name": "Speed",
+        "frequency": "sec",
+        "interval": "10",
+        "estimation": false,
+        "ignore": false,
+        "pauseAtStartup": false,
+        "topicDependent": false,
+        "x": 610,
+        "y": 1480,
+        "wires": [
+            [],
+            [
+                "7eb4f53450dcdf22"
+            ]
+        ]
+    },
+    {
+        "id": "c9597b1485e6a1db",
+        "type": "msg-speed",
+        "z": "9fcb3dc635318115",
+        "name": "Speed",
+        "frequency": "sec",
+        "interval": "10",
+        "estimation": false,
+        "ignore": false,
+        "pauseAtStartup": false,
+        "topicDependent": false,
+        "x": 610,
+        "y": 1540,
+        "wires": [
+            [],
+            [
+                "a09adfe5f67d2466"
+            ]
+        ]
+    },
+    {
+        "id": "de455b0922a8320c",
+        "type": "inject",
+        "z": "9fcb3dc635318115",
+        "name": "Once",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 240,
+        "wires": [
+            [
+                "02f9ea24a447a4bf",
+                "cbaf057b21b74d5e",
+                "ba0078a75bce5079",
+                "ef73b2734ba69ce9",
+                "372054932ed7cc7e",
+                "2933423cd28f1686",
+                "84504441426d2c10",
+                "0409b074e5072243",
+                "98950e79f6947e3a",
+                "a440adb1d906b7e1",
+                "5395eeb95ada2a4b",
+                "b310c4753946b7db"
+            ]
+        ]
+    },
+    {
+        "id": "cbaf057b21b74d5e",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Handle GB",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "connect",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "broker",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "broker.force",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "broker.url",
+                "pt": "msg",
+                "to": "MQTT_GB_BROKER",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.usetls",
+                "pt": "msg",
+                "to": "$contains($env(\"MQTT_GB_BROKER\"),/wss/) or $contains($env(\"MQTT_GB_BROKER\"),/mqtts/)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "broker.verifyservercert",
+                "pt": "msg",
+                "to": "$length($env(\"MQTT_GB_VERIFYCERT\")) = 0 ? false : $env(\"MQTT_GB_VERIFYCERT\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "broker.username",
+                "pt": "msg",
+                "to": "MQTT_GB_USERNAME",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.password",
+                "pt": "msg",
+                "to": "MQTT_GB_PASSWORD",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.protocolVersion",
+                "pt": "msg",
+                "to": "$length($env(\"MQTT_GB_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GB_BROKERVERSION\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "gb",
+                "pt": "flow",
+                "to": "GB_ID",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 200,
+        "wires": [
+            [
+                "6600d6a1be6e48c0"
+            ]
+        ]
+    },
+    {
+        "id": "1329e99213124402",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Handle GC 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "connect",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "broker",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "broker.force",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "broker.url",
+                "pt": "msg",
+                "to": "MQTT_GC_1_BROKER",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.usetls",
+                "pt": "msg",
+                "to": "$contains($env(\"MQTT_GC_1_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_1_BROKER\"),/mqtts/)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "broker.username",
+                "pt": "msg",
+                "to": "MQTT_GC_1_USERNAME",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.password",
+                "pt": "msg",
+                "to": "MQTT_GC_1_PASSWORD",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.protocolVersion",
+                "pt": "msg",
+                "to": "$length($env(\"MQTT_GC_1_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_1_BROKERVERSION\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "gc[0]",
+                "pt": "flow",
+                "to": "GC_1_ID",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 260,
+        "wires": [
+            [
+                "eba5cb2d057c0e5e"
+            ]
+        ]
+    },
+    {
+        "id": "eba5cb2d057c0e5e",
+        "type": "mqtt out",
+        "z": "9fcb3dc635318115",
+        "name": "Define GC1",
+        "topic": "",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "18635c819fe0c4ee",
+        "x": 650,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "6600d6a1be6e48c0",
+        "type": "mqtt out",
+        "z": "9fcb3dc635318115",
+        "name": "Define GB",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8af16e9d551a61eb",
+        "x": 510,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "02f9ea24a447a4bf",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 1 ?",
+        "property": "$length($env(\"MQTT_GC_1_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "1329e99213124402"
+            ]
+        ]
+    },
+    {
+        "id": "f7739bc9c3f024f6",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Handle GC 2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "connect",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "broker",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "broker.force",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "broker.url",
+                "pt": "msg",
+                "to": "MQTT_GC_2_BROKER",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.usetls",
+                "pt": "msg",
+                "to": "$contains($env(\"MQTT_GC_2_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_2_BROKER\"),/mqtts/)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "broker.username",
+                "pt": "msg",
+                "to": "MQTT_GC_2_USERNAME",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.password",
+                "pt": "msg",
+                "to": "MQTT_GC_2_PASSWORD",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.protocolVersion",
+                "pt": "msg",
+                "to": "$length($env(\"MQTT_GC_2_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_2_BROKERVERSION\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "gc[1]",
+                "pt": "flow",
+                "to": "GC_2_ID",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 320,
+        "wires": [
+            [
+                "44304cb54414a6a2"
+            ]
+        ]
+    },
+    {
+        "id": "44304cb54414a6a2",
+        "type": "mqtt out",
+        "z": "9fcb3dc635318115",
+        "name": "Define GC2",
+        "topic": "",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5899a7a7d75907f7",
+        "x": 650,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "ba0078a75bce5079",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 2 ?",
+        "property": "$length($env(\"MQTT_GC_2_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 320,
+        "wires": [
+            [
+                "f7739bc9c3f024f6"
+            ]
+        ]
+    },
+    {
+        "id": "1de65c960bb4581f",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Handle GC 3",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "connect",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "broker",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "broker.force",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "broker.url",
+                "pt": "msg",
+                "to": "MQTT_GC_3_BROKER",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.usetls",
+                "pt": "msg",
+                "to": "$contains($env(\"MQTT_GC_3_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_3_BROKER\"),/mqtts/)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "broker.username",
+                "pt": "msg",
+                "to": "MQTT_GC_3_USERNAME",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.password",
+                "pt": "msg",
+                "to": "MQTT_GC_3_PASSWORD",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.protocolVersion",
+                "pt": "msg",
+                "to": "$length($env(\"MQTT_GC_3_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_3_BROKERVERSION\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "gc[2]",
+                "pt": "flow",
+                "to": "GC_3_ID",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 380,
+        "wires": [
+            [
+                "9dd044305c383ac7"
+            ]
+        ]
+    },
+    {
+        "id": "9dd044305c383ac7",
+        "type": "mqtt out",
+        "z": "9fcb3dc635318115",
+        "name": "Define GC3",
+        "topic": "",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "085383537e4479a7",
+        "x": 650,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "ef73b2734ba69ce9",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 3 ?",
+        "property": "$length($env(\"MQTT_GC_3_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 380,
+        "wires": [
+            [
+                "1de65c960bb4581f"
+            ]
+        ]
+    },
+    {
+        "id": "4a835451725e728c",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Handle GC 4",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "connect",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "broker",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "broker.force",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "broker.url",
+                "pt": "msg",
+                "to": "MQTT_GC_4_BROKER",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.usetls",
+                "pt": "msg",
+                "to": "$contains($env(\"MQTT_GC_4_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_4_BROKER\"),/mqtts/)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "broker.username",
+                "pt": "msg",
+                "to": "MQTT_GC_4_USERNAME",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.password",
+                "pt": "msg",
+                "to": "MQTT_GC_4_PASSWORD",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.protocolVersion",
+                "pt": "msg",
+                "to": "$length($env(\"MQTT_GC_4_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_4_BROKERVERSION\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "gc[3]",
+                "pt": "flow",
+                "to": "GC_4_ID",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 440,
+        "wires": [
+            [
+                "8f08560422f1a101"
+            ]
+        ]
+    },
+    {
+        "id": "8f08560422f1a101",
+        "type": "mqtt out",
+        "z": "9fcb3dc635318115",
+        "name": "Define GC4",
+        "topic": "",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "d6314b59f8ceda2f",
+        "x": 650,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "372054932ed7cc7e",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 4 ?",
+        "property": "$length($env(\"MQTT_GC_4_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 440,
+        "wires": [
+            [
+                "4a835451725e728c"
+            ]
+        ]
+    },
+    {
+        "id": "e6966da1eb764617",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Handle GC 5",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "connect",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "broker",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "broker.force",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "broker.url",
+                "pt": "msg",
+                "to": "MQTT_GC_5_BROKER",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.usetls",
+                "pt": "msg",
+                "to": "$contains($env(\"MQTT_GC_5_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_5_BROKER\"),/mqtts/)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "broker.username",
+                "pt": "msg",
+                "to": "MQTT_GC_5_USERNAME",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.password",
+                "pt": "msg",
+                "to": "MQTT_GC_5_PASSWORD",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.protocolVersion",
+                "pt": "msg",
+                "to": "$length($env(\"MQTT_GC_5_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_5_BROKERVERSION\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "gc[4]",
+                "pt": "flow",
+                "to": "GC_5_ID",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 500,
+        "wires": [
+            [
+                "70e09a7056387ef4"
+            ]
+        ]
+    },
+    {
+        "id": "70e09a7056387ef4",
+        "type": "mqtt out",
+        "z": "9fcb3dc635318115",
+        "name": "Define GC5",
+        "topic": "",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "65157bf97529f3dd",
+        "x": 650,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "2933423cd28f1686",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 5 ?",
+        "property": "$length($env(\"MQTT_GC_5_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 500,
+        "wires": [
+            [
+                "e6966da1eb764617"
+            ]
+        ]
+    },
+    {
+        "id": "335b9a05bdf472bc",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Handle GC 6",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "connect",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "broker",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "broker.force",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "broker.url",
+                "pt": "msg",
+                "to": "MQTT_GC_6_BROKER",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.usetls",
+                "pt": "msg",
+                "to": "$contains($env(\"MQTT_GC_6_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_6_BROKER\"),/mqtts/)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "broker.username",
+                "pt": "msg",
+                "to": "MQTT_GC_6_USERNAME",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.password",
+                "pt": "msg",
+                "to": "MQTT_GC_6_PASSWORD",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.protocolVersion",
+                "pt": "msg",
+                "to": "$length($env(\"MQTT_GC_6_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_6_BROKERVERSION\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "gc[5]",
+                "pt": "flow",
+                "to": "GC_6_ID",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 560,
+        "wires": [
+            [
+                "7a339cb7ee3248aa"
+            ]
+        ]
+    },
+    {
+        "id": "7a339cb7ee3248aa",
+        "type": "mqtt out",
+        "z": "9fcb3dc635318115",
+        "name": "Define GC6",
+        "topic": "",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "e0abf69e68f5655a",
+        "x": 650,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "84504441426d2c10",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 6 ?",
+        "property": "$length($env(\"MQTT_GC_6_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 560,
+        "wires": [
+            [
+                "335b9a05bdf472bc"
+            ]
+        ]
+    },
+    {
+        "id": "afa1acfb4d19bc06",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Handle GC 7",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "connect",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "broker",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "broker.force",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "broker.url",
+                "pt": "msg",
+                "to": "MQTT_GC_7_BROKER",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.usetls",
+                "pt": "msg",
+                "to": "$contains($env(\"MQTT_GC_7_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_7_BROKER\"),/mqtts/)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "broker.username",
+                "pt": "msg",
+                "to": "MQTT_GC_7_USERNAME",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.password",
+                "pt": "msg",
+                "to": "MQTT_GC_7_PASSWORD",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.protocolVersion",
+                "pt": "msg",
+                "to": "$length($env(\"MQTT_GC_7_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_7_BROKERVERSION\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "gc[6]",
+                "pt": "flow",
+                "to": "GC_7_ID",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 620,
+        "wires": [
+            [
+                "b048fb4f5faf163e"
+            ]
+        ]
+    },
+    {
+        "id": "b048fb4f5faf163e",
+        "type": "mqtt out",
+        "z": "9fcb3dc635318115",
+        "name": "Define GC7",
+        "topic": "",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "86bd07697c1bc039",
+        "x": 650,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "0409b074e5072243",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 7 ?",
+        "property": "$length($env(\"MQTT_GC_7_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 620,
+        "wires": [
+            [
+                "afa1acfb4d19bc06"
+            ]
+        ]
+    },
+    {
+        "id": "943525222b5e62af",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Handle GC 8",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "connect",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "broker",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "broker.force",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "broker.url",
+                "pt": "msg",
+                "to": "MQTT_GC_8_BROKER",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.usetls",
+                "pt": "msg",
+                "to": "$contains($env(\"MQTT_GC_8_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_8_BROKER\"),/mqtts/)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "broker.username",
+                "pt": "msg",
+                "to": "MQTT_GC_8_USERNAME",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.password",
+                "pt": "msg",
+                "to": "MQTT_GC_8_PASSWORD",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.protocolVersion",
+                "pt": "msg",
+                "to": "$length($env(\"MQTT_GC_8_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_8_BROKERVERSION\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "gc[7]",
+                "pt": "flow",
+                "to": "GC_8_ID",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 680,
+        "wires": [
+            [
+                "67f2a77289c8f153"
+            ]
+        ]
+    },
+    {
+        "id": "67f2a77289c8f153",
+        "type": "mqtt out",
+        "z": "9fcb3dc635318115",
+        "name": "Define GC8",
+        "topic": "",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0b07d12b43fc3df1",
+        "x": 650,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "98950e79f6947e3a",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 8 ?",
+        "property": "$length($env(\"MQTT_GC_8_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 680,
+        "wires": [
+            [
+                "943525222b5e62af"
+            ]
+        ]
+    },
+    {
+        "id": "7f2a72caee39adce",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Handle GC 9",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "connect",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "broker",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "broker.force",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "broker.url",
+                "pt": "msg",
+                "to": "MQTT_GC_9_BROKER",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.usetls",
+                "pt": "msg",
+                "to": "$contains($env(\"MQTT_GC_9_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_9_BROKER\"),/mqtts/)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "broker.username",
+                "pt": "msg",
+                "to": "MQTT_GC_9_USERNAME",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.password",
+                "pt": "msg",
+                "to": "MQTT_GC_9_PASSWORD",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.protocolVersion",
+                "pt": "msg",
+                "to": "$length($env(\"MQTT_GC_9_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_9_BROKERVERSION\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "gc[8]",
+                "pt": "flow",
+                "to": "GC_9_ID",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 740,
+        "wires": [
+            [
+                "d3b0f595b60078c3"
+            ]
+        ]
+    },
+    {
+        "id": "d3b0f595b60078c3",
+        "type": "mqtt out",
+        "z": "9fcb3dc635318115",
+        "name": "Define GC9",
+        "topic": "",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f2c97bcad433a95c",
+        "x": 650,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "a440adb1d906b7e1",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 9 ?",
+        "property": "$length($env(\"MQTT_GC_9_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 740,
+        "wires": [
+            [
+                "7f2a72caee39adce"
+            ]
+        ]
+    },
+    {
+        "id": "d7bbfbda698f9b24",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Handle GC 10",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "connect",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "broker",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "broker.force",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "broker.url",
+                "pt": "msg",
+                "to": "MQTT_GC_10_BROKER",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.usetls",
+                "pt": "msg",
+                "to": "$contains($env(\"MQTT_GC_10_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_10_BROKER\"),/mqtts/)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "broker.username",
+                "pt": "msg",
+                "to": "MQTT_GC_10_USERNAME",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.password",
+                "pt": "msg",
+                "to": "MQTT_GC_10_PASSWORD",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.protocolVersion",
+                "pt": "msg",
+                "to": "$length($env(\"MQTT_GC_10_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_10_BROKERVERSION\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "gc[9]",
+                "pt": "flow",
+                "to": "GC_10_ID",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 800,
+        "wires": [
+            [
+                "ea92124a82e22665"
+            ]
+        ]
+    },
+    {
+        "id": "ea92124a82e22665",
+        "type": "mqtt out",
+        "z": "9fcb3dc635318115",
+        "name": "Define GC1",
+        "topic": "",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "92fcc20085a38a9d",
+        "x": 670,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "5395eeb95ada2a4b",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 10 ?",
+        "property": "$length($env(\"MQTT_GC_10_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 800,
+        "wires": [
+            [
+                "d7bbfbda698f9b24"
+            ]
+        ]
+    },
+    {
+        "id": "123646dccc919b37",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 1 ?",
+        "property": "$length($env(\"MQTT_GC_1_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 360,
+        "y": 1300,
+        "wires": [
+            [
+                "787e822270fae343"
+            ]
+        ]
+    },
+    {
+        "id": "30f45b658646e599",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 2 ?",
+        "property": "$length($env(\"MQTT_GC_2_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 360,
+        "y": 1360,
+        "wires": [
+            [
+                "86fe39df4ac6bb3a"
+            ]
+        ]
+    },
+    {
+        "id": "d48ec981c342ed1c",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 3 ?",
+        "property": "$length($env(\"MQTT_GC_3_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 360,
+        "y": 1420,
+        "wires": [
+            [
+                "6a6c03791ac454a9"
+            ]
+        ]
+    },
+    {
+        "id": "4408d5f578e56d68",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 4 ?",
+        "property": "$length($env(\"MQTT_GC_4_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 360,
+        "y": 1480,
+        "wires": [
+            [
+                "8ef58f2fa857ad2b"
+            ]
+        ]
+    },
+    {
+        "id": "5b98ae300a97518c",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 5 ?",
+        "property": "$length($env(\"MQTT_GC_5_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 360,
+        "y": 1540,
+        "wires": [
+            [
+                "b259769af0885bde"
+            ]
+        ]
+    },
+    {
+        "id": "787e822270fae343",
+        "type": "mqtt in",
+        "z": "9fcb3dc635318115",
+        "name": "GC 1",
+        "topic": "",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "18635c819fe0c4ee",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 490,
+        "y": 1300,
+        "wires": [
+            [
+                "aaa6ccd4cb51b7a7"
+            ]
+        ]
+    },
+    {
+        "id": "9a01739c8b89981c",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Cache",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cache",
+                "pt": "msg",
+                "to": "gc[0]",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 1300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "462f3c1b8fc65f7e",
+        "type": "subflow:218b5b0dabe0e4cb",
+        "z": "9fcb3dc635318115",
+        "name": "Monitor",
+        "x": 860,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "aaa6ccd4cb51b7a7",
+        "type": "msg-speed",
+        "z": "9fcb3dc635318115",
+        "name": "Speed",
+        "frequency": "sec",
+        "interval": "10",
+        "estimation": false,
+        "ignore": false,
+        "pauseAtStartup": false,
+        "topicDependent": false,
+        "x": 610,
+        "y": 1300,
+        "wires": [
+            [],
+            [
+                "9a01739c8b89981c"
+            ]
+        ]
+    },
+    {
+        "id": "996d7d67e8aa735d",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Cache",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cache",
+                "pt": "msg",
+                "to": "gc[2]",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 1420,
+        "wires": [
+            [
+                "cac7494512e7c688"
+            ]
+        ]
+    },
+    {
+        "id": "7eb4f53450dcdf22",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Cache",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cache",
+                "pt": "msg",
+                "to": "gc[3]",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 1480,
+        "wires": [
+            [
+                "1f2479d86f2bb5de"
+            ]
+        ]
+    },
+    {
+        "id": "a09adfe5f67d2466",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Cache",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cache",
+                "pt": "msg",
+                "to": "gc[4]",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 1540,
+        "wires": [
+            [
+                "e90f3c5e7aa6db59"
+            ]
+        ]
+    },
+    {
+        "id": "6082cddaab062b75",
+        "type": "mqtt in",
+        "z": "9fcb3dc635318115",
+        "name": "GC 6",
+        "topic": "",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "e0abf69e68f5655a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 490,
+        "y": 1600,
+        "wires": [
+            [
+                "fad7303a5a20d73a"
+            ]
+        ]
+    },
+    {
+        "id": "0ab6ca39136431d7",
+        "type": "subflow:218b5b0dabe0e4cb",
+        "z": "9fcb3dc635318115",
+        "name": "Monitor",
+        "x": 860,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "fad7303a5a20d73a",
+        "type": "msg-speed",
+        "z": "9fcb3dc635318115",
+        "name": "Speed",
+        "frequency": "sec",
+        "interval": "10",
+        "estimation": false,
+        "ignore": false,
+        "pauseAtStartup": false,
+        "topicDependent": false,
+        "x": 610,
+        "y": 1600,
+        "wires": [
+            [],
+            [
+                "43185118318fa73b"
+            ]
+        ]
+    },
+    {
+        "id": "2cd05ca1d5130ce7",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 6 ?",
+        "property": "$length($env(\"MQTT_GC_5_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 360,
+        "y": 1600,
+        "wires": [
+            [
+                "6082cddaab062b75"
+            ]
+        ]
+    },
+    {
+        "id": "43185118318fa73b",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Cache",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cache",
+                "pt": "msg",
+                "to": "gc[5]",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 1600,
+        "wires": [
+            [
+                "0ab6ca39136431d7"
+            ]
+        ]
+    },
+    {
+        "id": "dbcb66be9fda2e74",
+        "type": "mqtt in",
+        "z": "9fcb3dc635318115",
+        "name": "GC 7",
+        "topic": "",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "86bd07697c1bc039",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 490,
+        "y": 1660,
+        "wires": [
+            [
+                "6f95c8bffeffa465"
+            ]
+        ]
+    },
+    {
+        "id": "4dfd01aca4376ece",
+        "type": "subflow:218b5b0dabe0e4cb",
+        "z": "9fcb3dc635318115",
+        "name": "Monitor",
+        "x": 860,
+        "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "6f95c8bffeffa465",
+        "type": "msg-speed",
+        "z": "9fcb3dc635318115",
+        "name": "Speed",
+        "frequency": "sec",
+        "interval": "10",
+        "estimation": false,
+        "ignore": false,
+        "pauseAtStartup": false,
+        "topicDependent": false,
+        "x": 610,
+        "y": 1660,
+        "wires": [
+            [],
+            [
+                "4cb16838471a6e5a"
+            ]
+        ]
+    },
+    {
+        "id": "fc62a75f12c05585",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 7 ?",
+        "property": "$length($env(\"MQTT_GC_5_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 360,
+        "y": 1660,
+        "wires": [
+            [
+                "dbcb66be9fda2e74"
+            ]
+        ]
+    },
+    {
+        "id": "4cb16838471a6e5a",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Cache",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cache",
+                "pt": "msg",
+                "to": "gc[6]",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 1660,
+        "wires": [
+            [
+                "4dfd01aca4376ece"
+            ]
+        ]
+    },
+    {
+        "id": "b4752dc22ef7d9a7",
+        "type": "mqtt in",
+        "z": "9fcb3dc635318115",
+        "name": "GC 8",
+        "topic": "",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "0b07d12b43fc3df1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 490,
+        "y": 1720,
+        "wires": [
+            [
+                "25beb4cd9d76f406"
+            ]
+        ]
+    },
+    {
+        "id": "e06c6c1580a07014",
+        "type": "subflow:218b5b0dabe0e4cb",
+        "z": "9fcb3dc635318115",
+        "name": "Monitor",
+        "x": 860,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "25beb4cd9d76f406",
+        "type": "msg-speed",
+        "z": "9fcb3dc635318115",
+        "name": "Speed",
+        "frequency": "sec",
+        "interval": "10",
+        "estimation": false,
+        "ignore": false,
+        "pauseAtStartup": false,
+        "topicDependent": false,
+        "x": 610,
+        "y": 1720,
+        "wires": [
+            [],
+            [
+                "13e970528dbd6ba8"
+            ]
+        ]
+    },
+    {
+        "id": "62d5e95bf30eab6b",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 8 ?",
+        "property": "$length($env(\"MQTT_GC_5_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 360,
+        "y": 1720,
+        "wires": [
+            [
+                "b4752dc22ef7d9a7"
+            ]
+        ]
+    },
+    {
+        "id": "13e970528dbd6ba8",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Cache",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cache",
+                "pt": "msg",
+                "to": "gc[7]",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 1720,
+        "wires": [
+            [
+                "e06c6c1580a07014"
+            ]
+        ]
+    },
+    {
+        "id": "00cc7bb8706dde96",
+        "type": "mqtt in",
+        "z": "9fcb3dc635318115",
+        "name": "GC 9",
+        "topic": "",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "f2c97bcad433a95c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 490,
+        "y": 1780,
+        "wires": [
+            [
+                "440d84fc5f407709"
+            ]
+        ]
+    },
+    {
+        "id": "c44569631105f79c",
+        "type": "subflow:218b5b0dabe0e4cb",
+        "z": "9fcb3dc635318115",
+        "name": "Monitor",
+        "x": 860,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "440d84fc5f407709",
+        "type": "msg-speed",
+        "z": "9fcb3dc635318115",
+        "name": "Speed",
+        "frequency": "sec",
+        "interval": "10",
+        "estimation": false,
+        "ignore": false,
+        "pauseAtStartup": false,
+        "topicDependent": false,
+        "x": 610,
+        "y": 1780,
+        "wires": [
+            [],
+            [
+                "116b964cc595919e"
+            ]
+        ]
+    },
+    {
+        "id": "2178334fc1068644",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 9 ?",
+        "property": "$length($env(\"MQTT_GC_5_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 360,
+        "y": 1780,
+        "wires": [
+            [
+                "00cc7bb8706dde96"
+            ]
+        ]
+    },
+    {
+        "id": "116b964cc595919e",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Cache",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cache",
+                "pt": "msg",
+                "to": "gc[8]",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 1780,
+        "wires": [
+            [
+                "c44569631105f79c"
+            ]
+        ]
+    },
+    {
+        "id": "413628de064acdf5",
+        "type": "mqtt in",
+        "z": "9fcb3dc635318115",
+        "name": "GC 10",
+        "topic": "",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "92fcc20085a38a9d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 490,
+        "y": 1840,
+        "wires": [
+            [
+                "4c64f57879230159"
+            ]
+        ]
+    },
+    {
+        "id": "f88680224b100683",
+        "type": "subflow:218b5b0dabe0e4cb",
+        "z": "9fcb3dc635318115",
+        "name": "Monitor",
+        "x": 860,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "4c64f57879230159",
+        "type": "msg-speed",
+        "z": "9fcb3dc635318115",
+        "name": "Speed",
+        "frequency": "sec",
+        "interval": "10",
+        "estimation": false,
+        "ignore": false,
+        "pauseAtStartup": false,
+        "topicDependent": false,
+        "x": 610,
+        "y": 1840,
+        "wires": [
+            [],
+            [
+                "12c66efdbeae9a22"
+            ]
+        ]
+    },
+    {
+        "id": "172b7f8e1604278d",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC 10 ?",
+        "property": "$length($env(\"MQTT_GC_5_BROKER\"))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 360,
+        "y": 1840,
+        "wires": [
+            [
+                "413628de064acdf5"
+            ]
+        ]
+    },
+    {
+        "id": "12c66efdbeae9a22",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Cache",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cache",
+                "pt": "msg",
+                "to": "gc[9]",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 1840,
+        "wires": [
+            [
+                "f88680224b100683"
+            ]
+        ]
+    },
+    {
+        "id": "dad7e36c780b3d66",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "GC ?",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$split(topic,\"#\")[0]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 2040,
+        "wires": [
+            [
+                "568c765b12630d5a"
+            ]
+        ]
+    },
+    {
+        "id": "d25b573528bf41dd",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "Not Cacheable ?",
+        "property": "$contains(topic, \"recommended\") or (payload.properties.cache = false)",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 800,
+        "y": 900,
+        "wires": [
+            [],
+            [
+                "8b4cd7d82c23beee"
+            ]
+        ]
+    },
+    {
+        "id": "f53714198eb1e993",
+        "type": "mqtt in",
+        "z": "9fcb3dc635318115",
+        "name": "GB",
+        "topic": "",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "8af16e9d551a61eb",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 520,
+        "y": 900,
+        "wires": [
+            [
+                "2d4daa951d924bcf"
+            ]
+        ]
+    },
+    {
+        "id": "3100f7aa144dfebe",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Prepare",
+        "rules": [
+            {
+                "t": "set",
+                "p": "wnmtopic",
+                "pt": "msg",
+                "to": "topic",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "wnm",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "centreid",
+                "pt": "msg",
+                "to": "$split(topic,\"/\")[3]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "dataid",
+                "pt": "msg",
+                "to": "payload.properties.data_id",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "update",
+                "pt": "msg",
+                "to": "\"update\" in payload.links.rel",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "pubtime",
+                "pt": "msg",
+                "to": "payload.properties.pubtime",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "originkey",
+                "pt": "msg",
+                "to": "\"orig#\" & centreid & \"#\" & dataid & \"#\" & pubtime",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "orig",
+                "pt": "msg",
+                "to": "[\t   originkey,\t   dataid & \"#\" & pubtime,\t   \"EX\",\t   $flowContext(\"timeout_orig\")\t]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "hset_data",
+                "pt": "msg",
+                "to": "[\t   \"data#\" & centreid & \"#\" & dataid & \"#\" & pubtime,\t   \"orig\",\t   $millis(),\t   \"wnm\",\t   $string(wnm)\t]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": " \"wnm#\" & centreid & \"#\" & dataid",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "hset_wnm",
+                "pt": "msg",
+                "to": "[\t   topic,\t   pubtime,\t   $millis()\t]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1100,
+        "y": 900,
+        "wires": [
+            [
+                "06ca5006eca19380"
+            ]
+        ]
+    },
+    {
+        "id": "850db44db67c0829",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Del",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 1100,
+        "wires": [
+            [
+                "669a5db69fdb7581",
+                "9c0a69b57ce5d988",
+                "98e6536255949315",
+                "a93bb330271ec030"
+            ]
+        ]
+    },
+    {
+        "id": "669a5db69fdb7581",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Orig",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "orig",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 1040,
+        "wires": [
+            [
+                "d6b953d2c9b27373"
+            ]
+        ]
+    },
+    {
+        "id": "0493ab6e0426e3f8",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Prometheus",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t       \"centre_id\":  centreid\t   },\t   \"val\":1 \t\t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 1000,
+        "wires": [
+            [
+                "9b9c3b87553ee4b5"
+            ]
+        ]
+    },
+    {
+        "id": "2d4daa951d924bcf",
+        "type": "rbe",
+        "z": "9fcb3dc635318115",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 640,
+        "y": 900,
+        "wires": [
+            [
+                "d25b573528bf41dd"
+            ]
+        ]
+    },
+    {
+        "id": "9c0a69b57ce5d988",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "All",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "hset_data",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 1080,
+        "wires": [
+            [
+                "f8a53d2a6ae7d288"
+            ]
+        ]
+    },
+    {
+        "id": "d6b953d2c9b27373",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "SET",
+        "name": "SET",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 970,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f8a53d2a6ae7d288",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "HSET",
+        "name": "HSET",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 970,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9b9c3b87553ee4b5",
+        "type": "prometheus-exporter",
+        "z": "9fcb3dc635318115",
+        "name": "Origin",
+        "metric": "1d0ef4c6483c7efe",
+        "x": 850,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "8b4cd7d82c23beee",
+        "type": "msg-speed",
+        "z": "9fcb3dc635318115",
+        "name": "Speed",
+        "frequency": "sec",
+        "interval": "10",
+        "estimation": false,
+        "ignore": false,
+        "pauseAtStartup": false,
+        "topicDependent": false,
+        "x": 970,
+        "y": 900,
+        "wires": [
+            [],
+            [
+                "3100f7aa144dfebe"
+            ]
+        ]
+    },
+    {
+        "id": "fecf26268d94e20b",
+        "type": "split",
+        "z": "9fcb3dc635318115",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "gc",
+        "x": 970,
+        "y": 1160,
+        "wires": [
+            [
+                "bcc8512c5ce7b36e"
+            ]
+        ]
+    },
+    {
+        "id": "98e6536255949315",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "GC",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gc",
+                "pt": "msg",
+                "to": "gc",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 1160,
+        "wires": [
+            [
+                "fecf26268d94e20b"
+            ]
+        ]
+    },
+    {
+        "id": "bcc8512c5ce7b36e",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Store",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "[\t   gc & \"#\" & centreid & \"#\" & dataid & \"#\" & pubtime ,\t   $millis(),\t   \"EX\",\t  $flowContext(\"timeout_cache\")\t]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1090,
+        "y": 1160,
+        "wires": [
+            [
+                "d55761a08ee6e3d8"
+            ]
+        ]
+    },
+    {
+        "id": "d55761a08ee6e3d8",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "SET",
+        "name": "SET",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1210,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b778150ac43b8303",
+        "type": "delay",
+        "z": "9fcb3dc635318115",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 435,
+        "y": 900,
+        "wires": [
+            [
+                "f53714198eb1e993"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "b7e003bf5ca40a88",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "origin",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "\"origin/a/wis2/\" & $flowContext(\"topic\")",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 900,
+        "wires": [
+            [
+                "b778150ac43b8303"
+            ]
+        ]
+    },
+    {
+        "id": "9bb946f7dd2f72ce",
+        "type": "catch",
+        "z": "9fcb3dc635318115",
+        "name": "",
+        "scope": [
+            "787e822270fae343",
+            "86fe39df4ac6bb3a",
+            "6a6c03791ac454a9",
+            "8ef58f2fa857ad2b",
+            "b259769af0885bde",
+            "6082cddaab062b75",
+            "dbcb66be9fda2e74",
+            "b4752dc22ef7d9a7",
+            "00cc7bb8706dde96",
+            "413628de064acdf5"
+        ],
+        "uncaught": false,
+        "x": 500,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "06ca5006eca19380",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "HGETALL",
+        "name": "HGETALL",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1240,
+        "y": 900,
+        "wires": [
+            [
+                "371140a2f45f8846"
+            ]
+        ]
+    },
+    {
+        "id": "371140a2f45f8846",
+        "type": "link out",
+        "z": "9fcb3dc635318115",
+        "name": "link out 7",
+        "mode": "link",
+        "links": [
+            "13a3a1072b158c5c"
+        ],
+        "x": 1335,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "13a3a1072b158c5c",
+        "type": "link in",
+        "z": "9fcb3dc635318115",
+        "name": "link in 6",
+        "links": [
+            "371140a2f45f8846"
+        ],
+        "x": 395,
+        "y": 1140,
+        "wires": [
+            [
+                "d5bb69f4d4f8c1b4"
+            ]
+        ]
+    },
+    {
+        "id": "d5bb69f4d4f8c1b4",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "Empty ?",
+        "property": "$count(payload)",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 500,
+        "y": 1140,
+        "wires": [
+            [
+                "0493ab6e0426e3f8",
+                "850db44db67c0829"
+            ],
+            [
+                "da9042e45b74ed1c"
+            ]
+        ]
+    },
+    {
+        "id": "a93bb330271ec030",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "WNM",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "hset_wnm",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 1120,
+        "wires": [
+            [
+                "f044c7490c8e792d"
+            ]
+        ]
+    },
+    {
+        "id": "f044c7490c8e792d",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "HSET",
+        "name": "HSET",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 970,
+        "y": 1120,
+        "wires": [
+            [
+                "2fc3adac5cab5d9d"
+            ]
+        ]
+    },
+    {
+        "id": "2fc3adac5cab5d9d",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Expire",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "[ hset_wnm[0], 86400 ]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1090,
+        "y": 1120,
+        "wires": [
+            [
+                "47e819a2f896a2be"
+            ]
+        ]
+    },
+    {
+        "id": "47e819a2f896a2be",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "EXPIRE",
+        "name": "EXPIRE",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1220,
+        "y": 1120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "47515d621ebc39f1",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "Pubtime up ?",
+        "property": "$reduce( $map(pubtime_keys, function($value) { $value < pubtime }), function($result, $value) { $result and $value }, true )",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 840,
+        "y": 1220,
+        "wires": [
+            [
+                "a85bf3a7164bde23"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "da9042e45b74ed1c",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Keys",
+        "rules": [
+            {
+                "t": "set",
+                "p": "pubtime_keys",
+                "pt": "msg",
+                "to": "$filter(payload, function($value, $index) { $index % 2 = 0 } )",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 1220,
+        "wires": [
+            [
+                "47515d621ebc39f1"
+            ]
+        ]
+    },
+    {
+        "id": "a85bf3a7164bde23",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "Update ?",
+        "property": "update",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1000,
+        "y": 1220,
+        "wires": [
+            [
+                "e17647d5392269e9"
+            ],
+            [
+                "30e12522f009eef0"
+            ]
+        ]
+    },
+    {
+        "id": "e17647d5392269e9",
+        "type": "link out",
+        "z": "9fcb3dc635318115",
+        "name": "link out 8",
+        "mode": "link",
+        "links": [
+            "eb5263f7a5df0484"
+        ],
+        "x": 1095,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "eb5263f7a5df0484",
+        "type": "link in",
+        "z": "9fcb3dc635318115",
+        "name": "link in 7",
+        "links": [
+            "e17647d5392269e9"
+        ],
+        "x": 655,
+        "y": 1160,
+        "wires": [
+            [
+                "850db44db67c0829"
+            ]
+        ]
+    },
+    {
+        "id": "30e12522f009eef0",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Prometheus",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t       \"centre_id\":  centreid\t   },\t   \"val\":1 \t\t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1150,
+        "y": 1240,
+        "wires": [
+            [
+                "e3c16ea751473a08"
+            ]
+        ]
+    },
+    {
+        "id": "e3c16ea751473a08",
+        "type": "prometheus-exporter",
+        "z": "9fcb3dc635318115",
+        "name": "Duplicate",
+        "metric": "ab2e2f87fc8b78d4",
+        "x": 1300,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "c2cfa8d7adb26eae",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "Log ?",
+        "property": "log",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "true",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 970,
+        "y": 2060,
+        "wires": [
+            [
+                "717b10cd90d28b61"
+            ]
+        ]
+    },
+    {
+        "id": "2d6e5034b46ef850",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Filename",
+        "rules": [
+            {
+                "t": "set",
+                "p": "_logIO_",
+                "pt": "msg",
+                "to": "{\"fileName\":\"no-global-cache.json\",\"dirName\":\"/log\",\"logLevel\":\"info\"}",
+                "tot": "json"
+            },
+            {
+                "t": "delete",
+                "p": "pattern",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1260,
+        "y": 2060,
+        "wires": [
+            [
+                "b0efdc98fd94d239"
+            ]
+        ]
+    },
+    {
+        "id": "b0efdc98fd94d239",
+        "type": "logIO",
+        "z": "9fcb3dc635318115",
+        "name": "Log",
+        "active": true,
+        "logger": "5742725833a2549a",
+        "complete": "payload",
+        "targetType": "msg",
+        "logIOMode": "inline",
+        "logIOScope": "I",
+        "autoStart": true,
+        "scope": [
+            "2d6e5034b46ef850"
+        ],
+        "x": 1390,
+        "y": 2060,
+        "wires": []
+    },
+    {
+        "id": "717b10cd90d28b61",
+        "type": "function",
+        "z": "9fcb3dc635318115",
+        "name": "Fill missing",
+        "func": "const keys = flow.get(\"gc\");\nconst mixed = msg.payload;\n\n// Convert mixed array to key-value map\nconst resultMap = {};\nfor (let i = 0; i < mixed.length; i += 2) {\n    resultMap[mixed[i]] = mixed[i + 1];\n}\n\n// Add missing keys with value 999\nkeys.forEach(key => {\n    if (!(key in resultMap)) {\n        resultMap[key] = \"9999999999999\";\n    }\n});\n\n// Convert back to array\nconst payload = [];\nfor (const [key, value] of Object.entries(resultMap)) {\n    payload.push(key, value);\n}\n\nmsg.payload = payload;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 2060,
+        "wires": [
+            [
+                "2d6e5034b46ef850"
+            ]
+        ]
+    }
+]

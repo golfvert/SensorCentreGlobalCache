@@ -7,7 +7,7 @@
         "@golfvert/node-red-redis": "1.1.0",
         "node-red-contrib-msg-speed": "2.1.0",
         "node-red-contrib-prometheus-exporter": "1.0.5",
-        "@zigasebenik/node-red-log-io": "1.1.6"
+        "@zigasebenik/node-red-log-io": "1.3.2"
     },
     "node-red": {
         "settings": {

@@ -73,7 +73,7 @@
         "type": "prometheus-metric-config",
         "name": "wmo_wis2_scgc_cache_delay_seconds",
         "help": "Delay to get the data in the cache",
-        "labels": "global_cache,centre_id",
+        "labels": "global_cache,centre_id,report_by",
         "mtype": "gauge"
     },
     {
@@ -81,7 +81,7 @@
         "type": "prometheus-metric-config",
         "name": "wmo_wis2_scgc_messages_cached_delay_total",
         "help": "Message cached",
-        "labels": "global_cache,delay,centre_id",
+        "labels": "global_cache,delay,centre_id,report_by",
         "mtype": "counter"
     },
     {
@@ -208,7 +208,7 @@
         "type": "prometheus-metric-config",
         "name": "wmo_wis2_scgc_messages_missed_total",
         "help": "Not in globalcache",
-        "labels": "global_cache,centre_id",
+        "labels": "global_cache,centre_id,report_by",
         "mtype": "counter"
     },
     {
@@ -216,7 +216,7 @@
         "type": "prometheus-metric-config",
         "name": "wmo_wis2_scgc_messages_missed_all_total",
         "help": "Not in any cache",
-        "labels": "centre_id",
+        "labels": "centre_id,report_by",
         "mtype": "counter"
     },
     {
@@ -406,7 +406,7 @@
         "type": "prometheus-metric-config",
         "name": "wmo_wis2_scgc_messages_published_total",
         "help": "Messages from origin",
-        "labels": "centre_id",
+        "labels": "centre_id,report_by",
         "mtype": "counter"
     },
     {
@@ -436,7 +436,7 @@
         "type": "prometheus-metric-config",
         "name": "wmo_wis2_scgc_messages_duplicates_total",
         "help": "Number of messages with identical data_id and no \"rel=update\"",
-        "labels": "centre_id",
+        "labels": "centre_id,report_by",
         "mtype": "counter"
     },
     {
@@ -488,7 +488,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"delay\": $flowContext(\"$parent.delay1\"),\t      \"centre_id\":  $flowContext(\"centreid\")\t   },\t   \"val\":1 \t}",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"delay\": $flowContext(\"$parent.delay1\"),\t      \"centre_id\":  $flowContext(\"centreid\"),\t      \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\":1 \t}",
                 "tot": "jsonata"
             }
         ],
@@ -524,6 +524,13 @@
                 "pt": "flow",
                 "to": "$split(topic,\"/\")[3]",
                 "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "sensorid",
+                "pt": "flow",
+                "to": "sensorid",
+                "tot": "msg"
             },
             {
                 "t": "set",
@@ -604,7 +611,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\t   \"op\":\"set\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"centre_id\":  $flowContext(\"centreid\")\t   },\t   \"val\": ( ($millis() - $number(msg.payload)) / 1000 )\t}",
+                "to": "{\t   \"op\":\"set\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"centre_id\":  $flowContext(\"centreid\"),\t      \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\": ( ($millis() - $number(msg.payload)) / 1000 )\t}",
                 "tot": "jsonata"
             }
         ],
@@ -657,7 +664,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"delay\": $flowContext(\"$parent.delay2\"),\t      \"centre_id\":  $flowContext(\"centreid\")\t   },\t   \"val\":1 \t}",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"delay\": $flowContext(\"$parent.delay2\"),\t      \"centre_id\":  $flowContext(\"centreid\"),\t      \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\":1 \t}",
                 "tot": "jsonata"
             }
         ],
@@ -684,7 +691,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"delay\": $flowContext(\"$parent.timeout_cache\"),\t      \"centre_id\":  $flowContext(\"centreid\")\t   },\t   \"val\":1 \t}",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"delay\": $flowContext(\"$parent.timeout_cache\"),\t      \"centre_id\":  $flowContext(\"centreid\"),\t      \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\":1 \t}",
                 "tot": "jsonata"
             }
         ],
@@ -904,7 +911,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": globalcache,\t      \"centre_id\":  centreid\t    },\t   \"val\":1 \t}",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": globalcache,\t      \"centre_id\":  centreid,\t      \"report_by\": $flowContext(\"sensorid\")\t    },\t   \"val\":1 \t}",
                 "tot": "jsonata"
             }
         ],
@@ -968,6 +975,13 @@
                 "pt": "flow",
                 "to": "$length($env(\"WNM_LOGGING\")) = 0 ? false : $env(\"WNM_LOGGING\")",
                 "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "sensorid",
+                "pt": "flow",
+                "to": "SENSOR_CENTRE_ID",
+                "tot": "env"
             }
         ],
         "action": "",
@@ -1053,6 +1067,13 @@
                 "p": "cache",
                 "pt": "msg",
                 "to": "gc[1]",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "sensorid",
+                "pt": "msg",
+                "to": "sensorid",
                 "tot": "flow"
             }
         ],
@@ -1275,7 +1296,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"centre_id\": centreid\t    },\t   \"val\":1 \t}",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"centre_id\": centreid,\t      \"report_by\": $flowContext(\"sensorid\")\t    },\t   \"val\":1 \t}",
                 "tot": "jsonata"
             }
         ],
@@ -3064,6 +3085,13 @@
                 "pt": "msg",
                 "to": "gc[0]",
                 "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "sensorid",
+                "pt": "msg",
+                "to": "sensorid",
+                "tot": "flow"
             }
         ],
         "action": "",
@@ -3074,7 +3102,9 @@
         "x": 730,
         "y": 1300,
         "wires": [
-            []
+            [
+                "462f3c1b8fc65f7e"
+            ]
         ]
     },
     {
@@ -3118,6 +3148,13 @@
                 "pt": "msg",
                 "to": "gc[2]",
                 "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "sensorid",
+                "pt": "msg",
+                "to": "sensorid",
+                "tot": "flow"
             }
         ],
         "action": "",
@@ -3145,6 +3182,13 @@
                 "pt": "msg",
                 "to": "gc[3]",
                 "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "sensorid",
+                "pt": "msg",
+                "to": "sensorid",
+                "tot": "flow"
             }
         ],
         "action": "",
@@ -3171,6 +3215,13 @@
                 "p": "cache",
                 "pt": "msg",
                 "to": "gc[4]",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "sensorid",
+                "pt": "msg",
+                "to": "sensorid",
                 "tot": "flow"
             }
         ],
@@ -3274,6 +3325,13 @@
                 "pt": "msg",
                 "to": "gc[5]",
                 "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "sensorid",
+                "pt": "msg",
+                "to": "sensorid",
+                "tot": "flow"
             }
         ],
         "action": "",
@@ -3375,6 +3433,13 @@
                 "p": "cache",
                 "pt": "msg",
                 "to": "gc[6]",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "sensorid",
+                "pt": "msg",
+                "to": "sensorid",
                 "tot": "flow"
             }
         ],
@@ -3478,6 +3543,13 @@
                 "pt": "msg",
                 "to": "gc[7]",
                 "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "sensorid",
+                "pt": "msg",
+                "to": "sensorid",
+                "tot": "flow"
             }
         ],
         "action": "",
@@ -3580,6 +3652,13 @@
                 "pt": "msg",
                 "to": "gc[8]",
                 "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "sensorid",
+                "pt": "msg",
+                "to": "sensorid",
+                "tot": "flow"
             }
         ],
         "action": "",
@@ -3681,6 +3760,13 @@
                 "p": "cache",
                 "pt": "msg",
                 "to": "gc[9]",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "sensorid",
+                "pt": "msg",
+                "to": "sensorid",
                 "tot": "flow"
             }
         ],
@@ -3944,7 +4030,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t       \"centre_id\":  centreid\t   },\t   \"val\":1 \t\t}",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t       \"centre_id\": centreid,\t       \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\":1 \t\t}",
                 "tot": "jsonata"
             }
         ],
@@ -4538,7 +4624,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t       \"centre_id\":  centreid\t   },\t   \"val\":1 \t\t}",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t       \"centre_id\":  centreid,\t       \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\":1 \t\t}",
                 "tot": "jsonata"
             }
         ],
@@ -4644,7 +4730,9 @@
         ],
         "x": 1390,
         "y": 2060,
-        "wires": []
+        "wires": [
+            []
+        ]
     },
     {
         "id": "717b10cd90d28b61",

@@ -425,7 +425,7 @@
         "fileZippedArchive": true,
         "fileMaxSize": "500",
         "fileMaxSizeUnit": "m",
-        "fileMaxFiles": "24",
+        "fileMaxFiles": "25",
         "fileMaxFilesUnit": "",
         "consoleIsJsonFormat": false,
         "elkUrl": "http://localhost:9200",
@@ -4179,7 +4179,7 @@
         "rules": [
             {
                 "t": "set",
-                "p": "wnmtopic",
+                "p": "wth",
                 "pt": "msg",
                 "to": "topic",
                 "tot": "msg"
@@ -4237,7 +4237,7 @@
                 "t": "set",
                 "p": "hset_data",
                 "pt": "msg",
-                "to": "[\t   \"data#\" & centreid & \"#\" & dataid & \"#\" & pubtime,\t   \"orig\",\t   $millis(),\t   \"wnm\",\t   $string(wnm)\t]",
+                "to": "[\t   \"data#\" & centreid & \"#\" & dataid & \"#\" & pubtime,\t   \"orig\",\t   $millis(),\t   \"wnm\",\t   $string(wnm),\t   \"wth\",\t   wth\t]",
                 "tot": "jsonata"
             },
             {
@@ -5012,7 +5012,7 @@
         "type": "function",
         "z": "9fcb3dc635318115",
         "name": "Fill missing",
-        "func": "const keys = flow.get(\"gc\");\nconst mixed = msg.payload;\n\n// Convert mixed array to key-value map\nconst resultMap = {};\nfor (let i = 0; i < mixed.length; i += 2) {\n    resultMap[mixed[i]] = mixed[i + 1];\n}\n\n// Add missing keys with value 999\nkeys.forEach(key => {\n    if (!(key in resultMap)) {\n        resultMap[key] = \"9999999999999\";\n    }\n});\n\n// Convert back to array\nconst payload = [];\nfor (const [key, value] of Object.entries(resultMap)) {\n    payload.push(key, value);\n}\n\nmsg.payload = payload;\nreturn msg;",
+        "func": "const keys = flow.get(\"gc\");\nconst mixed = msg.payload;\nconst centreid = msg.centreid;\n\n// Convert mixed array to key-value map\nconst resultMap = {};\nfor (let i = 0; i < mixed.length; i += 2) {\n    resultMap[mixed[i]] = mixed[i + 1];\n}\n\n// Add missing keys with value 999\nkeys.forEach(key => {\n    if (!(key in resultMap)) {\n        resultMap[key] = \"9999999999999\";\n    }\n});\n\n\n// Add centre-id \nresultMap[\"centre-id\"] = centreid;\n\n// Parse wnm if valid JSON, otherwise keep original \nif (\"wnm\" in resultMap) {\n    try { resultMap[\"wnm\"] = JSON.parse(resultMap[\"wnm\"]); }\n    catch (e) { }\n}\n\n// Convert back to array\nconst payload = [];\nfor (const [key, value] of Object.entries(resultMap)) {\n    payload.push(key, value);\n}\n\nmsg.payload = payload;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,

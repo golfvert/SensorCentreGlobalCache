@@ -1,5 +1,13 @@
 [
     {
+        "id": "3462e18517f294e4",
+        "type": "tab",
+        "label": "CI/CD",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "9fcb3dc635318115",
         "type": "tab",
         "label": "Sensor Global Cache",
@@ -85,69 +93,9 @@
         "mtype": "counter"
     },
     {
-        "id": "5899a7a7d75907f7",
-        "type": "mqtt-broker",
-        "name": "GC2",
-        "broker": "\"\"",
-        "port": "1883",
-        "clientid": "",
-        "autoConnect": false,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "085383537e4479a7",
-        "type": "mqtt-broker",
-        "name": "GC3",
-        "broker": "\"\"",
-        "port": "",
-        "tls": "",
-        "clientid": "",
-        "autoConnect": false,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
         "id": "d6314b59f8ceda2f",
         "type": "mqtt-broker",
-        "name": "GC4",
+        "name": "GB4",
         "broker": "\"\"",
         "port": "",
         "clientid": "",
@@ -167,37 +115,6 @@
         "closeMsg": {},
         "willTopic": "",
         "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "65157bf97529f3dd",
-        "type": "mqtt-broker",
-        "name": "GC5",
-        "broker": "\"\"",
-        "port": "",
-        "clientid": "",
-        "autoConnect": false,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
         "willPayload": "",
         "willMsg": {},
         "userProps": "",
@@ -222,7 +139,7 @@
     {
         "id": "18635c819fe0c4ee",
         "type": "mqtt-broker",
-        "name": "GC1",
+        "name": "GB3",
         "broker": "\"\"",
         "port": "",
         "tls": "",
@@ -243,159 +160,6 @@
         "closeMsg": {},
         "willTopic": "",
         "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "e0abf69e68f5655a",
-        "type": "mqtt-broker",
-        "name": "GC6",
-        "broker": "\"\"",
-        "port": "",
-        "tls": "",
-        "clientid": "",
-        "autoConnect": false,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "86bd07697c1bc039",
-        "type": "mqtt-broker",
-        "name": "GC7",
-        "broker": "\"\"",
-        "port": "",
-        "clientid": "",
-        "autoConnect": false,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "0b07d12b43fc3df1",
-        "type": "mqtt-broker",
-        "name": "GC8",
-        "broker": "\"\"",
-        "port": "",
-        "clientid": "",
-        "autoConnect": false,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "f2c97bcad433a95c",
-        "type": "mqtt-broker",
-        "name": "GC9",
-        "broker": "\"\"",
-        "port": "",
-        "clientid": "",
-        "autoConnect": false,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "92fcc20085a38a9d",
-        "type": "mqtt-broker",
-        "name": "GC10",
-        "broker": "\"\"",
-        "port": "",
-        "clientid": "",
-        "autoConnect": false,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
         "willPayload": "",
         "willMsg": {},
         "userProps": "",
@@ -514,6 +278,30 @@
         "willMsg": {},
         "userProps": "",
         "sessionExpiry": ""
+    },
+    {
+        "id": "29ba581929826767",
+        "type": "prometheus-metric-config",
+        "name": "wmo_wis2_scgc_messages_cache_override_total",
+        "help": "Message not cached override",
+        "labels": "global_cache,centre_id,report_by",
+        "mtype": "counter"
+    },
+    {
+        "id": "cd6ec1cdc99b1de5",
+        "type": "prometheus-metric-config",
+        "name": "wmo_wis2_scgc_download_selected_total",
+        "help": "Number of data files selected for download",
+        "labels": "report_by",
+        "mtype": "counter"
+    },
+    {
+        "id": "bc213c9fdea8c6f6",
+        "type": "prometheus-metric-config",
+        "name": "wmo_wis2_scgc_download_successful_total",
+        "help": "Number of data files successfully downloaded",
+        "labels": "global_cache,report_by",
+        "mtype": "counter"
     },
     {
         "id": "37e01b07c3e8a037",
@@ -1060,8 +848,7 @@
         "z": "218b5b0dabe0e4cb",
         "name": "link in 8",
         "links": [
-            "064312cfd531aaaf",
-            "c969c9733ff8ce21"
+            "064312cfd531aaaf"
         ],
         "x": 215,
         "y": 460,
@@ -1140,6 +927,62 @@
         ]
     },
     {
+        "id": "15d0ec9bc2ce2c9c",
+        "type": "inject",
+        "z": "3462e18517f294e4",
+        "name": "Update image:tag",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 270,
+        "y": 80,
+        "wires": [
+            [
+                "d92bb90dbc47cc63"
+            ]
+        ]
+    },
+    {
+        "id": "d92bb90dbc47cc63",
+        "type": "function",
+        "z": "3462e18517f294e4",
+        "name": "Tag",
+        "func": "// ── Configuration ─────────────────────────────────────────────\nconst IMAGE_NAME = env.get(\"NODE_RED_CONTAINER_NAME\");\nconst TAG_DIR = env.get(\"NODE_RED_CONTAINER_DIRECTORY\");\nconst TAG_FILE = `${TAG_DIR}/image:tag`;\n\nif (!IMAGE_NAME || !TAG_DIR) {\n    node.error(\"Missing required environment variables: NODE_RED_CONTAINER_NAME and/or NODE_RED_CONTAINER_DIRECTORY\");\n    return null;\n}\n// ──────────────────────────────────────────────────────────────\n\nconst now = new Date();\nconst curY = now.getFullYear();\nconst curM = now.getMonth() + 1;  // 1-12\n\nlet newTag;\n\nif (!fs.existsSync(TAG_FILE)) {\n    // File does not exist: create with YYYY.MM.1\n    newTag = `${curY}.${curM}.1`;\n\n} else {\n    const content = fs.readFileSync(TAG_FILE, 'utf8').trim();\n    // Expected format: imagename:YYYY.MM.patch\n    const match = content.match(/:(\\d+)\\.(\\d+)\\.(\\d+)$/);\n\n    if (!match) {\n        // Unreadable format: reset\n        newTag = `${curY}.${curM}.1`;\n\n    } else {\n        let [, fileY, fileM, fileP] = match.map(Number);\n\n        if (fileY === curY && fileM === curM) {\n            // Same year and month: bump patch\n            newTag = `${curY}.${curM}.${fileP + 1}`;\n\n        } else {\n            // Different month or year: compute next month\n            let nextY = fileY;\n            let nextM = fileM + 1;\n            if (nextM > 12) {\n                nextY += 1;\n                nextM = 1;\n            }\n            newTag = `${nextY}.${nextM}.1`;\n        }\n    }\n}\n\nconst fileContent = `${IMAGE_NAME}:${newTag}`;\nfs.writeFileSync(TAG_FILE, fileContent, 'utf8');\n\nmsg.payload = fileContent;\nnode.status({ fill: \"green\", shape: \"dot\", text: fileContent });\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "fs",
+                "module": "fs"
+            },
+            {
+                "var": "path",
+                "module": "path"
+            }
+        ],
+        "x": 430,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "568c765b12630d5a",
         "type": "switch",
         "z": "9fcb3dc635318115",
@@ -1181,8 +1024,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 5,
-        "x": 400,
-        "y": 2140,
+        "x": 560,
+        "y": 1900,
         "wires": [
             [
                 "5c23a20c1171293c"
@@ -1235,8 +1078,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 550,
-        "y": 2160,
+        "x": 710,
+        "y": 1920,
         "wires": [
             [
                 "571f740a66401f2c"
@@ -1304,6 +1147,13 @@
                 "pt": "flow",
                 "to": "SENSOR_CENTRE_ID_URL",
                 "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "gc",
+                "pt": "flow",
+                "to": "$split($env(\"GLOBAL_CACHE\"),\",\")",
+                "tot": "jsonata"
             }
         ],
         "action": "",
@@ -1316,110 +1166,6 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "b6486169011447a9",
-        "type": "inject",
-        "z": "9fcb3dc635318115",
-        "name": "Subscription",
-        "props": [
-            {
-                "p": "action",
-                "v": "subscribe",
-                "vt": "str"
-            },
-            {
-                "p": "topic",
-                "v": "\"cache/a/wis2/\" & $flowContext(\"topic\")",
-                "vt": "jsonata"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "10",
-        "topic": "",
-        "x": 170,
-        "y": 1600,
-        "wires": [
-            [
-                "123646dccc919b37",
-                "30f45b658646e599",
-                "d48ec981c342ed1c",
-                "4408d5f578e56d68",
-                "5b98ae300a97518c",
-                "2cd05ca1d5130ce7",
-                "fc62a75f12c05585",
-                "62d5e95bf30eab6b",
-                "2178334fc1068644",
-                "172b7f8e1604278d",
-                "b7e003bf5ca40a88"
-            ]
-        ]
-    },
-    {
-        "id": "86fe39df4ac6bb3a",
-        "type": "mqtt in",
-        "z": "9fcb3dc635318115",
-        "name": "GC 2",
-        "topic": "",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "5899a7a7d75907f7",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 1,
-        "x": 490,
-        "y": 1520,
-        "wires": [
-            [
-                "d236be8daa824d52"
-            ]
-        ]
-    },
-    {
-        "id": "3335b84a9d04f571",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Cache",
-        "rules": [
-            {
-                "t": "set",
-                "p": "cache",
-                "pt": "msg",
-                "to": "gc[1]",
-                "tot": "flow"
-            },
-            {
-                "t": "set",
-                "p": "sensorid",
-                "pt": "msg",
-                "to": "sensorid",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 730,
-        "y": 1520,
-        "wires": [
-            [
-                "1b6822f80f612616"
-            ]
-        ]
-    },
-    {
-        "id": "1b6822f80f612616",
-        "type": "subflow:218b5b0dabe0e4cb",
-        "z": "9fcb3dc635318115",
-        "name": "Monitor",
-        "x": 860,
-        "y": 1520,
-        "wires": []
     },
     {
         "id": "22e263de01f5f52f",
@@ -1445,66 +1191,6 @@
                 "cff5e351d6a01d18"
             ]
         ]
-    },
-    {
-        "id": "6a6c03791ac454a9",
-        "type": "mqtt in",
-        "z": "9fcb3dc635318115",
-        "name": "GC 3",
-        "topic": "",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "085383537e4479a7",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 1,
-        "x": 490,
-        "y": 1580,
-        "wires": [
-            [
-                "770ce9fbe6d1fb6b"
-            ]
-        ]
-    },
-    {
-        "id": "cac7494512e7c688",
-        "type": "subflow:218b5b0dabe0e4cb",
-        "z": "9fcb3dc635318115",
-        "name": "Monitor",
-        "x": 860,
-        "y": 1580,
-        "wires": []
-    },
-    {
-        "id": "8ef58f2fa857ad2b",
-        "type": "mqtt in",
-        "z": "9fcb3dc635318115",
-        "name": "GC 4",
-        "topic": "",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "d6314b59f8ceda2f",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 1,
-        "x": 490,
-        "y": 1640,
-        "wires": [
-            [
-                "9b72a24e04539dfd"
-            ]
-        ]
-    },
-    {
-        "id": "1f2479d86f2bb5de",
-        "type": "subflow:218b5b0dabe0e4cb",
-        "z": "9fcb3dc635318115",
-        "name": "Monitor",
-        "x": 860,
-        "y": 1640,
-        "wires": []
     },
     {
         "id": "5c23a20c1171293c",
@@ -1546,8 +1232,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 550,
-        "y": 2120,
+        "x": 710,
+        "y": 1880,
         "wires": [
             [
                 "443ca97e3b2a6192"
@@ -1574,8 +1260,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 910,
-        "y": 2080,
+        "x": 1070,
+        "y": 1840,
         "wires": [
             [
                 "d972d19f8d20ee7d"
@@ -1600,8 +1286,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 910,
-        "y": 2120,
+        "x": 1070,
+        "y": 1880,
         "wires": [
             [
                 "403a1066f87bedb1"
@@ -1627,43 +1313,13 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1070,
-        "y": 2080,
+        "x": 1230,
+        "y": 1840,
         "wires": [
             [
                 "3c682df2ec8a4bbe"
             ]
         ]
-    },
-    {
-        "id": "b259769af0885bde",
-        "type": "mqtt in",
-        "z": "9fcb3dc635318115",
-        "name": "GC 5",
-        "topic": "",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "65157bf97529f3dd",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 1,
-        "x": 490,
-        "y": 1700,
-        "wires": [
-            [
-                "c9597b1485e6a1db"
-            ]
-        ]
-    },
-    {
-        "id": "e90f3c5e7aa6db59",
-        "type": "subflow:218b5b0dabe0e4cb",
-        "z": "9fcb3dc635318115",
-        "name": "Monitor",
-        "x": 860,
-        "y": 1700,
-        "wires": []
     },
     {
         "id": "9e28b01962ba1f2e",
@@ -1675,8 +1331,8 @@
         "topic": "__keyevent@0__:expired",
         "obj": true,
         "timeout": 0,
-        "x": 210,
-        "y": 2140,
+        "x": 370,
+        "y": 1900,
         "wires": [
             [
                 "568c765b12630d5a"
@@ -1713,13 +1369,13 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 720,
-        "y": 2120,
+        "x": 880,
+        "y": 1880,
         "wires": [
             [
                 "ef52aac7153a7cd5",
                 "568dfc3eeca101c6",
-                "c2cfa8d7adb26eae"
+                "0756f7af4db61927"
             ]
         ]
     },
@@ -1735,8 +1391,8 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1060,
-        "y": 2120,
+        "x": 1220,
+        "y": 1880,
         "wires": [
             []
         ]
@@ -1747,8 +1403,8 @@
         "z": "9fcb3dc635318115",
         "name": "Not cached",
         "metric": "87cae6509a425ee7",
-        "x": 710,
-        "y": 2160,
+        "x": 870,
+        "y": 1920,
         "wires": []
     },
     {
@@ -1757,89 +1413,9 @@
         "z": "9fcb3dc635318115",
         "name": "Not cached at all",
         "metric": "84cd0deea504b109",
-        "x": 1250,
-        "y": 2080,
+        "x": 1410,
+        "y": 1840,
         "wires": []
-    },
-    {
-        "id": "d236be8daa824d52",
-        "type": "msg-speed",
-        "z": "9fcb3dc635318115",
-        "name": "Speed",
-        "frequency": "sec",
-        "interval": "10",
-        "estimation": false,
-        "ignore": false,
-        "pauseAtStartup": false,
-        "topicDependent": false,
-        "x": 610,
-        "y": 1520,
-        "wires": [
-            [],
-            [
-                "3335b84a9d04f571"
-            ]
-        ]
-    },
-    {
-        "id": "770ce9fbe6d1fb6b",
-        "type": "msg-speed",
-        "z": "9fcb3dc635318115",
-        "name": "Speed",
-        "frequency": "sec",
-        "interval": "10",
-        "estimation": false,
-        "ignore": false,
-        "pauseAtStartup": false,
-        "topicDependent": false,
-        "x": 610,
-        "y": 1580,
-        "wires": [
-            [],
-            [
-                "996d7d67e8aa735d"
-            ]
-        ]
-    },
-    {
-        "id": "9b72a24e04539dfd",
-        "type": "msg-speed",
-        "z": "9fcb3dc635318115",
-        "name": "Speed",
-        "frequency": "sec",
-        "interval": "10",
-        "estimation": false,
-        "ignore": false,
-        "pauseAtStartup": false,
-        "topicDependent": false,
-        "x": 610,
-        "y": 1640,
-        "wires": [
-            [],
-            [
-                "7eb4f53450dcdf22"
-            ]
-        ]
-    },
-    {
-        "id": "c9597b1485e6a1db",
-        "type": "msg-speed",
-        "z": "9fcb3dc635318115",
-        "name": "Speed",
-        "frequency": "sec",
-        "interval": "10",
-        "estimation": false,
-        "ignore": false,
-        "pauseAtStartup": false,
-        "topicDependent": false,
-        "x": 610,
-        "y": 1700,
-        "wires": [
-            [],
-            [
-                "a09adfe5f67d2466"
-            ]
-        ]
     },
     {
         "id": "de455b0922a8320c",
@@ -1866,20 +1442,12 @@
         "y": 240,
         "wires": [
             [
-                "02f9ea24a447a4bf",
-                "cbaf057b21b74d5e",
-                "ba0078a75bce5079",
-                "ef73b2734ba69ce9",
-                "372054932ed7cc7e",
-                "2933423cd28f1686",
-                "84504441426d2c10",
-                "0409b074e5072243",
-                "98950e79f6947e3a",
-                "a440adb1d906b7e1",
-                "5395eeb95ada2a4b",
                 "b310c4753946b7db",
-                "543076d592aa93a6",
-                "40a77dbbc723fe60"
+                "40a77dbbc723fe60",
+                "546305a3f542c340",
+                "ac10d56f38ce5e50",
+                "96c6c93b7eabf39a",
+                "9ff745c3dd5a2d92"
             ]
         ]
     },
@@ -1965,114 +1533,13 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 350,
+        "x": 490,
         "y": 180,
         "wires": [
             [
                 "6600d6a1be6e48c0"
             ]
         ]
-    },
-    {
-        "id": "1329e99213124402",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Handle GC 1",
-        "rules": [
-            {
-                "t": "set",
-                "p": "action",
-                "pt": "msg",
-                "to": "connect",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "broker",
-                "pt": "msg",
-                "to": "{}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "broker.force",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            },
-            {
-                "t": "set",
-                "p": "broker.url",
-                "pt": "msg",
-                "to": "MQTT_GC_1_BROKER",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.usetls",
-                "pt": "msg",
-                "to": "$contains($env(\"MQTT_GC_1_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_1_BROKER\"),/mqtts/)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "broker.username",
-                "pt": "msg",
-                "to": "MQTT_GC_1_USERNAME",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.password",
-                "pt": "msg",
-                "to": "MQTT_GC_1_PASSWORD",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.protocolVersion",
-                "pt": "msg",
-                "to": "$length($env(\"MQTT_GC_1_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_1_BROKERVERSION\")",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "gc[0]",
-                "pt": "flow",
-                "to": "GC_1_ID",
-                "tot": "env"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 490,
-        "y": 360,
-        "wires": [
-            [
-                "eba5cb2d057c0e5e"
-            ]
-        ]
-    },
-    {
-        "id": "eba5cb2d057c0e5e",
-        "type": "mqtt out",
-        "z": "9fcb3dc635318115",
-        "name": "Define GC1",
-        "topic": "",
-        "qos": "1",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "18635c819fe0c4ee",
-        "x": 650,
-        "y": 360,
-        "wires": []
     },
     {
         "id": "6600d6a1be6e48c0",
@@ -2088,2024 +1555,9 @@
         "correl": "",
         "expiry": "",
         "broker": "8af16e9d551a61eb",
-        "x": 510,
+        "x": 650,
         "y": 180,
         "wires": []
-    },
-    {
-        "id": "02f9ea24a447a4bf",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 1 ?",
-        "property": "$length($env(\"MQTT_GC_1_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 340,
-        "y": 360,
-        "wires": [
-            [
-                "1329e99213124402"
-            ]
-        ]
-    },
-    {
-        "id": "f7739bc9c3f024f6",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Handle GC 2",
-        "rules": [
-            {
-                "t": "set",
-                "p": "action",
-                "pt": "msg",
-                "to": "connect",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "broker",
-                "pt": "msg",
-                "to": "{}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "broker.force",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            },
-            {
-                "t": "set",
-                "p": "broker.url",
-                "pt": "msg",
-                "to": "MQTT_GC_2_BROKER",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.usetls",
-                "pt": "msg",
-                "to": "$contains($env(\"MQTT_GC_2_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_2_BROKER\"),/mqtts/)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "broker.username",
-                "pt": "msg",
-                "to": "MQTT_GC_2_USERNAME",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.password",
-                "pt": "msg",
-                "to": "MQTT_GC_2_PASSWORD",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.protocolVersion",
-                "pt": "msg",
-                "to": "$length($env(\"MQTT_GC_2_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_2_BROKERVERSION\")",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "gc[1]",
-                "pt": "flow",
-                "to": "GC_2_ID",
-                "tot": "env"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 490,
-        "y": 420,
-        "wires": [
-            [
-                "44304cb54414a6a2"
-            ]
-        ]
-    },
-    {
-        "id": "44304cb54414a6a2",
-        "type": "mqtt out",
-        "z": "9fcb3dc635318115",
-        "name": "Define GC2",
-        "topic": "",
-        "qos": "1",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "5899a7a7d75907f7",
-        "x": 650,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "ba0078a75bce5079",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 2 ?",
-        "property": "$length($env(\"MQTT_GC_2_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 340,
-        "y": 420,
-        "wires": [
-            [
-                "f7739bc9c3f024f6"
-            ]
-        ]
-    },
-    {
-        "id": "1de65c960bb4581f",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Handle GC 3",
-        "rules": [
-            {
-                "t": "set",
-                "p": "action",
-                "pt": "msg",
-                "to": "connect",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "broker",
-                "pt": "msg",
-                "to": "{}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "broker.force",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            },
-            {
-                "t": "set",
-                "p": "broker.url",
-                "pt": "msg",
-                "to": "MQTT_GC_3_BROKER",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.usetls",
-                "pt": "msg",
-                "to": "$contains($env(\"MQTT_GC_3_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_3_BROKER\"),/mqtts/)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "broker.username",
-                "pt": "msg",
-                "to": "MQTT_GC_3_USERNAME",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.password",
-                "pt": "msg",
-                "to": "MQTT_GC_3_PASSWORD",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.protocolVersion",
-                "pt": "msg",
-                "to": "$length($env(\"MQTT_GC_3_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_3_BROKERVERSION\")",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "gc[2]",
-                "pt": "flow",
-                "to": "GC_3_ID",
-                "tot": "env"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 490,
-        "y": 480,
-        "wires": [
-            [
-                "9dd044305c383ac7"
-            ]
-        ]
-    },
-    {
-        "id": "9dd044305c383ac7",
-        "type": "mqtt out",
-        "z": "9fcb3dc635318115",
-        "name": "Define GC3",
-        "topic": "",
-        "qos": "1",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "085383537e4479a7",
-        "x": 650,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "ef73b2734ba69ce9",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 3 ?",
-        "property": "$length($env(\"MQTT_GC_3_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 340,
-        "y": 480,
-        "wires": [
-            [
-                "1de65c960bb4581f"
-            ]
-        ]
-    },
-    {
-        "id": "4a835451725e728c",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Handle GC 4",
-        "rules": [
-            {
-                "t": "set",
-                "p": "action",
-                "pt": "msg",
-                "to": "connect",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "broker",
-                "pt": "msg",
-                "to": "{}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "broker.force",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            },
-            {
-                "t": "set",
-                "p": "broker.url",
-                "pt": "msg",
-                "to": "MQTT_GC_4_BROKER",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.usetls",
-                "pt": "msg",
-                "to": "$contains($env(\"MQTT_GC_4_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_4_BROKER\"),/mqtts/)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "broker.username",
-                "pt": "msg",
-                "to": "MQTT_GC_4_USERNAME",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.password",
-                "pt": "msg",
-                "to": "MQTT_GC_4_PASSWORD",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.protocolVersion",
-                "pt": "msg",
-                "to": "$length($env(\"MQTT_GC_4_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_4_BROKERVERSION\")",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "gc[3]",
-                "pt": "flow",
-                "to": "GC_4_ID",
-                "tot": "env"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 490,
-        "y": 540,
-        "wires": [
-            [
-                "8f08560422f1a101"
-            ]
-        ]
-    },
-    {
-        "id": "8f08560422f1a101",
-        "type": "mqtt out",
-        "z": "9fcb3dc635318115",
-        "name": "Define GC4",
-        "topic": "",
-        "qos": "1",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "d6314b59f8ceda2f",
-        "x": 650,
-        "y": 540,
-        "wires": []
-    },
-    {
-        "id": "372054932ed7cc7e",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 4 ?",
-        "property": "$length($env(\"MQTT_GC_4_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 340,
-        "y": 540,
-        "wires": [
-            [
-                "4a835451725e728c"
-            ]
-        ]
-    },
-    {
-        "id": "e6966da1eb764617",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Handle GC 5",
-        "rules": [
-            {
-                "t": "set",
-                "p": "action",
-                "pt": "msg",
-                "to": "connect",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "broker",
-                "pt": "msg",
-                "to": "{}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "broker.force",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            },
-            {
-                "t": "set",
-                "p": "broker.url",
-                "pt": "msg",
-                "to": "MQTT_GC_5_BROKER",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.usetls",
-                "pt": "msg",
-                "to": "$contains($env(\"MQTT_GC_5_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_5_BROKER\"),/mqtts/)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "broker.username",
-                "pt": "msg",
-                "to": "MQTT_GC_5_USERNAME",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.password",
-                "pt": "msg",
-                "to": "MQTT_GC_5_PASSWORD",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.protocolVersion",
-                "pt": "msg",
-                "to": "$length($env(\"MQTT_GC_5_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_5_BROKERVERSION\")",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "gc[4]",
-                "pt": "flow",
-                "to": "GC_5_ID",
-                "tot": "env"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 490,
-        "y": 600,
-        "wires": [
-            [
-                "70e09a7056387ef4"
-            ]
-        ]
-    },
-    {
-        "id": "70e09a7056387ef4",
-        "type": "mqtt out",
-        "z": "9fcb3dc635318115",
-        "name": "Define GC5",
-        "topic": "",
-        "qos": "1",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "65157bf97529f3dd",
-        "x": 650,
-        "y": 600,
-        "wires": []
-    },
-    {
-        "id": "2933423cd28f1686",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 5 ?",
-        "property": "$length($env(\"MQTT_GC_5_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 340,
-        "y": 600,
-        "wires": [
-            [
-                "e6966da1eb764617"
-            ]
-        ]
-    },
-    {
-        "id": "335b9a05bdf472bc",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Handle GC 6",
-        "rules": [
-            {
-                "t": "set",
-                "p": "action",
-                "pt": "msg",
-                "to": "connect",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "broker",
-                "pt": "msg",
-                "to": "{}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "broker.force",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            },
-            {
-                "t": "set",
-                "p": "broker.url",
-                "pt": "msg",
-                "to": "MQTT_GC_6_BROKER",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.usetls",
-                "pt": "msg",
-                "to": "$contains($env(\"MQTT_GC_6_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_6_BROKER\"),/mqtts/)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "broker.username",
-                "pt": "msg",
-                "to": "MQTT_GC_6_USERNAME",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.password",
-                "pt": "msg",
-                "to": "MQTT_GC_6_PASSWORD",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.protocolVersion",
-                "pt": "msg",
-                "to": "$length($env(\"MQTT_GC_6_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_6_BROKERVERSION\")",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "gc[5]",
-                "pt": "flow",
-                "to": "GC_6_ID",
-                "tot": "env"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 490,
-        "y": 660,
-        "wires": [
-            [
-                "7a339cb7ee3248aa"
-            ]
-        ]
-    },
-    {
-        "id": "7a339cb7ee3248aa",
-        "type": "mqtt out",
-        "z": "9fcb3dc635318115",
-        "name": "Define GC6",
-        "topic": "",
-        "qos": "1",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "e0abf69e68f5655a",
-        "x": 650,
-        "y": 660,
-        "wires": []
-    },
-    {
-        "id": "84504441426d2c10",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 6 ?",
-        "property": "$length($env(\"MQTT_GC_6_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 340,
-        "y": 660,
-        "wires": [
-            [
-                "335b9a05bdf472bc"
-            ]
-        ]
-    },
-    {
-        "id": "afa1acfb4d19bc06",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Handle GC 7",
-        "rules": [
-            {
-                "t": "set",
-                "p": "action",
-                "pt": "msg",
-                "to": "connect",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "broker",
-                "pt": "msg",
-                "to": "{}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "broker.force",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            },
-            {
-                "t": "set",
-                "p": "broker.url",
-                "pt": "msg",
-                "to": "MQTT_GC_7_BROKER",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.usetls",
-                "pt": "msg",
-                "to": "$contains($env(\"MQTT_GC_7_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_7_BROKER\"),/mqtts/)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "broker.username",
-                "pt": "msg",
-                "to": "MQTT_GC_7_USERNAME",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.password",
-                "pt": "msg",
-                "to": "MQTT_GC_7_PASSWORD",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.protocolVersion",
-                "pt": "msg",
-                "to": "$length($env(\"MQTT_GC_7_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_7_BROKERVERSION\")",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "gc[6]",
-                "pt": "flow",
-                "to": "GC_7_ID",
-                "tot": "env"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 490,
-        "y": 720,
-        "wires": [
-            [
-                "b048fb4f5faf163e"
-            ]
-        ]
-    },
-    {
-        "id": "b048fb4f5faf163e",
-        "type": "mqtt out",
-        "z": "9fcb3dc635318115",
-        "name": "Define GC7",
-        "topic": "",
-        "qos": "1",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "86bd07697c1bc039",
-        "x": 650,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "0409b074e5072243",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 7 ?",
-        "property": "$length($env(\"MQTT_GC_7_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 340,
-        "y": 720,
-        "wires": [
-            [
-                "afa1acfb4d19bc06"
-            ]
-        ]
-    },
-    {
-        "id": "943525222b5e62af",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Handle GC 8",
-        "rules": [
-            {
-                "t": "set",
-                "p": "action",
-                "pt": "msg",
-                "to": "connect",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "broker",
-                "pt": "msg",
-                "to": "{}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "broker.force",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            },
-            {
-                "t": "set",
-                "p": "broker.url",
-                "pt": "msg",
-                "to": "MQTT_GC_8_BROKER",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.usetls",
-                "pt": "msg",
-                "to": "$contains($env(\"MQTT_GC_8_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_8_BROKER\"),/mqtts/)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "broker.username",
-                "pt": "msg",
-                "to": "MQTT_GC_8_USERNAME",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.password",
-                "pt": "msg",
-                "to": "MQTT_GC_8_PASSWORD",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.protocolVersion",
-                "pt": "msg",
-                "to": "$length($env(\"MQTT_GC_8_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_8_BROKERVERSION\")",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "gc[7]",
-                "pt": "flow",
-                "to": "GC_8_ID",
-                "tot": "env"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 490,
-        "y": 780,
-        "wires": [
-            [
-                "67f2a77289c8f153"
-            ]
-        ]
-    },
-    {
-        "id": "67f2a77289c8f153",
-        "type": "mqtt out",
-        "z": "9fcb3dc635318115",
-        "name": "Define GC8",
-        "topic": "",
-        "qos": "1",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "0b07d12b43fc3df1",
-        "x": 650,
-        "y": 780,
-        "wires": []
-    },
-    {
-        "id": "98950e79f6947e3a",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 8 ?",
-        "property": "$length($env(\"MQTT_GC_8_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 340,
-        "y": 780,
-        "wires": [
-            [
-                "943525222b5e62af"
-            ]
-        ]
-    },
-    {
-        "id": "7f2a72caee39adce",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Handle GC 9",
-        "rules": [
-            {
-                "t": "set",
-                "p": "action",
-                "pt": "msg",
-                "to": "connect",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "broker",
-                "pt": "msg",
-                "to": "{}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "broker.force",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            },
-            {
-                "t": "set",
-                "p": "broker.url",
-                "pt": "msg",
-                "to": "MQTT_GC_9_BROKER",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.usetls",
-                "pt": "msg",
-                "to": "$contains($env(\"MQTT_GC_9_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_9_BROKER\"),/mqtts/)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "broker.username",
-                "pt": "msg",
-                "to": "MQTT_GC_9_USERNAME",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.password",
-                "pt": "msg",
-                "to": "MQTT_GC_9_PASSWORD",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.protocolVersion",
-                "pt": "msg",
-                "to": "$length($env(\"MQTT_GC_9_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_9_BROKERVERSION\")",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "gc[8]",
-                "pt": "flow",
-                "to": "GC_9_ID",
-                "tot": "env"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 490,
-        "y": 840,
-        "wires": [
-            [
-                "d3b0f595b60078c3"
-            ]
-        ]
-    },
-    {
-        "id": "d3b0f595b60078c3",
-        "type": "mqtt out",
-        "z": "9fcb3dc635318115",
-        "name": "Define GC9",
-        "topic": "",
-        "qos": "1",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "f2c97bcad433a95c",
-        "x": 650,
-        "y": 840,
-        "wires": []
-    },
-    {
-        "id": "a440adb1d906b7e1",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 9 ?",
-        "property": "$length($env(\"MQTT_GC_9_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 340,
-        "y": 840,
-        "wires": [
-            [
-                "7f2a72caee39adce"
-            ]
-        ]
-    },
-    {
-        "id": "d7bbfbda698f9b24",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Handle GC 10",
-        "rules": [
-            {
-                "t": "set",
-                "p": "action",
-                "pt": "msg",
-                "to": "connect",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "broker",
-                "pt": "msg",
-                "to": "{}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "broker.force",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            },
-            {
-                "t": "set",
-                "p": "broker.url",
-                "pt": "msg",
-                "to": "MQTT_GC_10_BROKER",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.usetls",
-                "pt": "msg",
-                "to": "$contains($env(\"MQTT_GC_10_BROKER\"),/wss/) or $contains($env(\"MQTT_GC_10_BROKER\"),/mqtts/)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "broker.username",
-                "pt": "msg",
-                "to": "MQTT_GC_10_USERNAME",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.password",
-                "pt": "msg",
-                "to": "MQTT_GC_10_PASSWORD",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "broker.protocolVersion",
-                "pt": "msg",
-                "to": "$length($env(\"MQTT_GC_10_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GC_10_BROKERVERSION\")",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "gc[9]",
-                "pt": "flow",
-                "to": "GC_10_ID",
-                "tot": "env"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 500,
-        "y": 900,
-        "wires": [
-            [
-                "ea92124a82e22665"
-            ]
-        ]
-    },
-    {
-        "id": "ea92124a82e22665",
-        "type": "mqtt out",
-        "z": "9fcb3dc635318115",
-        "name": "Define GC1",
-        "topic": "",
-        "qos": "1",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "92fcc20085a38a9d",
-        "x": 670,
-        "y": 900,
-        "wires": []
-    },
-    {
-        "id": "5395eeb95ada2a4b",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 10 ?",
-        "property": "$length($env(\"MQTT_GC_10_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 340,
-        "y": 900,
-        "wires": [
-            [
-                "d7bbfbda698f9b24"
-            ]
-        ]
-    },
-    {
-        "id": "123646dccc919b37",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 1 ?",
-        "property": "$length($env(\"MQTT_GC_1_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 360,
-        "y": 1460,
-        "wires": [
-            [
-                "787e822270fae343"
-            ]
-        ]
-    },
-    {
-        "id": "30f45b658646e599",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 2 ?",
-        "property": "$length($env(\"MQTT_GC_2_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 360,
-        "y": 1520,
-        "wires": [
-            [
-                "86fe39df4ac6bb3a"
-            ]
-        ]
-    },
-    {
-        "id": "d48ec981c342ed1c",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 3 ?",
-        "property": "$length($env(\"MQTT_GC_3_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 360,
-        "y": 1580,
-        "wires": [
-            [
-                "6a6c03791ac454a9"
-            ]
-        ]
-    },
-    {
-        "id": "4408d5f578e56d68",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 4 ?",
-        "property": "$length($env(\"MQTT_GC_4_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 360,
-        "y": 1640,
-        "wires": [
-            [
-                "8ef58f2fa857ad2b"
-            ]
-        ]
-    },
-    {
-        "id": "5b98ae300a97518c",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 5 ?",
-        "property": "$length($env(\"MQTT_GC_5_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 360,
-        "y": 1700,
-        "wires": [
-            [
-                "b259769af0885bde"
-            ]
-        ]
-    },
-    {
-        "id": "787e822270fae343",
-        "type": "mqtt in",
-        "z": "9fcb3dc635318115",
-        "name": "GC 1",
-        "topic": "",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "18635c819fe0c4ee",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 1,
-        "x": 490,
-        "y": 1460,
-        "wires": [
-            [
-                "aaa6ccd4cb51b7a7"
-            ]
-        ]
-    },
-    {
-        "id": "9a01739c8b89981c",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Cache",
-        "rules": [
-            {
-                "t": "set",
-                "p": "cache",
-                "pt": "msg",
-                "to": "gc[0]",
-                "tot": "flow"
-            },
-            {
-                "t": "set",
-                "p": "sensorid",
-                "pt": "msg",
-                "to": "sensorid",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 730,
-        "y": 1460,
-        "wires": [
-            [
-                "462f3c1b8fc65f7e"
-            ]
-        ]
-    },
-    {
-        "id": "462f3c1b8fc65f7e",
-        "type": "subflow:218b5b0dabe0e4cb",
-        "z": "9fcb3dc635318115",
-        "name": "Monitor",
-        "x": 860,
-        "y": 1460,
-        "wires": []
-    },
-    {
-        "id": "aaa6ccd4cb51b7a7",
-        "type": "msg-speed",
-        "z": "9fcb3dc635318115",
-        "name": "Speed",
-        "frequency": "sec",
-        "interval": "10",
-        "estimation": false,
-        "ignore": false,
-        "pauseAtStartup": false,
-        "topicDependent": false,
-        "x": 610,
-        "y": 1460,
-        "wires": [
-            [],
-            [
-                "9a01739c8b89981c"
-            ]
-        ]
-    },
-    {
-        "id": "996d7d67e8aa735d",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Cache",
-        "rules": [
-            {
-                "t": "set",
-                "p": "cache",
-                "pt": "msg",
-                "to": "gc[2]",
-                "tot": "flow"
-            },
-            {
-                "t": "set",
-                "p": "sensorid",
-                "pt": "msg",
-                "to": "sensorid",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 730,
-        "y": 1580,
-        "wires": [
-            [
-                "cac7494512e7c688"
-            ]
-        ]
-    },
-    {
-        "id": "7eb4f53450dcdf22",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Cache",
-        "rules": [
-            {
-                "t": "set",
-                "p": "cache",
-                "pt": "msg",
-                "to": "gc[3]",
-                "tot": "flow"
-            },
-            {
-                "t": "set",
-                "p": "sensorid",
-                "pt": "msg",
-                "to": "sensorid",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 730,
-        "y": 1640,
-        "wires": [
-            [
-                "1f2479d86f2bb5de"
-            ]
-        ]
-    },
-    {
-        "id": "a09adfe5f67d2466",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Cache",
-        "rules": [
-            {
-                "t": "set",
-                "p": "cache",
-                "pt": "msg",
-                "to": "gc[4]",
-                "tot": "flow"
-            },
-            {
-                "t": "set",
-                "p": "sensorid",
-                "pt": "msg",
-                "to": "sensorid",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 730,
-        "y": 1700,
-        "wires": [
-            [
-                "e90f3c5e7aa6db59"
-            ]
-        ]
-    },
-    {
-        "id": "6082cddaab062b75",
-        "type": "mqtt in",
-        "z": "9fcb3dc635318115",
-        "name": "GC 6",
-        "topic": "",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "e0abf69e68f5655a",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 1,
-        "x": 490,
-        "y": 1760,
-        "wires": [
-            [
-                "fad7303a5a20d73a"
-            ]
-        ]
-    },
-    {
-        "id": "0ab6ca39136431d7",
-        "type": "subflow:218b5b0dabe0e4cb",
-        "z": "9fcb3dc635318115",
-        "name": "Monitor",
-        "x": 860,
-        "y": 1760,
-        "wires": []
-    },
-    {
-        "id": "fad7303a5a20d73a",
-        "type": "msg-speed",
-        "z": "9fcb3dc635318115",
-        "name": "Speed",
-        "frequency": "sec",
-        "interval": "10",
-        "estimation": false,
-        "ignore": false,
-        "pauseAtStartup": false,
-        "topicDependent": false,
-        "x": 610,
-        "y": 1760,
-        "wires": [
-            [],
-            [
-                "43185118318fa73b"
-            ]
-        ]
-    },
-    {
-        "id": "2cd05ca1d5130ce7",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 6 ?",
-        "property": "$length($env(\"MQTT_GC_5_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 360,
-        "y": 1760,
-        "wires": [
-            [
-                "6082cddaab062b75"
-            ]
-        ]
-    },
-    {
-        "id": "43185118318fa73b",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Cache",
-        "rules": [
-            {
-                "t": "set",
-                "p": "cache",
-                "pt": "msg",
-                "to": "gc[5]",
-                "tot": "flow"
-            },
-            {
-                "t": "set",
-                "p": "sensorid",
-                "pt": "msg",
-                "to": "sensorid",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 730,
-        "y": 1760,
-        "wires": [
-            [
-                "0ab6ca39136431d7"
-            ]
-        ]
-    },
-    {
-        "id": "dbcb66be9fda2e74",
-        "type": "mqtt in",
-        "z": "9fcb3dc635318115",
-        "name": "GC 7",
-        "topic": "",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "86bd07697c1bc039",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 1,
-        "x": 490,
-        "y": 1820,
-        "wires": [
-            [
-                "6f95c8bffeffa465"
-            ]
-        ]
-    },
-    {
-        "id": "4dfd01aca4376ece",
-        "type": "subflow:218b5b0dabe0e4cb",
-        "z": "9fcb3dc635318115",
-        "name": "Monitor",
-        "x": 860,
-        "y": 1820,
-        "wires": []
-    },
-    {
-        "id": "6f95c8bffeffa465",
-        "type": "msg-speed",
-        "z": "9fcb3dc635318115",
-        "name": "Speed",
-        "frequency": "sec",
-        "interval": "10",
-        "estimation": false,
-        "ignore": false,
-        "pauseAtStartup": false,
-        "topicDependent": false,
-        "x": 610,
-        "y": 1820,
-        "wires": [
-            [],
-            [
-                "4cb16838471a6e5a"
-            ]
-        ]
-    },
-    {
-        "id": "fc62a75f12c05585",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 7 ?",
-        "property": "$length($env(\"MQTT_GC_5_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 360,
-        "y": 1820,
-        "wires": [
-            [
-                "dbcb66be9fda2e74"
-            ]
-        ]
-    },
-    {
-        "id": "4cb16838471a6e5a",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Cache",
-        "rules": [
-            {
-                "t": "set",
-                "p": "cache",
-                "pt": "msg",
-                "to": "gc[6]",
-                "tot": "flow"
-            },
-            {
-                "t": "set",
-                "p": "sensorid",
-                "pt": "msg",
-                "to": "sensorid",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 730,
-        "y": 1820,
-        "wires": [
-            [
-                "4dfd01aca4376ece"
-            ]
-        ]
-    },
-    {
-        "id": "b4752dc22ef7d9a7",
-        "type": "mqtt in",
-        "z": "9fcb3dc635318115",
-        "name": "GC 8",
-        "topic": "",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "0b07d12b43fc3df1",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 1,
-        "x": 490,
-        "y": 1880,
-        "wires": [
-            [
-                "25beb4cd9d76f406"
-            ]
-        ]
-    },
-    {
-        "id": "e06c6c1580a07014",
-        "type": "subflow:218b5b0dabe0e4cb",
-        "z": "9fcb3dc635318115",
-        "name": "Monitor",
-        "x": 860,
-        "y": 1880,
-        "wires": []
-    },
-    {
-        "id": "25beb4cd9d76f406",
-        "type": "msg-speed",
-        "z": "9fcb3dc635318115",
-        "name": "Speed",
-        "frequency": "sec",
-        "interval": "10",
-        "estimation": false,
-        "ignore": false,
-        "pauseAtStartup": false,
-        "topicDependent": false,
-        "x": 610,
-        "y": 1880,
-        "wires": [
-            [],
-            [
-                "13e970528dbd6ba8"
-            ]
-        ]
-    },
-    {
-        "id": "62d5e95bf30eab6b",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 8 ?",
-        "property": "$length($env(\"MQTT_GC_5_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 360,
-        "y": 1880,
-        "wires": [
-            [
-                "b4752dc22ef7d9a7"
-            ]
-        ]
-    },
-    {
-        "id": "13e970528dbd6ba8",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Cache",
-        "rules": [
-            {
-                "t": "set",
-                "p": "cache",
-                "pt": "msg",
-                "to": "gc[7]",
-                "tot": "flow"
-            },
-            {
-                "t": "set",
-                "p": "sensorid",
-                "pt": "msg",
-                "to": "sensorid",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 730,
-        "y": 1880,
-        "wires": [
-            [
-                "e06c6c1580a07014"
-            ]
-        ]
-    },
-    {
-        "id": "00cc7bb8706dde96",
-        "type": "mqtt in",
-        "z": "9fcb3dc635318115",
-        "name": "GC 9",
-        "topic": "",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "f2c97bcad433a95c",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 1,
-        "x": 490,
-        "y": 1940,
-        "wires": [
-            [
-                "440d84fc5f407709"
-            ]
-        ]
-    },
-    {
-        "id": "c44569631105f79c",
-        "type": "subflow:218b5b0dabe0e4cb",
-        "z": "9fcb3dc635318115",
-        "name": "Monitor",
-        "x": 860,
-        "y": 1940,
-        "wires": []
-    },
-    {
-        "id": "440d84fc5f407709",
-        "type": "msg-speed",
-        "z": "9fcb3dc635318115",
-        "name": "Speed",
-        "frequency": "sec",
-        "interval": "10",
-        "estimation": false,
-        "ignore": false,
-        "pauseAtStartup": false,
-        "topicDependent": false,
-        "x": 610,
-        "y": 1940,
-        "wires": [
-            [],
-            [
-                "116b964cc595919e"
-            ]
-        ]
-    },
-    {
-        "id": "2178334fc1068644",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 9 ?",
-        "property": "$length($env(\"MQTT_GC_5_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 360,
-        "y": 1940,
-        "wires": [
-            [
-                "00cc7bb8706dde96"
-            ]
-        ]
-    },
-    {
-        "id": "116b964cc595919e",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Cache",
-        "rules": [
-            {
-                "t": "set",
-                "p": "cache",
-                "pt": "msg",
-                "to": "gc[8]",
-                "tot": "flow"
-            },
-            {
-                "t": "set",
-                "p": "sensorid",
-                "pt": "msg",
-                "to": "sensorid",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 730,
-        "y": 1940,
-        "wires": [
-            [
-                "c44569631105f79c"
-            ]
-        ]
-    },
-    {
-        "id": "413628de064acdf5",
-        "type": "mqtt in",
-        "z": "9fcb3dc635318115",
-        "name": "GC 10",
-        "topic": "",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "92fcc20085a38a9d",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 1,
-        "x": 490,
-        "y": 2000,
-        "wires": [
-            [
-                "4c64f57879230159"
-            ]
-        ]
-    },
-    {
-        "id": "f88680224b100683",
-        "type": "subflow:218b5b0dabe0e4cb",
-        "z": "9fcb3dc635318115",
-        "name": "Monitor",
-        "x": 860,
-        "y": 2000,
-        "wires": []
-    },
-    {
-        "id": "4c64f57879230159",
-        "type": "msg-speed",
-        "z": "9fcb3dc635318115",
-        "name": "Speed",
-        "frequency": "sec",
-        "interval": "10",
-        "estimation": false,
-        "ignore": false,
-        "pauseAtStartup": false,
-        "topicDependent": false,
-        "x": 610,
-        "y": 2000,
-        "wires": [
-            [],
-            [
-                "12c66efdbeae9a22"
-            ]
-        ]
-    },
-    {
-        "id": "172b7f8e1604278d",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "GC 10 ?",
-        "property": "$length($env(\"MQTT_GC_5_BROKER\"))",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 360,
-        "y": 2000,
-        "wires": [
-            [
-                "413628de064acdf5"
-            ]
-        ]
-    },
-    {
-        "id": "12c66efdbeae9a22",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Cache",
-        "rules": [
-            {
-                "t": "set",
-                "p": "cache",
-                "pt": "msg",
-                "to": "gc[9]",
-                "tot": "flow"
-            },
-            {
-                "t": "set",
-                "p": "sensorid",
-                "pt": "msg",
-                "to": "sensorid",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 730,
-        "y": 2000,
-        "wires": [
-            [
-                "f88680224b100683"
-            ]
-        ]
     },
     {
         "id": "d25b573528bf41dd",
@@ -4125,8 +1577,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 810,
-        "y": 960,
+        "x": 1070,
+        "y": 440,
         "wires": [
             [],
             [
@@ -4147,8 +1599,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 1,
-        "x": 530,
-        "y": 960,
+        "x": 790,
+        "y": 440,
         "wires": [
             [
                 "2d4daa951d924bcf"
@@ -4221,7 +1673,7 @@
                 "t": "set",
                 "p": "hset_data",
                 "pt": "msg",
-                "to": "[\t   \"data#\" & centreid & \"#\" & dataid & \"#\" & pubtime,\t   \"orig\",\t   $millis(),\t   \"wnm\",\t   $string(wnm),\t   \"wth\",\t   wth\t]",
+                "to": "[\t   \"data#\" & centreid & \"#\" & dataid & \"#\" & pubtime,\t   \"origin\",\t   $millis(),\t   \"wnm\",\t   $string(wnm),\t   \"wth\",\t   wth\t]",
                 "tot": "jsonata"
             },
             {
@@ -4249,8 +1701,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 640,
-        "y": 1120,
+        "x": 580,
+        "y": 1100,
         "wires": [
             [
                 "06ca5006eca19380"
@@ -4279,8 +1731,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 770,
-        "y": 1280,
+        "x": 710,
+        "y": 1260,
         "wires": [
             [
                 "669a5db69fdb7581",
@@ -4309,8 +1761,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 930,
-        "y": 1220,
+        "x": 870,
+        "y": 1200,
         "wires": [
             [
                 "d6b953d2c9b27373"
@@ -4336,8 +1788,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 790,
-        "y": 1180,
+        "x": 730,
+        "y": 1160,
         "wires": [
             [
                 "9b9c3b87553ee4b5"
@@ -4356,8 +1808,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 650,
-        "y": 960,
+        "x": 910,
+        "y": 440,
         "wires": [
             [
                 "d25b573528bf41dd"
@@ -4383,8 +1835,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 930,
-        "y": 1260,
+        "x": 870,
+        "y": 1240,
         "wires": [
             [
                 "f8a53d2a6ae7d288"
@@ -4403,8 +1855,8 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1050,
-        "y": 1220,
+        "x": 990,
+        "y": 1200,
         "wires": [
             []
         ]
@@ -4421,8 +1873,8 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1050,
-        "y": 1260,
+        "x": 990,
+        "y": 1240,
         "wires": [
             []
         ]
@@ -4433,8 +1885,8 @@
         "z": "9fcb3dc635318115",
         "name": "Origin",
         "metric": "1d0ef4c6483c7efe",
-        "x": 930,
-        "y": 1180,
+        "x": 870,
+        "y": 1160,
         "wires": []
     },
     {
@@ -4448,8 +1900,8 @@
         "ignore": false,
         "pauseAtStartup": false,
         "topicDependent": false,
-        "x": 510,
-        "y": 1120,
+        "x": 450,
+        "y": 1100,
         "wires": [
             [],
             [
@@ -4469,8 +1921,8 @@
         "stream": false,
         "addname": "",
         "property": "gc",
-        "x": 1050,
-        "y": 1340,
+        "x": 990,
+        "y": 1320,
         "wires": [
             [
                 "bcc8512c5ce7b36e"
@@ -4496,8 +1948,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 930,
-        "y": 1340,
+        "x": 870,
+        "y": 1320,
         "wires": [
             [
                 "fecf26268d94e20b"
@@ -4523,8 +1975,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1170,
-        "y": 1340,
+        "x": 1110,
+        "y": 1320,
         "wires": [
             [
                 "d55761a08ee6e3d8"
@@ -4543,8 +1995,8 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1290,
-        "y": 1340,
+        "x": 1230,
+        "y": 1320,
         "wires": [
             []
         ]
@@ -4566,42 +2018,17 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 435,
-        "y": 1000,
+        "x": 535,
+        "y": 540,
         "wires": [
             [
-                "6effc579c4b9bbf3",
-                "f53714198eb1e993"
+                "d9c563e17942b9a6",
+                "ceb38b5ea1e2c7c1",
+                "7d5b30d063a3d2d5",
+                "eb6cea8c4c1bc946"
             ]
         ],
         "l": false
-    },
-    {
-        "id": "b7e003bf5ca40a88",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "origin",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "\"origin/a/wis2/\" & $flowContext(\"topic\")",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 350,
-        "y": 1000,
-        "wires": [
-            [
-                "b778150ac43b8303"
-            ]
-        ]
     },
     {
         "id": "9bb946f7dd2f72ce",
@@ -4639,8 +2066,8 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 780,
-        "y": 1120,
+        "x": 720,
+        "y": 1100,
         "wires": [
             [
                 "371140a2f45f8846"
@@ -4656,8 +2083,8 @@
         "links": [
             "13a3a1072b158c5c"
         ],
-        "x": 875,
-        "y": 1120,
+        "x": 815,
+        "y": 1100,
         "wires": []
     },
     {
@@ -4668,8 +2095,8 @@
         "links": [
             "371140a2f45f8846"
         ],
-        "x": 475,
-        "y": 1320,
+        "x": 415,
+        "y": 1300,
         "wires": [
             [
                 "d5bb69f4d4f8c1b4"
@@ -4696,8 +2123,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 580,
-        "y": 1320,
+        "x": 520,
+        "y": 1300,
         "wires": [
             [
                 "0493ab6e0426e3f8",
@@ -4727,8 +2154,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 930,
-        "y": 1300,
+        "x": 870,
+        "y": 1280,
         "wires": [
             [
                 "f044c7490c8e792d"
@@ -4747,8 +2174,8 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1050,
-        "y": 1300,
+        "x": 990,
+        "y": 1280,
         "wires": [
             [
                 "2fc3adac5cab5d9d"
@@ -4774,8 +2201,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1170,
-        "y": 1300,
+        "x": 1110,
+        "y": 1280,
         "wires": [
             [
                 "47e819a2f896a2be"
@@ -4794,8 +2221,8 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1300,
-        "y": 1300,
+        "x": 1240,
+        "y": 1280,
         "wires": [
             []
         ]
@@ -4818,8 +2245,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 920,
-        "y": 1400,
+        "x": 860,
+        "y": 1380,
         "wires": [
             [
                 "a85bf3a7164bde23"
@@ -4846,8 +2273,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 770,
-        "y": 1400,
+        "x": 710,
+        "y": 1380,
         "wires": [
             [
                 "47515d621ebc39f1"
@@ -4872,8 +2299,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1080,
-        "y": 1400,
+        "x": 1020,
+        "y": 1380,
         "wires": [
             [
                 "e17647d5392269e9"
@@ -4892,8 +2319,8 @@
         "links": [
             "eb5263f7a5df0484"
         ],
-        "x": 1175,
-        "y": 1380,
+        "x": 1115,
+        "y": 1360,
         "wires": []
     },
     {
@@ -4904,8 +2331,8 @@
         "links": [
             "e17647d5392269e9"
         ],
-        "x": 735,
-        "y": 1340,
+        "x": 675,
+        "y": 1320,
         "wires": [
             [
                 "850db44db67c0829"
@@ -4931,8 +2358,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1230,
-        "y": 1420,
+        "x": 1170,
+        "y": 1400,
         "wires": [
             [
                 "e3c16ea751473a08"
@@ -4945,8 +2372,8 @@
         "z": "9fcb3dc635318115",
         "name": "Duplicate",
         "metric": "ab2e2f87fc8b78d4",
-        "x": 1380,
-        "y": 1420,
+        "x": 1320,
+        "y": 1400,
         "wires": []
     },
     {
@@ -4964,11 +2391,11 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 890,
-        "y": 2160,
+        "x": 1110,
+        "y": 2080,
         "wires": [
             [
-                "717b10cd90d28b61"
+                "bbadfa05cca00d92"
             ]
         ]
     },
@@ -4985,30 +2412,10 @@
         "logIOScope": "I",
         "autoStart": true,
         "scope": [],
-        "x": 1330,
-        "y": 2160,
+        "x": 1520,
+        "y": 2080,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "717b10cd90d28b61",
-        "type": "function",
-        "z": "9fcb3dc635318115",
-        "name": "Fill missing",
-        "func": "const keys = flow.get(\"gc\");\nconst mixed = msg.payload;\nconst centreid = msg.centreid;\n\n// Convert mixed array to key-value map\nconst resultMap = {};\nfor (let i = 0; i < mixed.length; i += 2) {\n    resultMap[mixed[i]] = mixed[i + 1];\n}\n\n// Add missing keys with value 9999999999999\nkeys.forEach(key => {\n    if (!(key in resultMap)) {\n        resultMap[key] = \"9999999999999\";\n    }\n});\n\n// Add centre-id \nresultMap[\"centre-id\"] = centreid;\n\n// Parse wnm (you confirmed it's always valid JSON)\nconst parsedWnm = JSON.parse(resultMap[\"wnm\"]);\nresultMap[\"wnm\"] = parsedWnm;\n\n// Freeze heavy nested object to prevent Node-RED deep cloning\nObject.freeze(parsedWnm);\n\n// Freeze the whole payload to prevent Node-RED deep cloning\nObject.freeze(resultMap);\n\n// Set payload as JSON object\nmsg.payload = resultMap;\n\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1030,
-        "y": 2160,
-        "wires": [
-            [
-                "2ef8dc5b21e22705"
-            ]
         ]
     },
     {
@@ -5017,12 +2424,12 @@
         "z": "9fcb3dc635318115",
         "server": "bd6837434fd7b3cb",
         "command": "psubscribe",
-        "name": "Sub",
+        "name": "Sub Origin",
         "topic": "origin/*",
         "obj": true,
         "timeout": 0,
-        "x": 390,
-        "y": 1120,
+        "x": 320,
+        "y": 1100,
         "wires": [
             [
                 "8b4cd7d82c23beee"
@@ -5041,8 +2448,8 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1470,
-        "y": 960,
+        "x": 1730,
+        "y": 440,
         "wires": [
             []
         ]
@@ -5071,8 +2478,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1340,
-        "y": 960,
+        "x": 1600,
+        "y": 440,
         "wires": [
             [
                 "deed215fd6e4f8f2"
@@ -5161,8 +2568,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 350,
-        "y": 240,
+        "x": 490,
+        "y": 220,
         "wires": [
             [
                 "1067ac263cbb3463"
@@ -5183,8 +2590,8 @@
         "correl": "",
         "expiry": "",
         "broker": "bd45a6d2a3028afd",
-        "x": 510,
-        "y": 240,
+        "x": 650,
+        "y": 220,
         "wires": []
     },
     {
@@ -5205,8 +2612,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 870,
-        "y": 1040,
+        "x": 1130,
+        "y": 500,
         "wires": [
             [],
             [
@@ -5227,8 +2634,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 1,
-        "x": 530,
-        "y": 1040,
+        "x": 790,
+        "y": 500,
         "wires": [
             [
                 "68d4df2b43657354"
@@ -5247,8 +2654,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 710,
-        "y": 1040,
+        "x": 970,
+        "y": 500,
         "wires": [
             [
                 "bf7a987450cb06f7"
@@ -5267,8 +2674,8 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1530,
-        "y": 1040,
+        "x": 1790,
+        "y": 500,
         "wires": [
             []
         ]
@@ -5297,8 +2704,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1400,
-        "y": 1040,
+        "x": 1660,
+        "y": 500,
         "wires": [
             [
                 "7157bb2dd11e8234"
@@ -5343,8 +2750,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 970,
-        "y": 960,
+        "x": 1230,
+        "y": 440,
         "wires": [
             [
                 "522e09cdb6843f51"
@@ -5363,8 +2770,8 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1090,
-        "y": 960,
+        "x": 1350,
+        "y": 440,
         "wires": [
             [
                 "1b8b7fb7e63be747"
@@ -5386,8 +2793,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1210,
-        "y": 960,
+        "x": 1470,
+        "y": 440,
         "wires": [
             [
                 "dd26e12524ceb0cf"
@@ -5432,8 +2839,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1030,
-        "y": 1040,
+        "x": 1290,
+        "y": 500,
         "wires": [
             [
                 "aa5146ce5de05959"
@@ -5452,8 +2859,8 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1150,
-        "y": 1040,
+        "x": 1410,
+        "y": 500,
         "wires": [
             [
                 "573d857dca13c79d"
@@ -5475,8 +2882,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1270,
-        "y": 1040,
+        "x": 1530,
+        "y": 500,
         "wires": [
             [
                 "eefc0d32b16117f3"
@@ -5500,8 +2907,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 615,
-        "y": 1040,
+        "x": 875,
+        "y": 500,
         "wires": [
             [
                 "007578fcc8005f1a"
@@ -5521,16 +2928,6 @@
                 "pt": "msg",
                 "to": "{\"dirName\":\"/log\",\"logLevel\":\"info\"}",
                 "tot": "json"
-            },
-            {
-                "t": "delete",
-                "p": "pattern",
-                "pt": "msg"
-            },
-            {
-                "t": "delete",
-                "p": "topic",
-                "pt": "msg"
             }
         ],
         "action": "",
@@ -5538,8 +2935,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1190,
-        "y": 2160,
+        "x": 1380,
+        "y": 2080,
         "wires": [
             [
                 "b0efdc98fd94d239"
@@ -5557,8 +2954,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 190,
-        "y": 2300,
+        "x": 330,
+        "y": 2220,
         "wires": [
             [
                 "092cca744b1adb95"
@@ -5577,8 +2974,8 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 690,
-        "y": 2300,
+        "x": 830,
+        "y": 2220,
         "wires": [
             [
                 "ec02f2b62c3bc985"
@@ -5600,8 +2997,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 810,
-        "y": 2300,
+        "x": 950,
+        "y": 2220,
         "wires": [
             [
                 "ccbbb7ed97dd3b83"
@@ -5632,8 +3029,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 930,
-        "y": 2300,
+        "x": 1070,
+        "y": 2220,
         "wires": [
             [
                 "b01e3302812b3d24"
@@ -5652,8 +3049,8 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1050,
-        "y": 2300,
+        "x": 1190,
+        "y": 2220,
         "wires": [
             [
                 "ea2bb49ff7fad9b8"
@@ -5729,7 +3126,7 @@
         "to": "",
         "reg": false,
         "x": 490,
-        "y": 300,
+        "y": 340,
         "wires": [
             [
                 "c50bc1f1479503b7"
@@ -5751,7 +3148,7 @@
         "expiry": "",
         "broker": "5481f3311ff3028d",
         "x": 650,
-        "y": 300,
+        "y": 340,
         "wires": []
     },
     {
@@ -5772,7 +3169,7 @@
         "repair": false,
         "outputs": 1,
         "x": 330,
-        "y": 300,
+        "y": 340,
         "wires": [
             [
                 "33f83fd4826f51a5"
@@ -5784,7 +3181,7 @@
         "type": "function",
         "z": "9fcb3dc635318115",
         "name": "WMEM",
-        "func": "const end = new Date(Date.now() - 60 * 60 * 1000);\n// zero out minutes, seconds, milliseconds\nend.setMinutes(59, 59, 999);\nconst rfc3339_end = end.toISOString();  \n\nconst start = new Date(Date.now() - 60 * 60 * 1000);\n// zero out minutes, seconds, milliseconds\nstart.setMinutes(0, 0, 0);\nconst rfc3339_start = start.toISOString();  \n\nconst now = new Date(); \nconst uuid = crypto.randomUUID();\n\nconst filename = msg.filename;\n\nconst length = msg.size;\n\nmsg.payload = {\n    \"specversion\": \"1.0\",\n    \"type\": \"int.wmo.wis.wme.event\",\n    \"source\": flow.get(\"sensorid\"),\n    \"subject\": flow.get(\"sensorid\"),\n    \"id\": uuid,\n    \"time\": now,\n    \"datacontenttype\": \"application/json\",\n    \"dataschema\": \"https://schemas.wmo.int/wme/1.0.0/schemas/wis2-event-message-encoding-bundled.json\",\n    \"data\": {\n        \"conformsTo\": [\n            \"http://wis.wmo.int/spec/wme/1/conf/monitoring-event-message-encoding-core\"\n        ],\n        \"time\": {\n            \"interval\": [\n                rfc3339_start, rfc3339_end\n            ]\n        },\n        \"severity\": \"INFO\",\n        \"links\": [{\n            \"rel\": \"canonical\",\n            \"type\": \"application/gzip\",\n            \"href\": flow.get(\"url\") + \"/\" + filename,\n            \"length\": length\n        }]\n    }\n}\n\nmsg.topic=\"monitor/a/wis2/\" + flow.get(\"sensorid\")\n\nreturn msg;\n\n",
+        "func": "const end = new Date(Date.now() - 60 * 60 * 1000);\n// zero out minutes, seconds, milliseconds\nend.setMinutes(59, 59, 999);\nconst rfc3339_end = end.toISOString();  \n\nconst start = new Date(Date.now() - 60 * 60 * 1000);\n// zero out minutes, seconds, milliseconds\nstart.setMinutes(0, 0, 0);\nconst rfc3339_start = start.toISOString();  \n\nconst now = new Date(); \nconst uuid = crypto.randomUUID();\n\nconst filename = msg.filename;\n\nconst length = msg.size;\n\nmsg.payload = {\n    \"specversion\": \"1.0\",\n    \"type\": \"int.wmo.wis.wme.event.log\",\n    \"source\": flow.get(\"sensorid\"),\n    \"subject\": flow.get(\"sensorid\"),\n    \"id\": uuid,\n    \"time\": now,\n    \"datacontenttype\": \"application/json\",\n    \"dataschema\": \"https://schemas.wmo.int/wme/1.0.0/schemas/wis2-event-message-encoding-bundled.json\",\n    \"data\": {\n        \"conformsTo\": [\n            \"http://wis.wmo.int/spec/wme/1/conf/monitoring-event-message-encoding-core\"\n        ],\n        \"time\": {\n            \"interval\": [\n                rfc3339_start, rfc3339_end\n            ]\n        },\n        \"severity\": \"INFO\",\n        \"links\": [{\n            \"rel\": \"canonical\",\n            \"type\": \"application/gzip\",\n            \"href\": flow.get(\"url\") + \"/\" + filename,\n            \"length\": length\n        }]\n    }\n}\n\nmsg.topic=\"monitor/a/wis2/\" + flow.get(\"sensorid\")\n\nreturn msg;\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5796,8 +3193,8 @@
                 "module": "crypto"
             }
         ],
-        "x": 1180,
-        "y": 2300,
+        "x": 1320,
+        "y": 2220,
         "wires": [
             [
                 "1fb143f2a0e68701"
@@ -5818,8 +3215,8 @@
         "correl": "",
         "expiry": "",
         "broker": "5481f3311ff3028d",
-        "x": 1320,
-        "y": 2300,
+        "x": 1460,
+        "y": 2220,
         "wires": []
     },
     {
@@ -5860,8 +3257,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 310,
-        "y": 2300,
+        "x": 450,
+        "y": 2220,
         "wires": [
             [
                 "bca2a41b43ad1308"
@@ -5885,8 +3282,8 @@
                 "module": "fs"
             }
         ],
-        "x": 430,
-        "y": 2300,
+        "x": 570,
+        "y": 2220,
         "wires": [
             [
                 "f755ba4a695f7069"
@@ -5908,12 +3305,2956 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 560,
-        "y": 2300,
+        "x": 700,
+        "y": 2220,
         "wires": [
             [
                 "25c1622b056610de"
             ]
+        ]
+    },
+    {
+        "id": "a323f69fd3faba27",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Handle GB3",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "connect",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "broker",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "broker.force",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "broker.url",
+                "pt": "msg",
+                "to": "MQTT_GB3_BROKER",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.usetls",
+                "pt": "msg",
+                "to": "$contains($env(\"MQTT_GB3_BROKER\"),/wss/) or $contains($env(\"MQTT_GB3_BROKER\"),/mqtts/)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "broker.verifyservercert",
+                "pt": "msg",
+                "to": "$length($env(\"MQTT_GB3_VERIFYCERT\")) = 0 ? false : $env(\"MQTT_GB3_VERIFYCERT\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "broker.username",
+                "pt": "msg",
+                "to": "MQTT_GB3_USERNAME",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.password",
+                "pt": "msg",
+                "to": "MQTT_GB3_PASSWORD",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.protocolVersion",
+                "pt": "msg",
+                "to": "$length($env(\"MQTT_GB3_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GB3_BROKERVERSION\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "gb3",
+                "pt": "flow",
+                "to": "GB3_ID",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 260,
+        "wires": [
+            [
+                "4acc9c68e853f923"
+            ]
+        ]
+    },
+    {
+        "id": "4acc9c68e853f923",
+        "type": "mqtt out",
+        "z": "9fcb3dc635318115",
+        "name": "Define GB3",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "18635c819fe0c4ee",
+        "x": 650,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "9804814461f57c60",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Handle GB4",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "connect",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "broker",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "broker.force",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "broker.url",
+                "pt": "msg",
+                "to": "MQTT_GB4_BROKER",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.usetls",
+                "pt": "msg",
+                "to": "$contains($env(\"MQTT_GB4_BROKER\"),/wss/) or $contains($env(\"MQTT_GB4_BROKER\"),/mqtts/)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "broker.verifyservercert",
+                "pt": "msg",
+                "to": "$length($env(\"MQTT_GB4_VERIFYCERT\")) = 0 ? false : $env(\"MQTT_GB4_VERIFYCERT\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "broker.username",
+                "pt": "msg",
+                "to": "MQTT_GB4_USERNAME",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.password",
+                "pt": "msg",
+                "to": "MQTT_GB4_PASSWORD",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "broker.protocolVersion",
+                "pt": "msg",
+                "to": "$length($env(\"MQTT_GB4_BROKERVERSION\")) = 0 ? 4 : $env(\"MQTT_GB4_BROKERVERSION\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "gb4",
+                "pt": "flow",
+                "to": "GB4_ID",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 300,
+        "wires": [
+            [
+                "aa9138632819c6cc"
+            ]
+        ]
+    },
+    {
+        "id": "aa9138632819c6cc",
+        "type": "mqtt out",
+        "z": "9fcb3dc635318115",
+        "name": "Define GB4",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "d6314b59f8ceda2f",
+        "x": 650,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "99247b2068ea35f1",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "Not Cacheable ?",
+        "property": "$contains(topic, \"recommended\") or (payload.properties.cache = false)",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1130,
+        "y": 560,
+        "wires": [
+            [],
+            [
+                "99422103905cace4"
+            ]
+        ]
+    },
+    {
+        "id": "3504141db388c44b",
+        "type": "mqtt in",
+        "z": "9fcb3dc635318115",
+        "name": "GB3",
+        "topic": "",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "18635c819fe0c4ee",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 790,
+        "y": 560,
+        "wires": [
+            [
+                "2aa518f36852ced2"
+            ]
+        ]
+    },
+    {
+        "id": "9db24d3ad92f1147",
+        "type": "rbe",
+        "z": "9fcb3dc635318115",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 970,
+        "y": 560,
+        "wires": [
+            [
+                "99247b2068ea35f1"
+            ]
+        ]
+    },
+    {
+        "id": "c9458520b8536694",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "PUBLISH",
+        "name": "Pub",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1790,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7faa915477fdd653",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Prepare",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[ mqtttopic3, $string(mqttpayload3) ]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1660,
+        "y": 560,
+        "wires": [
+            [
+                "c9458520b8536694"
+            ]
+        ]
+    },
+    {
+        "id": "eb035dd355066b34",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "Not Cacheable ?",
+        "property": "$contains(topic, \"recommended\") or (payload.properties.cache = false)",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1130,
+        "y": 620,
+        "wires": [
+            [],
+            [
+                "fc117630f986176e"
+            ]
+        ]
+    },
+    {
+        "id": "be18022f35a5eb5c",
+        "type": "mqtt in",
+        "z": "9fcb3dc635318115",
+        "name": "GB4",
+        "topic": "",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "d6314b59f8ceda2f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 790,
+        "y": 620,
+        "wires": [
+            [
+                "2354f2ce021b50f8"
+            ]
+        ]
+    },
+    {
+        "id": "e5a7bade62bbe00b",
+        "type": "rbe",
+        "z": "9fcb3dc635318115",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 970,
+        "y": 620,
+        "wires": [
+            [
+                "eb035dd355066b34"
+            ]
+        ]
+    },
+    {
+        "id": "845d028fc41273dc",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "PUBLISH",
+        "name": "Pub",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1790,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "100689d9f1fbb0d5",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Prepare",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[ mqtttopic4, $string(mqttpayload4) ]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1660,
+        "y": 620,
+        "wires": [
+            [
+                "845d028fc41273dc"
+            ]
+        ]
+    },
+    {
+        "id": "99422103905cace4",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Save",
+        "rules": [
+            {
+                "t": "set",
+                "p": "mqttpayload3",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "mqtttopic3",
+                "pt": "msg",
+                "to": "topic",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[\"wnmid#\" & msg.mqttpayload3.id,true,\"NX\",\"EX\",900]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1290,
+        "y": 560,
+        "wires": [
+            [
+                "03778f93344ab7af"
+            ]
+        ]
+    },
+    {
+        "id": "03778f93344ab7af",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "SET",
+        "name": "Set",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1410,
+        "y": 560,
+        "wires": [
+            [
+                "9c9704b83cc3c17d"
+            ]
+        ]
+    },
+    {
+        "id": "9c9704b83cc3c17d",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "OK ?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1530,
+        "y": 560,
+        "wires": [
+            [
+                "7faa915477fdd653"
+            ]
+        ]
+    },
+    {
+        "id": "fc117630f986176e",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Save",
+        "rules": [
+            {
+                "t": "set",
+                "p": "mqttpayload4",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "mqtttopic4",
+                "pt": "msg",
+                "to": "topic",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[\"wnmid#\" & msg.mqttpayload4.id,true,\"NX\",\"EX\",900]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1290,
+        "y": 620,
+        "wires": [
+            [
+                "907216bfd09f264b"
+            ]
+        ]
+    },
+    {
+        "id": "907216bfd09f264b",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "SET",
+        "name": "Set",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1410,
+        "y": 620,
+        "wires": [
+            [
+                "d91912010b3224cb"
+            ]
+        ]
+    },
+    {
+        "id": "d91912010b3224cb",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "OK ?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1530,
+        "y": 620,
+        "wires": [
+            [
+                "100689d9f1fbb0d5"
+            ]
+        ]
+    },
+    {
+        "id": "2354f2ce021b50f8",
+        "type": "delay",
+        "z": "9fcb3dc635318115",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 875,
+        "y": 620,
+        "wires": [
+            [
+                "e5a7bade62bbe00b"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "2aa518f36852ced2",
+        "type": "delay",
+        "z": "9fcb3dc635318115",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 875,
+        "y": 560,
+        "wires": [
+            [
+                "9db24d3ad92f1147"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "27a1404b41321162",
+        "type": "mqtt in",
+        "z": "9fcb3dc635318115",
+        "name": "GB1",
+        "topic": "",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "8af16e9d551a61eb",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 790,
+        "y": 700,
+        "wires": [
+            [
+                "dd0478a83bff4961"
+            ]
+        ]
+    },
+    {
+        "id": "dd0478a83bff4961",
+        "type": "rbe",
+        "z": "9fcb3dc635318115",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 910,
+        "y": 700,
+        "wires": [
+            [
+                "d4010e77e9843339"
+            ]
+        ]
+    },
+    {
+        "id": "7c26d6dd35e39810",
+        "type": "delay",
+        "z": "9fcb3dc635318115",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 535,
+        "y": 800,
+        "wires": [
+            [
+                "522934166b583a69",
+                "91d83d5810df2840",
+                "3ebbb9bb589c9146",
+                "6f55177cd9f93b49"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "626b32331304383e",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "PUBLISH",
+        "name": "Pub",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1530,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fb6df34acb41ee8e",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Prepare",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[ mqtttopic1, $string(mqttpayload1) ]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1400,
+        "y": 700,
+        "wires": [
+            [
+                "626b32331304383e"
+            ]
+        ]
+    },
+    {
+        "id": "36e9675cf835c160",
+        "type": "mqtt in",
+        "z": "9fcb3dc635318115",
+        "name": "GB2",
+        "topic": "",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "bd45a6d2a3028afd",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 790,
+        "y": 760,
+        "wires": [
+            [
+                "231fb7471f6604a0"
+            ]
+        ]
+    },
+    {
+        "id": "c63be59788b2d805",
+        "type": "rbe",
+        "z": "9fcb3dc635318115",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 970,
+        "y": 760,
+        "wires": [
+            [
+                "6cde4b13e16412c2"
+            ]
+        ]
+    },
+    {
+        "id": "a3db46acd86c6f27",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "PUBLISH",
+        "name": "Pub",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1610,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fbf127a63fd2eedc",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Prepare",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[ mqtttopic2, $string(mqttpayload2) ]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1480,
+        "y": 760,
+        "wires": [
+            [
+                "a3db46acd86c6f27"
+            ]
+        ]
+    },
+    {
+        "id": "d4010e77e9843339",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Save",
+        "rules": [
+            {
+                "t": "set",
+                "p": "mqttpayload1",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "mqtttopic1",
+                "pt": "msg",
+                "to": "topic",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[\"wnmid#\" & msg.mqttpayload1.id,true,\"NX\",\"EX\",900]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1030,
+        "y": 700,
+        "wires": [
+            [
+                "e2c1fab5f0bfb317"
+            ]
+        ]
+    },
+    {
+        "id": "e2c1fab5f0bfb317",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "SET",
+        "name": "Set",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1150,
+        "y": 700,
+        "wires": [
+            [
+                "2c9f94406fd2ee81"
+            ]
+        ]
+    },
+    {
+        "id": "2c9f94406fd2ee81",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "OK ?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1270,
+        "y": 700,
+        "wires": [
+            [
+                "fb6df34acb41ee8e"
+            ]
+        ]
+    },
+    {
+        "id": "6cde4b13e16412c2",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Save",
+        "rules": [
+            {
+                "t": "set",
+                "p": "mqttpayload2",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "mqtttopic2",
+                "pt": "msg",
+                "to": "topic",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[\"wnmid#\" & msg.mqttpayload2.id,true,\"NX\",\"EX\",900]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1110,
+        "y": 760,
+        "wires": [
+            [
+                "e09021d035e82e48"
+            ]
+        ]
+    },
+    {
+        "id": "e09021d035e82e48",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "SET",
+        "name": "Set",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1230,
+        "y": 760,
+        "wires": [
+            [
+                "f0e7920b1c15b87d"
+            ]
+        ]
+    },
+    {
+        "id": "f0e7920b1c15b87d",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "OK ?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1350,
+        "y": 760,
+        "wires": [
+            [
+                "fbf127a63fd2eedc"
+            ]
+        ]
+    },
+    {
+        "id": "231fb7471f6604a0",
+        "type": "delay",
+        "z": "9fcb3dc635318115",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 875,
+        "y": 760,
+        "wires": [
+            [
+                "c63be59788b2d805"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "897843f52a2d52ca",
+        "type": "mqtt in",
+        "z": "9fcb3dc635318115",
+        "name": "GB3",
+        "topic": "",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "18635c819fe0c4ee",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 790,
+        "y": 820,
+        "wires": [
+            [
+                "4c99df4a8073d30e"
+            ]
+        ]
+    },
+    {
+        "id": "b5c5bcdedc1beafe",
+        "type": "rbe",
+        "z": "9fcb3dc635318115",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 970,
+        "y": 820,
+        "wires": [
+            [
+                "6a94f5e72ff0ad47"
+            ]
+        ]
+    },
+    {
+        "id": "17671f18e35c0e8d",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "PUBLISH",
+        "name": "Pub",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1610,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b0d5c6cc4e425701",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Prepare",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[ mqtttopic3, $string(mqttpayload3) ]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1480,
+        "y": 820,
+        "wires": [
+            [
+                "17671f18e35c0e8d"
+            ]
+        ]
+    },
+    {
+        "id": "36da551a5ec1f88b",
+        "type": "mqtt in",
+        "z": "9fcb3dc635318115",
+        "name": "GB4",
+        "topic": "",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "d6314b59f8ceda2f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 790,
+        "y": 880,
+        "wires": [
+            [
+                "95c13ebcf945b71d"
+            ]
+        ]
+    },
+    {
+        "id": "12e815cf752c7442",
+        "type": "rbe",
+        "z": "9fcb3dc635318115",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 970,
+        "y": 880,
+        "wires": [
+            [
+                "c42c916af6051bcc"
+            ]
+        ]
+    },
+    {
+        "id": "0c12637dbe70782d",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "PUBLISH",
+        "name": "Pub",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1610,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4dc7e977af78d651",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Prepare",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[ mqtttopic4, $string(mqttpayload4) ]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1480,
+        "y": 880,
+        "wires": [
+            [
+                "0c12637dbe70782d"
+            ]
+        ]
+    },
+    {
+        "id": "6a94f5e72ff0ad47",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Save",
+        "rules": [
+            {
+                "t": "set",
+                "p": "mqttpayload3",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "mqtttopic3",
+                "pt": "msg",
+                "to": "topic",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[\"wnmid#\" & msg.mqttpayload3.id,true,\"NX\",\"EX\",900]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1110,
+        "y": 820,
+        "wires": [
+            [
+                "b962ec68cbf3c851"
+            ]
+        ]
+    },
+    {
+        "id": "b962ec68cbf3c851",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "SET",
+        "name": "Set",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1230,
+        "y": 820,
+        "wires": [
+            [
+                "aaa10816d22cf356"
+            ]
+        ]
+    },
+    {
+        "id": "aaa10816d22cf356",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "OK ?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1350,
+        "y": 820,
+        "wires": [
+            [
+                "b0d5c6cc4e425701"
+            ]
+        ]
+    },
+    {
+        "id": "c42c916af6051bcc",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Save",
+        "rules": [
+            {
+                "t": "set",
+                "p": "mqttpayload4",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "mqtttopic4",
+                "pt": "msg",
+                "to": "topic",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[\"wnmid#\" & msg.mqttpayload4.id,true,\"NX\",\"EX\",900]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1110,
+        "y": 880,
+        "wires": [
+            [
+                "eadcb45ef4ab91b7"
+            ]
+        ]
+    },
+    {
+        "id": "eadcb45ef4ab91b7",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "SET",
+        "name": "Set",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1230,
+        "y": 880,
+        "wires": [
+            [
+                "56751e515c6471d4"
+            ]
+        ]
+    },
+    {
+        "id": "56751e515c6471d4",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "OK ?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1350,
+        "y": 880,
+        "wires": [
+            [
+                "4dc7e977af78d651"
+            ]
+        ]
+    },
+    {
+        "id": "95c13ebcf945b71d",
+        "type": "delay",
+        "z": "9fcb3dc635318115",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 875,
+        "y": 880,
+        "wires": [
+            [
+                "12e815cf752c7442"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "4c99df4a8073d30e",
+        "type": "delay",
+        "z": "9fcb3dc635318115",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 875,
+        "y": 820,
+        "wires": [
+            [
+                "b5c5bcdedc1beafe"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "6848aed8fc0576ef",
+        "type": "msg-speed",
+        "z": "9fcb3dc635318115",
+        "name": "Speed",
+        "frequency": "sec",
+        "interval": "10",
+        "estimation": false,
+        "ignore": false,
+        "pauseAtStartup": false,
+        "topicDependent": false,
+        "x": 450,
+        "y": 1580,
+        "wires": [
+            [],
+            [
+                "61eacaa0e5d09085"
+            ]
+        ]
+    },
+    {
+        "id": "75543d31f3197441",
+        "type": "redis-in",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "psubscribe",
+        "name": "Sub Cache",
+        "topic": "cache/*",
+        "obj": true,
+        "timeout": 0,
+        "x": 320,
+        "y": 1580,
+        "wires": [
+            [
+                "6848aed8fc0576ef"
+            ]
+        ]
+    },
+    {
+        "id": "61eacaa0e5d09085",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Cache",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cache",
+                "pt": "msg",
+                "to": "payload.properties.global-cache",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "sensorid",
+                "pt": "msg",
+                "to": "sensorid",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 1580,
+        "wires": [
+            [
+                "94b8e6879433ceb8"
+            ]
+        ]
+    },
+    {
+        "id": "662ddb5376824c47",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "Delay to cache",
+        "property": "( ($millis() - $number(msg.payload)) / 1000 ) - 10",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "$parent.delay1",
+                "vt": "flow"
+            },
+            {
+                "t": "lte",
+                "v": "$parent.delay2",
+                "vt": "flow"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 1480,
+        "y": 1680,
+        "wires": [
+            [
+                "1d9ee046916c5093"
+            ],
+            [
+                "4043154d2b58a1f9"
+            ],
+            [
+                "46de086332063a8f"
+            ]
+        ]
+    },
+    {
+        "id": "1d9ee046916c5093",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Prometheus - 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"delay_threshold\": $flowContext(\"$parent.delay1\"),\t      \"centre_id\":  $flowContext(\"centreid\"),\t      \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\":1 \t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1680,
+        "y": 1640,
+        "wires": [
+            [
+                "171c492628d9b58a"
+            ]
+        ]
+    },
+    {
+        "id": "1b78be8146d340c5",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Get",
+        "rules": [
+            {
+                "t": "set",
+                "p": "centreid",
+                "pt": "msg",
+                "to": "$split(topic,\"/\")[3]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "data_id",
+                "pt": "msg",
+                "to": "payload.properties.data_id & \":\" & payload.properties.pubtime & \":\" & (\t   $exists(payload.properties.integrity.value) ? $substring(\t       $replace(\t           payload.properties.integrity.value,\t           \"/\",\t           \"\"\t       ),\t       0,\t       12\t   ) : $replace(\t       payload.properties.pubtime,\t       /[^0-9]/,\t       \"\"\t   ) \t)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "\"scgc#\" & cache & \"#\" & centreid & \"#\" & data_id & \"#\" & payload.properties.pubtime",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "hset",
+                "pt": "msg",
+                "to": "[\t   \"data#\" & centreid & \"#\" & data_id & \"#\" & payload.properties.pubtime,\t   cache,\t   $millis()\t]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "orig_wnm",
+                "pt": "msg",
+                "to": "[\t   \"data#\" & centreid & \"#\" & data_id & \"#\" & payload.properties.pubtime,\t   \"wnm\"\t]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "cache_links",
+                "pt": "msg",
+                "to": "payload.links",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 1580,
+        "wires": [
+            [
+                "e2f544e5d1f6455b"
+            ]
+        ]
+    },
+    {
+        "id": "9220ddbcf828c9e8",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Del",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "topic",
+                "tot": "msg",
+                "dc": true
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1450,
+        "y": 1580,
+        "wires": [
+            [
+                "1cdbb9cdb172d888"
+            ]
+        ]
+    },
+    {
+        "id": "4b40bd8841d50275",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Prometheus",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"op\":\"set\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"centre_id\":  $flowContext(\"centreid\"),\t      \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\": ( ( ($millis() - $number(msg.payload)) / 1000 ) - 10 )\t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1470,
+        "y": 1540,
+        "wires": [
+            [
+                "06c3f4227bfc40f4"
+            ]
+        ]
+    },
+    {
+        "id": "1bb29eabe5e41ef7",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "Expired ?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1260,
+        "y": 1580,
+        "wires": [
+            [
+                "9220ddbcf828c9e8",
+                "4b40bd8841d50275",
+                "662ddb5376824c47",
+                "679b924436eb59b8",
+                "22a1f2a706594e52"
+            ]
+        ]
+    },
+    {
+        "id": "4043154d2b58a1f9",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Prometheus - 2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"delay_threshold\": $flowContext(\"$parent.delay2\"),\t      \"centre_id\":  $flowContext(\"centreid\"),\t      \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\":1 \t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1680,
+        "y": 1680,
+        "wires": [
+            [
+                "171c492628d9b58a"
+            ]
+        ]
+    },
+    {
+        "id": "46de086332063a8f",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Prometheus - 3",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"delay_threshold\": $flowContext(\"$parent.timeout_cache\"),\t      \"centre_id\":  $flowContext(\"centreid\"),\t      \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\":1 \t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1680,
+        "y": 1720,
+        "wires": [
+            [
+                "171c492628d9b58a"
+            ]
+        ]
+    },
+    {
+        "id": "94b8e6879433ceb8",
+        "type": "delay",
+        "z": "9fcb3dc635318115",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 655,
+        "y": 1580,
+        "wires": [
+            [
+                "096102aedaba66a8"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "679b924436eb59b8",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Hset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "hset",
+                "pt": "msg",
+                "to": "$append(msg.hset, [   msg.cache & \":url\",   msg.url ])",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "hset",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1450,
+        "y": 1500,
+        "wires": [
+            [
+                "68a901019451b22a"
+            ]
+        ]
+    },
+    {
+        "id": "1cdbb9cdb172d888",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "DEL",
+        "name": "",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1580,
+        "y": 1580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "efc9758439cc50e8",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "GET",
+        "name": "",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1120,
+        "y": 1580,
+        "wires": [
+            [
+                "1bb29eabe5e41ef7"
+            ]
+        ]
+    },
+    {
+        "id": "68a901019451b22a",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "HSET",
+        "name": "",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1590,
+        "y": 1500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "06c3f4227bfc40f4",
+        "type": "prometheus-exporter",
+        "z": "9fcb3dc635318115",
+        "name": "Delay",
+        "metric": "a7877619083a1ee3",
+        "x": 1610,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "171c492628d9b58a",
+        "type": "prometheus-exporter",
+        "z": "9fcb3dc635318115",
+        "name": "Cached",
+        "metric": "5ff96cf14749d4c6",
+        "x": 1860,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "64920f2a57493b69",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "WNM",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "orig_wnm",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 1760,
+        "wires": [
+            [
+                "e2100652e6064386"
+            ]
+        ]
+    },
+    {
+        "id": "e2100652e6064386",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "HGET",
+        "name": "",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 530,
+        "y": 1760,
+        "wires": [
+            [
+                "01063ded698937d5"
+            ]
+        ]
+    },
+    {
+        "id": "01063ded698937d5",
+        "type": "json",
+        "z": "9fcb3dc635318115",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 670,
+        "y": 1760,
+        "wires": [
+            [
+                "b7db4642551df00f"
+            ]
+        ]
+    },
+    {
+        "id": "b7db4642551df00f",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Links",
+        "rules": [
+            {
+                "t": "set",
+                "p": "orig_links",
+                "pt": "msg",
+                "to": "payload.links",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 1760,
+        "wires": [
+            [
+                "49affbb497b9aa30"
+            ]
+        ]
+    },
+    {
+        "id": "22a1f2a706594e52",
+        "type": "link out",
+        "z": "9fcb3dc635318115",
+        "name": "link out 12",
+        "mode": "link",
+        "links": [
+            "21c28195bdcee16d"
+        ],
+        "x": 1415,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "21c28195bdcee16d",
+        "type": "link in",
+        "z": "9fcb3dc635318115",
+        "name": "link in 11",
+        "links": [
+            "22a1f2a706594e52"
+        ],
+        "x": 295,
+        "y": 1760,
+        "wires": [
+            [
+                "64920f2a57493b69"
+            ]
+        ]
+    },
+    {
+        "id": "49affbb497b9aa30",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "Cached ?",
+        "property": "orig_links",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "cache_links",
+                "vt": "msg"
+            },
+            {
+                "t": "jsonata_exp",
+                "v": "cache",
+                "vt": "jsonata"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 920,
+        "y": 1760,
+        "wires": [
+            [],
+            [
+                "79cd899f16701066"
+            ]
+        ]
+    },
+    {
+        "id": "66e67687a51efca3",
+        "type": "prometheus-exporter",
+        "z": "9fcb3dc635318115",
+        "name": "Cache override",
+        "metric": "29ba581929826767",
+        "x": 1240,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "79cd899f16701066",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Prometheus",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"centre_id\":  $flowContext(\"centreid\"),\t      \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\":1 \t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1070,
+        "y": 1760,
+        "wires": [
+            [
+                "66e67687a51efca3"
+            ]
+        ]
+    },
+    {
+        "id": "096102aedaba66a8",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GC ?",
+        "property": "msg.cache in $flowContext(\"gc\")",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 750,
+        "y": 1580,
+        "wires": [
+            [
+                "1b78be8146d340c5"
+            ]
+        ]
+    },
+    {
+        "id": "9ff745c3dd5a2d92",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GB 1 ?",
+        "property": "$length($env(\"MQTT_GB1_BROKER\")) > 0",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 180,
+        "wires": [
+            [
+                "cbaf057b21b74d5e"
+            ]
+        ]
+    },
+    {
+        "id": "96c6c93b7eabf39a",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GB 2 ?",
+        "property": "$length($env(\"MQTT_GB2_BROKER\")) > 0",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 220,
+        "wires": [
+            [
+                "543076d592aa93a6"
+            ]
+        ]
+    },
+    {
+        "id": "ac10d56f38ce5e50",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GB 3 ?",
+        "property": "$length($env(\"MQTT_GB3_BROKER\")) > 0",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "a323f69fd3faba27"
+            ]
+        ]
+    },
+    {
+        "id": "546305a3f542c340",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GB 4 ?",
+        "property": "$length($env(\"MQTT_GB4_BROKER\")) > 0",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 300,
+        "wires": [
+            [
+                "9804814461f57c60"
+            ]
+        ]
+    },
+    {
+        "id": "d9c563e17942b9a6",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GB 1 ?",
+        "property": "$length($env(\"MQTT_GB1_BROKER\")) > 0",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 660,
+        "y": 440,
+        "wires": [
+            [
+                "f53714198eb1e993"
+            ]
+        ]
+    },
+    {
+        "id": "ceb38b5ea1e2c7c1",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GB 2 ?",
+        "property": "$length($env(\"MQTT_GB2_BROKER\")) > 0",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 660,
+        "y": 500,
+        "wires": [
+            [
+                "6effc579c4b9bbf3"
+            ]
+        ]
+    },
+    {
+        "id": "7d5b30d063a3d2d5",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GB 3 ?",
+        "property": "$length($env(\"MQTT_GB3_BROKER\")) > 0",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 660,
+        "y": 560,
+        "wires": [
+            [
+                "3504141db388c44b"
+            ]
+        ]
+    },
+    {
+        "id": "eb6cea8c4c1bc946",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GB 4 ?",
+        "property": "$length($env(\"MQTT_GB4_BROKER\")) > 0",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 660,
+        "y": 620,
+        "wires": [
+            [
+                "be18022f35a5eb5c"
+            ]
+        ]
+    },
+    {
+        "id": "6f55177cd9f93b49",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GB 1 ?",
+        "property": "$length($env(\"MQTT_GB1_BROKER\")) > 0",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 660,
+        "y": 700,
+        "wires": [
+            [
+                "27a1404b41321162"
+            ]
+        ]
+    },
+    {
+        "id": "3ebbb9bb589c9146",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GB 2 ?",
+        "property": "$length($env(\"MQTT_GB2_BROKER\")) > 0",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 660,
+        "y": 760,
+        "wires": [
+            [
+                "36e9675cf835c160"
+            ]
+        ]
+    },
+    {
+        "id": "91d83d5810df2840",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GB 3 ?",
+        "property": "$length($env(\"MQTT_GB3_BROKER\")) > 0",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 660,
+        "y": 820,
+        "wires": [
+            [
+                "897843f52a2d52ca"
+            ]
+        ]
+    },
+    {
+        "id": "522934166b583a69",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "GB 4 ?",
+        "property": "$length($env(\"MQTT_GB4_BROKER\")) > 0",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 660,
+        "y": 880,
+        "wires": [
+            [
+                "36da551a5ec1f88b"
+            ]
+        ]
+    },
+    {
+        "id": "e2f544e5d1f6455b",
+        "type": "function",
+        "z": "9fcb3dc635318115",
+        "name": "200 ?",
+        "func": "const link = (msg.cache_links || []).find(l => l.rel === 'canonical' || l.rel === 'update');\nconst url = link ? link.href : null;\n\nif (!url) {\n    // No URL → stop flow\n    return null;\n}\n\nreturn new Promise((resolve, reject) => {\n    const client = url.startsWith(\"https\") ? https : http;\n\n    const req = client.request(url, { method: \"HEAD\" }, (res) => {\n        const code = res.statusCode;\n\n        if (code !== 200) {\n            // ❌ Not 200 → stop flow\n            resolve(null);\n            return;\n        }\n\n        // ✔ 200 → continue\n        msg.statusCode = code;\n        msg.url = url;\n        resolve(msg);\n    });\n\n    req.on(\"error\", (err) => {\n        // ❌ Error → stop flow\n        resolve(null);\n    });\n\n    req.end();\n});",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "http",
+                "module": "http"
+            },
+            {
+                "var": "https",
+                "module": "https"
+            }
+        ],
+        "x": 990,
+        "y": 1580,
+        "wires": [
+            [
+                "efc9758439cc50e8"
+            ]
+        ]
+    },
+    {
+        "id": "9743a79a96fdefbc",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "Sampled ?",
+        "property": "sampled",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 1190,
+        "y": 1940,
+        "wires": [
+            [
+                "3d2d7f0f1534dbae"
+            ],
+            [
+                "2061db0db43e1b41"
+            ]
+        ]
+    },
+    {
+        "id": "0756f7af4db61927",
+        "type": "function",
+        "z": "9fcb3dc635318115",
+        "name": "M & S",
+        "func": "const keys = flow.get(\"gc\");\nconst mixed = msg.payload;\nconst centreid = msg.centreid;\n\nlet complete = true;\nmsg.sampled = false;\n\n// Convert mixed array to key-value map\nconst resultMap = {};\nfor (let i = 0; i < mixed.length; i += 2) {\n    resultMap[mixed[i]] = mixed[i + 1];\n}\n\n// Add missing keys with value 9999999999999\nkeys.forEach(key => {\n    if (!(key in resultMap)) {\n        resultMap[key] = \"9999999999999\";\n        complete = false;\n    }\n});\n\n// Add centre-id\nresultMap[\"centre-id\"] = centreid;\n\n// Parse wnm\nconst parsedWnm = JSON.parse(resultMap[\"wnm\"]);\nresultMap[\"wnm\"] = parsedWnm;\n\nObject.freeze(parsedWnm);\nObject.freeze(resultMap);\n\nmsg.payload = resultMap;\n\n// Always maintain the rate limit window\nconst now = Date.now();\nconst current1min = Math.floor(now / 60000);\nlet periodCount = flow.get(\"samplePeriodCount\") || 0;\nlet periodSlot = flow.get(\"samplePeriodSlot\") || 0;\n\nif (current1min !== periodSlot) {\n    periodCount = 0;\n    flow.set(\"samplePeriodSlot\", current1min);\n}\n\nif (complete) {\n    const integrity = parsedWnm?.properties?.integrity;\n    const canonicalLink = parsedWnm?.links?.find(\n        link => link.rel === \"canonical\" && link.length != null\n    );\n\n    if (periodCount < 5 && integrity?.method && integrity?.value && canonicalLink && canonicalLink.length <= 20000) {\n        msg.method = integrity.method;\n        msg.value = integrity.value;\n        msg.originlink = canonicalLink;\n        msg.sampled = true;\n        flow.set(\"samplePeriodCount\", periodCount + 1);\n    }\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "crypto",
+                "module": "crypto"
+            }
+        ],
+        "x": 1050,
+        "y": 1940,
+        "wires": [
+            [
+                "9743a79a96fdefbc"
+            ]
+        ]
+    },
+    {
+        "id": "3d2d7f0f1534dbae",
+        "type": "link out",
+        "z": "9fcb3dc635318115",
+        "name": "Download",
+        "mode": "link",
+        "links": [
+            "c69a0969bac5aaf1"
+        ],
+        "x": 1360,
+        "y": 1920,
+        "wires": [],
+        "l": true
+    },
+    {
+        "id": "c69a0969bac5aaf1",
+        "type": "link in",
+        "z": "9fcb3dc635318115",
+        "name": "link in 1",
+        "links": [
+            "3d2d7f0f1534dbae"
+        ],
+        "x": 415,
+        "y": 2100,
+        "wires": [
+            [
+                "40838c27739e9251",
+                "89db4c4133b2f889"
+            ]
+        ]
+    },
+    {
+        "id": "40838c27739e9251",
+        "type": "function",
+        "z": "9fcb3dc635318115",
+        "name": "Download",
+        "func": "const MAX_RETRIES = 3;\nconst RETRY_DELAY_MS = 1000;\n\nconst payload = msg.payload;\n\nconst urlEntries = Object.entries(payload)\n    .filter(([key]) => key.endsWith(\":url\"))\n    .map(([key, url]) => ({ cacheName: key.replace(/:url$/, \"\"), url }));\n\nasync function sleep(ms) {\n    return new Promise(resolve => setTimeout(resolve, ms));\n}\n\nasync function downloadAndHash(url) {\n    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {\n        try {\n            const result = await new Promise((resolve, reject) => {\n                const lib = url.startsWith(\"https\") ? https : http;\n                const req = lib.get(url, (res) => {\n                    if (res.statusCode < 200 || res.statusCode >= 300) {\n                        res.resume();\n                        return reject(new Error(`HTTP ${res.statusCode}`));\n                    }\n                    res.setTimeout(20000, () => res.destroy(new Error(\"Response body timeout\")));\n                    const chunks = [];\n                    res.on(\"data\", chunk => chunks.push(chunk));\n                    res.on(\"end\", () => resolve(Buffer.concat(chunks)));\n                    res.on(\"error\", reject);\n                });\n                req.setTimeout(20000, () => req.destroy(new Error(\"Connection timeout\")));\n                req.on(\"error\", reject);\n            });\n            return crypto.createHash(msg.method).update(result).digest(\"base64\");\n        } catch (err) {\n            if (attempt < MAX_RETRIES) await sleep(RETRY_DELAY_MS);\n        }\n    }\n    return null;\n}\n\n(async () => {\n    const sensorid = flow.get(\"sensorid\");\n\n    const results = await Promise.allSettled(urlEntries.map(async ({ cacheName, url }) => {\n        const hash = await downloadAndHash(url);\n        if (hash === null) return { cacheName, url, match: false, downloaded: false };\n        return { cacheName, url, match: hash === msg.value, downloaded: true };\n    }));\n\n    const sample = {};\n\n    results.forEach((result, i) => {\n        if (result.status === \"fulfilled\" && result.value !== null) {\n            const { cacheName, match, downloaded } = result.value;\n\n            sample[cacheName] = downloaded ? 1 : 0;\n\n            if (downloaded) {\n                node.send([{\n                    ...msg,\n                    payload: {\n                        op: \"inc\",\n                        labels: {\n                            global_cache: cacheName,\n                            report_by: sensorid\n                        },\n                        val: 1\n                    }\n                }, null]);\n            }\n        }\n    });\n\n    node.send([null, {\n        ...msg,\n        payload: msg.payload,\n        sample\n    }]);\n})();\n\nreturn null;",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "https",
+                "module": "https"
+            },
+            {
+                "var": "http",
+                "module": "http"
+            },
+            {
+                "var": "crypto",
+                "module": "crypto"
+            }
+        ],
+        "x": 540,
+        "y": 2100,
+        "wires": [
+            [
+                "7021ddb8feacddfd"
+            ],
+            [
+                "9cd73b50d1ee4da9"
+            ]
+        ]
+    },
+    {
+        "id": "1241effcbb4841e8",
+        "type": "prometheus-exporter",
+        "z": "9fcb3dc635318115",
+        "name": "Sample",
+        "metric": "cd6ec1cdc99b1de5",
+        "x": 700,
+        "y": 2040,
+        "wires": []
+    },
+    {
+        "id": "89db4c4133b2f889",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Prometheus",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\": 1\t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 550,
+        "y": 2040,
+        "wires": [
+            [
+                "1241effcbb4841e8"
+            ]
+        ]
+    },
+    {
+        "id": "7021ddb8feacddfd",
+        "type": "prometheus-exporter",
+        "z": "9fcb3dc635318115",
+        "name": "Downloaded",
+        "metric": "bc213c9fdea8c6f6",
+        "x": 710,
+        "y": 2080,
+        "wires": []
+    },
+    {
+        "id": "2061db0db43e1b41",
+        "type": "link out",
+        "z": "9fcb3dc635318115",
+        "name": "Log",
+        "mode": "link",
+        "links": [
+            "6020dbf2b220391b"
+        ],
+        "x": 1350,
+        "y": 1960,
+        "wires": [],
+        "l": true
+    },
+    {
+        "id": "9cd73b50d1ee4da9",
+        "type": "link out",
+        "z": "9fcb3dc635318115",
+        "name": "Log",
+        "mode": "link",
+        "links": [
+            "6020dbf2b220391b"
+        ],
+        "x": 690,
+        "y": 2120,
+        "wires": [],
+        "l": true
+    },
+    {
+        "id": "6020dbf2b220391b",
+        "type": "link in",
+        "z": "9fcb3dc635318115",
+        "name": "link in 2",
+        "links": [
+            "2061db0db43e1b41",
+            "9cd73b50d1ee4da9"
+        ],
+        "x": 1025,
+        "y": 2080,
+        "wires": [
+            [
+                "c2cfa8d7adb26eae"
+            ]
+        ]
+    },
+    {
+        "id": "17a3c62135bcb4ba",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Init",
+        "rules": [
+            {
+                "t": "set",
+                "p": "qos",
+                "pt": "msg",
+                "to": "$env(\"MQTT_QOS\") = \"\" ? 0 : $number($env(\"MQTT_QOS\"))",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "{\"topic\": \"origin/a/wis2/\" & $flowContext(\"topic\"), \"qos\": qos } ",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "subscribe",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 540,
+        "wires": [
+            [
+                "b778150ac43b8303"
+            ]
+        ]
+    },
+    {
+        "id": "ecd4cba1d3c3ffc0",
+        "type": "status",
+        "z": "9fcb3dc635318115",
+        "name": "Brokers",
+        "scope": [
+            "6600d6a1be6e48c0",
+            "1067ac263cbb3463",
+            "4acc9c68e853f923",
+            "aa9138632819c6cc"
+        ],
+        "x": 170,
+        "y": 660,
+        "wires": [
+            [
+                "db6692c486872572"
+            ]
+        ]
+    },
+    {
+        "id": "db6692c486872572",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "Green ?",
+        "property": "status.fill",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "green",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 300,
+        "y": 660,
+        "wires": [
+            [
+                "17a3c62135bcb4ba",
+                "f47b87fdb5baa0bb"
+            ]
+        ]
+    },
+    {
+        "id": "f47b87fdb5baa0bb",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Init",
+        "rules": [
+            {
+                "t": "set",
+                "p": "qos",
+                "pt": "msg",
+                "to": "$env(\"MQTT_QOS\") = \"\" ? 0 : $number($env(\"MQTT_QOS\"))",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "{\"topic\": \"cache/a/wis2/\" & $flowContext(\"topic\"), \"qos\": qos } ",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "subscribe",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 800,
+        "wires": [
+            [
+                "7c26d6dd35e39810"
+            ]
+        ]
+    },
+    {
+        "id": "bbadfa05cca00d92",
+        "type": "function",
+        "z": "9fcb3dc635318115",
+        "name": "Normalize",
+        "func": "const payload = { ...msg.payload };  // unfreeze\nmsg.payload = payload;\nconst sample = msg.sample; \n\nconst globalCache = {};\n\nObject.keys(payload)\n    .filter(k => k.endsWith(\"-global-cache\"))\n    .forEach(cacheName => {\n        const entry = {\n            timestamp: payload[cacheName]\n        };\n\n        if (payload[`${cacheName}:url`] !== undefined) {\n            entry.url = payload[`${cacheName}:url`];\n        }\n        if (sample !== undefined) {\n            entry.downloaded = sample[cacheName] === 1;\n        }\n\n        globalCache[cacheName] = entry;\n\n        delete payload[cacheName];\n        delete payload[`${cacheName}:url`];\n    });\n\nmsg.payload[\"global-cache\"] = globalCache;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 2080,
+        "wires": [
+            [
+                "2ef8dc5b21e22705"
+            ]
+        ]
+    },
+    {
+        "id": "fbb91c5b65e30ceb",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Filename",
+        "rules": [
+            {
+                "t": "set",
+                "p": "_logIO_",
+                "pt": "msg",
+                "to": "{\"dirName\":\"/log\",\"logLevel\":\"info\"}",
+                "tot": "json"
+            },
+            {
+                "t": "delete",
+                "p": "pattern",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "value",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "orig",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "method",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "originlink",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "complete",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "sampled",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1720,
+        "y": 1920,
+        "wires": [
+            []
         ]
     }
 ]

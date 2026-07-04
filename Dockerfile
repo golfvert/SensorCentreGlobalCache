@@ -10,7 +10,7 @@ RUN apk add --no-cache \
     chmod 0777 /usr/src/node-red /data && \
     chown -R node-red:node-red /data 
 
-FROM nodered/node-red:4.1.8-minimal AS build
+FROM nodered/node-red:5.0.0-minimal AS build
 
 COPY package.json .
 
@@ -20,9 +20,8 @@ RUN npm install \
 
 FROM base AS prod
 
-COPY --from=build --chown=node-red:node-red /data/ /data/
-
 WORKDIR /usr/src/node-red
+
 COPY settings.js /data/settings.js
 COPY flows.json  /data/flows.json
 

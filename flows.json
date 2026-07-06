@@ -4888,7 +4888,7 @@
         "type": "function",
         "z": "9fcb3dc635318115",
         "name": "200 ?",
-        "func": "const link = (msg.cache_links || []).find(l => l.rel === 'canonical' || l.rel === 'update');\nconst url = link ? link.href : null;\n\nif (!url) {\n    // No URL → stop flow\n    return null;\n}\n\nreturn new Promise((resolve, reject) => {\n    const client = url.startsWith(\"https\") ? https : http;\n    let settled = false;\n\n    const req = client.request(url, { method: \"HEAD\", timeout: 10000 }, (res) => {\n        if (settled) return;\n        const code = res.statusCode;\n\n        if (code !== 200) {\n            // ❌ Not 200 → stop flow\n            settled = true;\n            resolve(null);\n            return;\n        }\n\n        // ✔ 200 → continue\n        settled = true;\n        msg.statusCode = code;\n        msg.url = url;\n        msg.rel = link.rel;   // 'canonical' or 'update'\n        resolve(msg);\n    });\n\n    req.on(\"timeout\", () => {\n        // ⏱ No response within 10s → mark as 404, stop flow\n        if (settled) return;\n        settled = true;\n        req.destroy();\n        msg.statusCode = 404;\n        resolve(null);\n    });\n\n    req.on(\"error\", (err) => {\n        // ❌ Error → stop flow\n        if (settled) return;\n        settled = true;\n        resolve(null);\n    });\n\n    req.end();\n});",
+        "func": "const link = (msg.cache_links || []).find(l => l.rel === 'canonical' || l.rel === 'update');\nconst url = link ? link.href : null;\n\nif (!url) {\n    // No URL → stop flow\n    return null;\n}\n\nmsg.statusCode = 200;\nmsg.rel = link.rel;   // 'canonical' or 'update'\nmsg.url = url;\n\nreturn msg;;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -6062,40 +6062,6 @@
         ]
     },
     {
-        "id": "8bca6967b749d074",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "WNM ?",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "\"wnm#\" & centreid & \"#\" & data_id",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 380,
-        "y": 1900,
-        "wires": [
-            [
-                "76a4014a36c950a0"
-            ]
-        ]
-    },
-    {
         "id": "76a4014a36c950a0",
         "type": "redis-command",
         "z": "9fcb3dc635318115",
@@ -6107,7 +6073,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 520,
+        "x": 500,
         "y": 1900,
         "wires": [
             [
@@ -6135,7 +6101,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 650,
+        "x": 630,
         "y": 1900,
         "wires": [
             [
@@ -6153,17 +6119,15 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload",
+                "p": "topic",
                 "pt": "msg",
                 "to": "[ \"early#\" & $substringAfter(hset[0], \"data#\"), cache, $millis(), cache & \":url\", ($exists(url) ? url : \"\") ]",
                 "tot": "jsonata"
             },
             {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
             }
         ],
         "action": "",
@@ -6171,7 +6135,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 790,
+        "x": 770,
         "y": 1880,
         "wires": [
             [
@@ -6191,7 +6155,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 910,
+        "x": 890,
         "y": 1880,
         "wires": [
             [
@@ -6207,17 +6171,15 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload",
+                "p": "topic",
                 "pt": "msg",
                 "to": "[ \"early#\" & $substringAfter(hset[0], \"data#\"), $flowContext(\"timeout_orig\") ]",
                 "tot": "jsonata"
             },
             {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
             }
         ],
         "action": "",
@@ -6225,7 +6187,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1030,
+        "x": 1010,
         "y": 1880,
         "wires": [
             [
@@ -6245,7 +6207,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1160,
+        "x": 1140,
         "y": 1880,
         "wires": [
             []
@@ -6270,7 +6232,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 810,
+        "x": 790,
         "y": 1920,
         "wires": [
             [
@@ -6284,7 +6246,7 @@
         "z": "9fcb3dc635318115",
         "name": "Early",
         "metric": "3e2a75606bc0774a",
-        "x": 950,
+        "x": 930,
         "y": 1920,
         "wires": []
     },
@@ -6296,17 +6258,15 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload",
+                "p": "topic",
                 "pt": "msg",
                 "to": "\"early#\" & $substringAfter(hset_data[0], \"data#\")",
                 "tot": "jsonata"
             },
             {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
             }
         ],
         "action": "",
@@ -6465,7 +6425,7 @@
         "y": 1900,
         "wires": [
             [
-                "8bca6967b749d074"
+                "d9ccba363ddb5d4a"
             ]
         ]
     },
@@ -6745,6 +6705,65 @@
                 "662ddb5376824c47",
                 "f9b62a35da0ee834"
             ]
+        ]
+    },
+    {
+        "id": "d9ccba363ddb5d4a",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "WNM",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "\"wnm#\" & centreid & \"#\" & data_id",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 1900,
+        "wires": [
+            [
+                "76a4014a36c950a0"
+            ]
+        ]
+    },
+    {
+        "id": "9ba4a782ac8e84c4",
+        "type": "function",
+        "z": "9fcb3dc635318115",
+        "name": "200 ?",
+        "func": "const link = (msg.cache_links || []).find(l => l.rel === 'canonical' || l.rel === 'update');\nconst url = link ? link.href : null;\n\nif (!url) {\n    // No URL → stop flow\n    return null;\n}\n\nreturn new Promise((resolve, reject) => {\n    const client = url.startsWith(\"https\") ? https : http;\n    let settled = false;\n\n    const req = client.request(url, { method: \"HEAD\", timeout: 10000 }, (res) => {\n        if (settled) return;\n        const code = res.statusCode;\n\n        if (code !== 200) {\n            // ❌ Not 200 → stop flow\n            settled = true;\n            resolve(null);\n            return;\n        }\n\n        // ✔ 200 → continue\n        settled = true;\n        msg.statusCode = code;\n        msg.url = url;\n        msg.rel = link.rel;   // 'canonical' or 'update'\n        resolve(msg);\n    });\n\n    req.on(\"timeout\", () => {\n        // ⏱ No response within 10s → mark as 404, stop flow\n        if (settled) return;\n        settled = true;\n        req.destroy();\n        msg.statusCode = 404;\n        resolve(null);\n    });\n\n    req.on(\"error\", (err) => {\n        // ❌ Error → stop flow\n        if (settled) return;\n        settled = true;\n        resolve(null);\n    });\n\n    req.end();\n});",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "http",
+                "module": "http"
+            },
+            {
+                "var": "https",
+                "module": "https"
+            }
+        ],
+        "x": 990,
+        "y": 1560,
+        "wires": [
+            []
         ]
     }
 ]

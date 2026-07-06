@@ -16,28 +16,6 @@
         "env": []
     },
     {
-        "id": "218b5b0dabe0e4cb",
-        "type": "subflow",
-        "name": "Monitor",
-        "info": "",
-        "category": "",
-        "in": [
-            {
-                "x": 80,
-                "y": 220,
-                "wires": [
-                    {
-                        "id": "b792d5af2f910c10"
-                    }
-                ]
-            }
-        ],
-        "out": [],
-        "env": [],
-        "meta": {},
-        "color": "#DDAA99"
-    },
-    {
         "id": "bd6837434fd7b3cb",
         "type": "redis-config",
         "name": "Redis",
@@ -240,15 +218,6 @@
         "env": []
     },
     {
-        "id": "b991eb3f6f6921cc",
-        "type": "prometheus-metric-config",
-        "z": "218b5b0dabe0e4cb",
-        "name": "wmo_wis2_scgc_messages_cache_override_total",
-        "help": "Message not cached override",
-        "labels": "global_cache,centre_id,report_by",
-        "mtype": "counter"
-    },
-    {
         "id": "5481f3311ff3028d",
         "type": "mqtt-broker",
         "name": "Pub",
@@ -374,627 +343,12 @@
         "sessionExpiry": ""
     },
     {
-        "id": "37e01b07c3e8a037",
-        "type": "switch",
-        "z": "218b5b0dabe0e4cb",
-        "name": "Delay to cache",
-        "property": "( ($millis() - $number(msg.payload)) / 1000 ) - 10",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "lte",
-                "v": "$parent.delay1",
-                "vt": "flow"
-            },
-            {
-                "t": "lte",
-                "v": "$parent.delay2",
-                "vt": "flow"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 3,
-        "x": 760,
-        "y": 320,
-        "wires": [
-            [
-                "12689335dc7f840c"
-            ],
-            [
-                "b0d1cc2019c31ab7"
-            ],
-            [
-                "e320c4a0bf5d15a7"
-            ]
-        ]
-    },
-    {
-        "id": "12689335dc7f840c",
-        "type": "change",
-        "z": "218b5b0dabe0e4cb",
-        "name": "Prometheus - 1",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"delay_threshold\": $flowContext(\"$parent.delay1\"),\t      \"centre_id\":  $flowContext(\"centreid\"),\t      \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\":1 \t}",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 960,
-        "y": 280,
-        "wires": [
-            [
-                "cc3ad656b9afece1"
-            ]
-        ]
-    },
-    {
-        "id": "f054d467a665124e",
-        "type": "change",
-        "z": "218b5b0dabe0e4cb",
-        "name": "Get",
-        "rules": [
-            {
-                "t": "set",
-                "p": "cache",
-                "pt": "flow",
-                "to": "cache",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "sensorid",
-                "pt": "flow",
-                "to": "sensorid",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "centreid",
-                "pt": "flow",
-                "to": "$split(topic,\"/\")[3]",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "data_id",
-                "pt": "msg",
-                "to": "payload.properties.data_id & \":\" & payload.properties.pubtime & \":\" & (\t   $exists(payload.properties.integrity.value) ? $substring(\t       $replace(\t           payload.properties.integrity.value,\t           \"/\",\t           \"\"\t       ),\t       0,\t       12\t   ) : $replace(\t       payload.properties.pubtime,\t       /[^0-9]/,\t       \"\"\t   ) \t)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "\"scgc#\" & $flowContext(\"cache\") & \"#\" & $flowContext(\"centreid\") & \"#\" & data_id & \"#\" & payload.properties.pubtime",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "hset",
-                "pt": "msg",
-                "to": "[\t   \"data#\" & $flowContext(\"centreid\") & \"#\" & data_id & \"#\" & payload.properties.pubtime,\t   $flowContext(\"cache\"),\t   $millis()\t]",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "cache",
-                "pt": "msg",
-                "to": "$exists(payload.properties.cache) ? payload.properties.cache : true",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "orig_wnm",
-                "pt": "msg",
-                "to": "[\t   \"data#\" & $flowContext(\"centreid\") & \"#\" & data_id & \"#\" & payload.properties.pubtime,\t   \"wnm\"\t]",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "cache_links",
-                "pt": "msg",
-                "to": "payload.links",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "[]",
-                "tot": "json",
-                "dc": true
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 310,
-        "y": 220,
-        "wires": [
-            [
-                "fe20b670574db962"
-            ]
-        ]
-    },
-    {
-        "id": "36c8e0768df24445",
-        "type": "change",
-        "z": "218b5b0dabe0e4cb",
-        "name": "Del",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "topic",
-                "tot": "msg",
-                "dc": true
-            },
-            {
-                "t": "delete",
-                "p": "topic",
-                "pt": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 730,
-        "y": 220,
-        "wires": [
-            [
-                "e9640af2fdcbe681"
-            ]
-        ]
-    },
-    {
-        "id": "f41c5ab8fb94e076",
-        "type": "change",
-        "z": "218b5b0dabe0e4cb",
-        "name": "Prometheus",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\t   \"op\":\"set\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"centre_id\":  $flowContext(\"centreid\"),\t      \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\": ( ( ($millis() - $number(msg.payload)) / 1000 ) - 10 )\t}",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 750,
-        "y": 180,
-        "wires": [
-            [
-                "ce363774ca216391"
-            ]
-        ]
-    },
-    {
-        "id": "bf048482180d33c6",
-        "type": "switch",
-        "z": "218b5b0dabe0e4cb",
-        "name": "Expired ?",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "nnull"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 580,
-        "y": 220,
-        "wires": [
-            [
-                "36c8e0768df24445",
-                "f41c5ab8fb94e076",
-                "37e01b07c3e8a037",
-                "a934bf4a57f5ab75",
-                "064312cfd531aaaf"
-            ]
-        ]
-    },
-    {
-        "id": "b0d1cc2019c31ab7",
-        "type": "change",
-        "z": "218b5b0dabe0e4cb",
-        "name": "Prometheus - 2",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"delay_threshold\": $flowContext(\"$parent.delay2\"),\t      \"centre_id\":  $flowContext(\"centreid\"),\t      \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\":1 \t}",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 960,
-        "y": 320,
-        "wires": [
-            [
-                "cc3ad656b9afece1"
-            ]
-        ]
-    },
-    {
-        "id": "e320c4a0bf5d15a7",
-        "type": "change",
-        "z": "218b5b0dabe0e4cb",
-        "name": "Prometheus - 3",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"delay_threshold\": $flowContext(\"$parent.timeout_cache\"),\t      \"centre_id\":  $flowContext(\"centreid\"),\t      \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\":1 \t}",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 960,
-        "y": 360,
-        "wires": [
-            [
-                "cc3ad656b9afece1"
-            ]
-        ]
-    },
-    {
-        "id": "b792d5af2f910c10",
-        "type": "delay",
-        "z": "218b5b0dabe0e4cb",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "10",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 180,
-        "y": 220,
-        "wires": [
-            [
-                "f054d467a665124e"
-            ]
-        ]
-    },
-    {
-        "id": "a934bf4a57f5ab75",
-        "type": "change",
-        "z": "218b5b0dabe0e4cb",
-        "name": "Hset",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "hset",
-                "tot": "msg"
-            },
-            {
-                "t": "delete",
-                "p": "payload",
-                "pt": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 730,
-        "y": 140,
-        "wires": [
-            [
-                "32b9c74a6b4358be"
-            ]
-        ]
-    },
-    {
-        "id": "e9640af2fdcbe681",
-        "type": "redis-command",
-        "z": "218b5b0dabe0e4cb",
-        "server": "bd6837434fd7b3cb",
-        "command": "DEL",
-        "name": "",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 860,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "fe20b670574db962",
-        "type": "redis-command",
-        "z": "218b5b0dabe0e4cb",
-        "server": "bd6837434fd7b3cb",
-        "command": "GET",
-        "name": "",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 440,
-        "y": 220,
-        "wires": [
-            [
-                "bf048482180d33c6"
-            ]
-        ]
-    },
-    {
-        "id": "32b9c74a6b4358be",
-        "type": "redis-command",
-        "z": "218b5b0dabe0e4cb",
-        "server": "bd6837434fd7b3cb",
-        "command": "HSET",
-        "name": "",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 870,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ce363774ca216391",
-        "type": "prometheus-exporter",
-        "z": "218b5b0dabe0e4cb",
-        "name": "Delay",
-        "metric": "a7877619083a1ee3",
-        "x": 890,
-        "y": 180,
-        "wires": []
-    },
-    {
-        "id": "cc3ad656b9afece1",
-        "type": "prometheus-exporter",
-        "z": "218b5b0dabe0e4cb",
-        "name": "Cached",
-        "metric": "5ff96cf14749d4c6",
-        "x": 1140,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "23300849c0a96dfb",
-        "type": "change",
-        "z": "218b5b0dabe0e4cb",
-        "name": "WNM",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "orig_wnm",
-                "tot": "msg"
-            },
-            {
-                "t": "delete",
-                "p": "topic",
-                "pt": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 310,
-        "y": 460,
-        "wires": [
-            [
-                "92c07fe7b4c6371b"
-            ]
-        ]
-    },
-    {
-        "id": "92c07fe7b4c6371b",
-        "type": "redis-command",
-        "z": "218b5b0dabe0e4cb",
-        "server": "bd6837434fd7b3cb",
-        "command": "HGET",
-        "name": "",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 450,
-        "y": 460,
-        "wires": [
-            [
-                "96ebeadf57737f79"
-            ]
-        ]
-    },
-    {
-        "id": "96ebeadf57737f79",
-        "type": "json",
-        "z": "218b5b0dabe0e4cb",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 590,
-        "y": 460,
-        "wires": [
-            [
-                "5ab5797d3671011e"
-            ]
-        ]
-    },
-    {
-        "id": "5ab5797d3671011e",
-        "type": "change",
-        "z": "218b5b0dabe0e4cb",
-        "name": "Links",
-        "rules": [
-            {
-                "t": "set",
-                "p": "orig_links",
-                "pt": "msg",
-                "to": "payload.links",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 460,
-        "wires": [
-            [
-                "e9ac31ee11295bcc"
-            ]
-        ]
-    },
-    {
-        "id": "064312cfd531aaaf",
-        "type": "link out",
-        "z": "218b5b0dabe0e4cb",
-        "name": "link out 9",
-        "mode": "link",
-        "links": [
-            "044c6018b954086e"
-        ],
-        "x": 695,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "044c6018b954086e",
-        "type": "link in",
-        "z": "218b5b0dabe0e4cb",
-        "name": "link in 8",
-        "links": [
-            "064312cfd531aaaf"
-        ],
-        "x": 215,
-        "y": 460,
-        "wires": [
-            [
-                "23300849c0a96dfb"
-            ]
-        ]
-    },
-    {
-        "id": "e9ac31ee11295bcc",
-        "type": "switch",
-        "z": "218b5b0dabe0e4cb",
-        "name": "Cached ?",
-        "property": "orig_links",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "cache_links",
-                "vt": "msg"
-            },
-            {
-                "t": "jsonata_exp",
-                "v": "cache",
-                "vt": "jsonata"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 840,
-        "y": 460,
-        "wires": [
-            [],
-            [
-                "0e49f1936ecdd272"
-            ]
-        ]
-    },
-    {
-        "id": "bbc0b553bf162683",
-        "type": "prometheus-exporter",
-        "z": "218b5b0dabe0e4cb",
-        "name": "Cache override",
-        "metric": "b991eb3f6f6921cc",
-        "x": 1160,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "0e49f1936ecdd272",
-        "type": "change",
-        "z": "218b5b0dabe0e4cb",
-        "name": "Prometheus",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": $flowContext(\"cache\"),\t      \"centre_id\":  $flowContext(\"centreid\"),\t      \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\":1 \t}",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 990,
-        "y": 460,
-        "wires": [
-            [
-                "bbc0b553bf162683"
-            ]
-        ]
+        "id": "3e2a75606bc0774a",
+        "type": "prometheus-metric-config",
+        "name": "wmo_wis2_scgc_messages_early_total",
+        "help": "Cache confirmation received before the corresponding origin message had been processed",
+        "labels": "global_cache,centre_id,report_by",
+        "mtype": "counter"
     },
     {
         "id": "15d0ec9bc2ce2c9c",
@@ -1095,7 +449,7 @@
         "repair": false,
         "outputs": 5,
         "x": 560,
-        "y": 1980,
+        "y": 2100,
         "wires": [
             [
                 "5c23a20c1171293c"
@@ -1149,7 +503,7 @@
         "to": "",
         "reg": false,
         "x": 710,
-        "y": 2000,
+        "y": 2120,
         "wires": [
             [
                 "571f740a66401f2c"
@@ -1303,7 +657,7 @@
         "to": "",
         "reg": false,
         "x": 710,
-        "y": 1960,
+        "y": 2080,
         "wires": [
             [
                 "443ca97e3b2a6192"
@@ -1331,7 +685,7 @@
         "repair": false,
         "outputs": 2,
         "x": 1070,
-        "y": 1920,
+        "y": 2040,
         "wires": [
             [
                 "d972d19f8d20ee7d"
@@ -1357,7 +711,7 @@
         "to": "",
         "reg": false,
         "x": 1070,
-        "y": 1960,
+        "y": 2080,
         "wires": [
             [
                 "403a1066f87bedb1"
@@ -1384,7 +738,7 @@
         "to": "",
         "reg": false,
         "x": 1230,
-        "y": 1920,
+        "y": 2040,
         "wires": [
             [
                 "3c682df2ec8a4bbe"
@@ -1402,7 +756,7 @@
         "obj": true,
         "timeout": 0,
         "x": 370,
-        "y": 1980,
+        "y": 2100,
         "wires": [
             [
                 "568c765b12630d5a"
@@ -1440,7 +794,7 @@
         "payloadType": "json",
         "block": false,
         "x": 880,
-        "y": 1960,
+        "y": 2080,
         "wires": [
             [
                 "ef52aac7153a7cd5",
@@ -1462,7 +816,7 @@
         "payloadType": "json",
         "block": false,
         "x": 1220,
-        "y": 1960,
+        "y": 2080,
         "wires": [
             []
         ]
@@ -1474,7 +828,7 @@
         "name": "Not cached",
         "metric": "87cae6509a425ee7",
         "x": 870,
-        "y": 2000,
+        "y": 2120,
         "wires": []
     },
     {
@@ -1484,7 +838,7 @@
         "name": "Not cached at all",
         "metric": "84cd0deea504b109",
         "x": 1410,
-        "y": 1920,
+        "y": 2040,
         "wires": []
     },
     {
@@ -1781,66 +1135,6 @@
         ]
     },
     {
-        "id": "850db44db67c0829",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Del",
-        "rules": [
-            {
-                "t": "delete",
-                "p": "topic",
-                "pt": "msg"
-            },
-            {
-                "t": "delete",
-                "p": "payload",
-                "pt": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 650,
-        "y": 1280,
-        "wires": [
-            [
-                "669a5db69fdb7581",
-                "9c0a69b57ce5d988",
-                "98e6536255949315",
-                "a93bb330271ec030"
-            ]
-        ]
-    },
-    {
-        "id": "669a5db69fdb7581",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Orig",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "orig",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 810,
-        "y": 1220,
-        "wires": [
-            [
-                "d6b953d2c9b27373"
-            ]
-        ]
-    },
-    {
         "id": "0493ab6e0426e3f8",
         "type": "change",
         "z": "9fcb3dc635318115",
@@ -1888,69 +1182,6 @@
         ]
     },
     {
-        "id": "9c0a69b57ce5d988",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "All",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "hset_data",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 810,
-        "y": 1260,
-        "wires": [
-            [
-                "f8a53d2a6ae7d288"
-            ]
-        ]
-    },
-    {
-        "id": "d6b953d2c9b27373",
-        "type": "redis-command",
-        "z": "9fcb3dc635318115",
-        "server": "bd6837434fd7b3cb",
-        "command": "SET",
-        "name": "SET",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 930,
-        "y": 1220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f8a53d2a6ae7d288",
-        "type": "redis-command",
-        "z": "9fcb3dc635318115",
-        "server": "bd6837434fd7b3cb",
-        "command": "HSET",
-        "name": "HSET",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 930,
-        "y": 1260,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "9b9c3b87553ee4b5",
         "type": "prometheus-exporter",
         "z": "9fcb3dc635318115",
@@ -1978,98 +1209,6 @@
             [
                 "3100f7aa144dfebe"
             ]
-        ]
-    },
-    {
-        "id": "fecf26268d94e20b",
-        "type": "split",
-        "z": "9fcb3dc635318115",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "property": "gc",
-        "x": 930,
-        "y": 1340,
-        "wires": [
-            [
-                "bcc8512c5ce7b36e"
-            ]
-        ]
-    },
-    {
-        "id": "98e6536255949315",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "GC",
-        "rules": [
-            {
-                "t": "set",
-                "p": "gc",
-                "pt": "msg",
-                "to": "gc",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 810,
-        "y": 1340,
-        "wires": [
-            [
-                "fecf26268d94e20b"
-            ]
-        ]
-    },
-    {
-        "id": "bcc8512c5ce7b36e",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Store",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "[\t   \"scgc#\" & gc & \"#\" & centreid & \"#\" & dataid & \"#\" & pubtime ,\t   $millis(),\t   \"EX\",\t  $flowContext(\"timeout_cache\")\t]",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1050,
-        "y": 1340,
-        "wires": [
-            [
-                "d55761a08ee6e3d8"
-            ]
-        ]
-    },
-    {
-        "id": "d55761a08ee6e3d8",
-        "type": "redis-command",
-        "z": "9fcb3dc635318115",
-        "server": "bd6837434fd7b3cb",
-        "command": "SET",
-        "name": "SET",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 1170,
-        "y": 1340,
-        "wires": [
-            []
         ]
     },
     {
@@ -2175,103 +1314,11 @@
         "wires": [
             [
                 "0493ab6e0426e3f8",
-                "850db44db67c0829"
+                "cef2c72c82999154"
             ],
             [
                 "da9042e45b74ed1c"
             ]
-        ]
-    },
-    {
-        "id": "a93bb330271ec030",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "WNM",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "hset_wnm",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 810,
-        "y": 1300,
-        "wires": [
-            [
-                "f044c7490c8e792d"
-            ]
-        ]
-    },
-    {
-        "id": "f044c7490c8e792d",
-        "type": "redis-command",
-        "z": "9fcb3dc635318115",
-        "server": "bd6837434fd7b3cb",
-        "command": "HSET",
-        "name": "HSET",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 930,
-        "y": 1300,
-        "wires": [
-            [
-                "2fc3adac5cab5d9d"
-            ]
-        ]
-    },
-    {
-        "id": "2fc3adac5cab5d9d",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Expire",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "[ hset_wnm[0], 86400 ]",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1050,
-        "y": 1300,
-        "wires": [
-            [
-                "47e819a2f896a2be"
-            ]
-        ]
-    },
-    {
-        "id": "47e819a2f896a2be",
-        "type": "redis-command",
-        "z": "9fcb3dc635318115",
-        "server": "bd6837434fd7b3cb",
-        "command": "EXPIRE",
-        "name": "EXPIRE",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 1180,
-        "y": 1300,
-        "wires": [
-            []
         ]
     },
     {
@@ -2293,7 +1340,7 @@
         "repair": false,
         "outputs": 2,
         "x": 800,
-        "y": 1400,
+        "y": 1440,
         "wires": [
             [
                 "a85bf3a7164bde23"
@@ -2321,7 +1368,7 @@
         "to": "",
         "reg": false,
         "x": 650,
-        "y": 1400,
+        "y": 1440,
         "wires": [
             [
                 "47515d621ebc39f1"
@@ -2351,7 +1398,7 @@
         "repair": false,
         "outputs": 2,
         "x": 960,
-        "y": 1400,
+        "y": 1440,
         "wires": [
             [
                 "e17647d5392269e9"
@@ -2371,7 +1418,7 @@
             "eb5263f7a5df0484"
         ],
         "x": 1055,
-        "y": 1380,
+        "y": 1420,
         "wires": []
     },
     {
@@ -2383,10 +1430,10 @@
             "e17647d5392269e9"
         ],
         "x": 615,
-        "y": 1340,
+        "y": 1360,
         "wires": [
             [
-                "850db44db67c0829"
+                "cef2c72c82999154"
             ]
         ]
     },
@@ -2410,7 +1457,7 @@
         "to": "",
         "reg": false,
         "x": 1110,
-        "y": 1420,
+        "y": 1460,
         "wires": [
             [
                 "e3c16ea751473a08"
@@ -2424,7 +1471,7 @@
         "name": "Duplicate",
         "metric": "ab2e2f87fc8b78d4",
         "x": 1260,
-        "y": 1420,
+        "y": 1460,
         "wires": []
     },
     {
@@ -2443,7 +1490,7 @@
         "repair": false,
         "outputs": 1,
         "x": 1090,
-        "y": 2140,
+        "y": 2260,
         "wires": [
             [
                 "bbadfa05cca00d92"
@@ -2464,7 +1511,7 @@
         "autoStart": true,
         "scope": [],
         "x": 1500,
-        "y": 2140,
+        "y": 2260,
         "wires": [
             []
         ]
@@ -2987,7 +2034,7 @@
         "to": "",
         "reg": false,
         "x": 1360,
-        "y": 2140,
+        "y": 2260,
         "wires": [
             [
                 "b0efdc98fd94d239"
@@ -3006,7 +2053,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 310,
-        "y": 2280,
+        "y": 2400,
         "wires": [
             [
                 "0ea5fdf6fea777fa"
@@ -3026,7 +2073,7 @@
         "payloadType": "json",
         "block": false,
         "x": 930,
-        "y": 2280,
+        "y": 2400,
         "wires": [
             [
                 "ec02f2b62c3bc985"
@@ -3049,7 +2096,7 @@
         "repair": false,
         "outputs": 1,
         "x": 1050,
-        "y": 2280,
+        "y": 2400,
         "wires": [
             [
                 "ccbbb7ed97dd3b83"
@@ -3081,7 +2128,7 @@
         "to": "",
         "reg": false,
         "x": 1170,
-        "y": 2280,
+        "y": 2400,
         "wires": [
             [
                 "b01e3302812b3d24"
@@ -3101,7 +2148,7 @@
         "payloadType": "json",
         "block": false,
         "x": 1290,
-        "y": 2280,
+        "y": 2400,
         "wires": [
             [
                 "ea2bb49ff7fad9b8"
@@ -3245,7 +2292,7 @@
             }
         ],
         "x": 1420,
-        "y": 2280,
+        "y": 2400,
         "wires": [
             [
                 "1fb143f2a0e68701"
@@ -3267,7 +2314,7 @@
         "expiry": "",
         "broker": "5481f3311ff3028d",
         "x": 1560,
-        "y": 2280,
+        "y": 2400,
         "wires": []
     },
     {
@@ -3309,7 +2356,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 2280,
+        "y": 2400,
         "wires": [
             [
                 "bca2a41b43ad1308"
@@ -3334,7 +2381,7 @@
             }
         ],
         "x": 670,
-        "y": 2280,
+        "y": 2400,
         "wires": [
             [
                 "f755ba4a695f7069"
@@ -3357,7 +2404,7 @@
         "repair": false,
         "outputs": 1,
         "x": 800,
-        "y": 2280,
+        "y": 2400,
         "wires": [
             [
                 "25c1622b056610de"
@@ -4887,7 +3934,7 @@
         "pauseAtStartup": false,
         "topicDependent": false,
         "x": 450,
-        "y": 1600,
+        "y": 1620,
         "wires": [
             [],
             [
@@ -4906,7 +3953,7 @@
         "obj": true,
         "timeout": 0,
         "x": 320,
-        "y": 1600,
+        "y": 1620,
         "wires": [
             [
                 "6848aed8fc0576ef"
@@ -4940,7 +3987,7 @@
         "to": "",
         "reg": false,
         "x": 570,
-        "y": 1600,
+        "y": 1620,
         "wires": [
             [
                 "94b8e6879433ceb8"
@@ -4951,7 +3998,7 @@
         "id": "662ddb5376824c47",
         "type": "switch",
         "z": "9fcb3dc635318115",
-        "name": "Delay to cache",
+        "name": "Delay",
         "property": "( $millis() - $number(msg.payload) ) / 1000 ",
         "propertyType": "jsonata",
         "rules": [
@@ -4972,8 +4019,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 3,
-        "x": 1480,
-        "y": 1700,
+        "x": 1470,
+        "y": 1540,
         "wires": [
             [
                 "1d9ee046916c5093"
@@ -5005,8 +4052,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1680,
-        "y": 1660,
+        "x": 1640,
+        "y": 1500,
         "wires": [
             [
                 "171c492628d9b58a"
@@ -5076,7 +4123,7 @@
         "to": "",
         "reg": false,
         "x": 870,
-        "y": 1600,
+        "y": 1620,
         "wires": [
             [
                 "e2f544e5d1f6455b"
@@ -5108,8 +4155,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1450,
-        "y": 1600,
+        "x": 1470,
+        "y": 1660,
         "wires": [
             [
                 "1cdbb9cdb172d888"
@@ -5126,13 +4173,16 @@
         "rules": [
             {
                 "t": "nnull"
+            },
+            {
+                "t": "null"
             }
         ],
-        "checkall": "true",
+        "checkall": "false",
         "repair": false,
-        "outputs": 1,
+        "outputs": 2,
         "x": 1260,
-        "y": 1600,
+        "y": 1620,
         "wires": [
             [
                 "9220ddbcf828c9e8",
@@ -5141,6 +4191,9 @@
                 "22a1f2a706594e52",
                 "299aa5b44f00a5e0",
                 "f9b62a35da0ee834"
+            ],
+            [
+                "62faa38b6e929de3"
             ]
         ]
     },
@@ -5163,8 +4216,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1680,
-        "y": 1700,
+        "x": 1640,
+        "y": 1540,
         "wires": [
             [
                 "171c492628d9b58a"
@@ -5190,8 +4243,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1680,
-        "y": 1740,
+        "x": 1640,
+        "y": 1580,
         "wires": [
             [
                 "171c492628d9b58a"
@@ -5216,7 +4269,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 655,
-        "y": 1600,
+        "y": 1620,
         "wires": [
             [
                 "096102aedaba66a8"
@@ -5255,8 +4308,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1450,
-        "y": 1520,
+        "x": 1470,
+        "y": 1620,
         "wires": [
             [
                 "68a901019451b22a"
@@ -5275,8 +4328,8 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1580,
-        "y": 1600,
+        "x": 1600,
+        "y": 1660,
         "wires": [
             []
         ]
@@ -5294,7 +4347,7 @@
         "payloadType": "json",
         "block": false,
         "x": 1120,
-        "y": 1600,
+        "y": 1620,
         "wires": [
             [
                 "1bb29eabe5e41ef7"
@@ -5313,8 +4366,8 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1590,
-        "y": 1520,
+        "x": 1610,
+        "y": 1620,
         "wires": [
             []
         ]
@@ -5325,8 +4378,8 @@
         "z": "9fcb3dc635318115",
         "name": "Delay",
         "metric": "a7877619083a1ee3",
-        "x": 1610,
-        "y": 1560,
+        "x": 1630,
+        "y": 1420,
         "wires": []
     },
     {
@@ -5335,8 +4388,8 @@
         "z": "9fcb3dc635318115",
         "name": "Threshold",
         "metric": "5ff96cf14749d4c6",
-        "x": 1860,
-        "y": 1700,
+        "x": 1820,
+        "y": 1540,
         "wires": []
     },
     {
@@ -5443,8 +4496,8 @@
         "links": [
             "21c28195bdcee16d"
         ],
-        "x": 1415,
-        "y": 1640,
+        "x": 1435,
+        "y": 1700,
         "wires": []
     },
     {
@@ -5547,7 +4600,7 @@
         "repair": false,
         "outputs": 1,
         "x": 750,
-        "y": 1600,
+        "y": 1620,
         "wires": [
             [
                 "1b78be8146d340c5"
@@ -5852,7 +4905,7 @@
             }
         ],
         "x": 990,
-        "y": 1600,
+        "y": 1620,
         "wires": [
             [
                 "efc9758439cc50e8"
@@ -5878,7 +4931,7 @@
         "repair": false,
         "outputs": 2,
         "x": 1190,
-        "y": 2020,
+        "y": 2140,
         "wires": [
             [
                 "3d2d7f0f1534dbae"
@@ -5906,7 +4959,7 @@
             }
         ],
         "x": 1050,
-        "y": 2020,
+        "y": 2140,
         "wires": [
             [
                 "9743a79a96fdefbc"
@@ -5923,7 +4976,7 @@
             "c69a0969bac5aaf1"
         ],
         "x": 1360,
-        "y": 2000,
+        "y": 2120,
         "wires": [],
         "l": true
     },
@@ -5936,7 +4989,7 @@
             "3d2d7f0f1534dbae"
         ],
         "x": 395,
-        "y": 2160,
+        "y": 2280,
         "wires": [
             [
                 "40838c27739e9251",
@@ -5970,7 +5023,7 @@
             }
         ],
         "x": 520,
-        "y": 2160,
+        "y": 2280,
         "wires": [
             [
                 "7021ddb8feacddfd"
@@ -5987,7 +5040,7 @@
         "name": "Sample",
         "metric": "cd6ec1cdc99b1de5",
         "x": 680,
-        "y": 2100,
+        "y": 2220,
         "wires": []
     },
     {
@@ -6010,7 +5063,7 @@
         "to": "",
         "reg": false,
         "x": 530,
-        "y": 2100,
+        "y": 2220,
         "wires": [
             [
                 "1241effcbb4841e8"
@@ -6024,7 +5077,7 @@
         "name": "Downloaded",
         "metric": "bc213c9fdea8c6f6",
         "x": 690,
-        "y": 2140,
+        "y": 2260,
         "wires": []
     },
     {
@@ -6037,7 +5090,7 @@
             "6020dbf2b220391b"
         ],
         "x": 1350,
-        "y": 2040,
+        "y": 2160,
         "wires": [],
         "l": true
     },
@@ -6051,7 +5104,7 @@
             "6020dbf2b220391b"
         ],
         "x": 670,
-        "y": 2180,
+        "y": 2300,
         "wires": [],
         "l": true
     },
@@ -6065,7 +5118,7 @@
             "9cd73b50d1ee4da9"
         ],
         "x": 1005,
-        "y": 2140,
+        "y": 2260,
         "wires": [
             [
                 "c2cfa8d7adb26eae"
@@ -6214,7 +5267,7 @@
         "finalize": "",
         "libs": [],
         "x": 1220,
-        "y": 2140,
+        "y": 2260,
         "wires": [
             [
                 "2ef8dc5b21e22705"
@@ -6239,7 +5292,7 @@
         "repair": false,
         "outputs": 1,
         "x": 430,
-        "y": 2280,
+        "y": 2400,
         "wires": [
             [
                 "092cca744b1adb95"
@@ -6265,8 +5318,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1470,
-        "y": 1480,
+        "x": 1490,
+        "y": 1460,
         "wires": [
             [
                 "fd99a6a3ee832f09"
@@ -6279,8 +5332,8 @@
         "z": "9fcb3dc635318115",
         "name": "Cached",
         "metric": "cefbe83260ed4899",
-        "x": 1620,
-        "y": 1480,
+        "x": 1640,
+        "y": 1460,
         "wires": []
     },
     {
@@ -6302,8 +5355,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1470,
-        "y": 1560,
+        "x": 1490,
+        "y": 1420,
         "wires": [
             [
                 "06c3f4227bfc40f4"
@@ -7005,6 +6058,692 @@
         "wires": [
             [
                 "84efc5ad9ab175b7"
+            ]
+        ]
+    },
+    {
+        "id": "8bca6967b749d074",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "WNM ?",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "\"wnm#\" & centreid & \"#\" & data_id",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 1900,
+        "wires": [
+            [
+                "76a4014a36c950a0"
+            ]
+        ]
+    },
+    {
+        "id": "76a4014a36c950a0",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "HGETALL",
+        "name": "HGETALL",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 520,
+        "y": 1900,
+        "wires": [
+            [
+                "34ad05bbb1d11f34"
+            ]
+        ]
+    },
+    {
+        "id": "34ad05bbb1d11f34",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "Seen?",
+        "property": "$count(payload)",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 650,
+        "y": 1900,
+        "wires": [
+            [
+                "8a298e65be0fa0a1",
+                "9a37e9f2ff601465"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8a298e65be0fa0a1",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Early",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[ \"early#\" & $substringAfter(hset[0], \"data#\"), cache, $millis(), cache & \":url\", ($exists(url) ? url : \"\") ]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 1880,
+        "wires": [
+            [
+                "21b055563588de51"
+            ]
+        ]
+    },
+    {
+        "id": "21b055563588de51",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "HSET",
+        "name": "HSET",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 910,
+        "y": 1880,
+        "wires": [
+            [
+                "e715acf9f8d8219a"
+            ]
+        ]
+    },
+    {
+        "id": "e715acf9f8d8219a",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Expire",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[ \"early#\" & $substringAfter(hset[0], \"data#\"), $flowContext(\"timeout_orig\") ]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1030,
+        "y": 1880,
+        "wires": [
+            [
+                "d40ace1457c08ede"
+            ]
+        ]
+    },
+    {
+        "id": "d40ace1457c08ede",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "EXPIRE",
+        "name": "EXPIRE",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1160,
+        "y": 1880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9a37e9f2ff601465",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Prometheus",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": cache,\t      \"centre_id\":  centreid,\t      \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\":1 \t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 1920,
+        "wires": [
+            [
+                "66e07710f32c43b8"
+            ]
+        ]
+    },
+    {
+        "id": "66e07710f32c43b8",
+        "type": "prometheus-exporter",
+        "z": "9fcb3dc635318115",
+        "name": "Early",
+        "metric": "3e2a75606bc0774a",
+        "x": 950,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "808c53b19e7bb780",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Early",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "\"early#\" & $substringAfter(hset_data[0], \"data#\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 1240,
+        "wires": [
+            [
+                "f9a458956f14a381"
+            ]
+        ]
+    },
+    {
+        "id": "f9a458956f14a381",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "HGETALL",
+        "name": "HGETALL",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 920,
+        "y": 1240,
+        "wires": [
+            [
+                "83c6714c6c5033d8"
+            ]
+        ]
+    },
+    {
+        "id": "83c6714c6c5033d8",
+        "type": "function",
+        "z": "9fcb3dc635318115",
+        "name": "Reconcile",
+        "func": "const gcList = flow.get(\"gc\") || [];\nconst arr = Array.isArray(msg.payload) ? msg.payload : [];\n\nconst map = {};\nfor (let i = 0; i < arr.length; i += 2) {\n    map[arr[i]] = arr[i + 1];\n}\n\nconst dataKey = msg.hset_data[0];\nconst earlyKey = \"early#\" + dataKey.slice(\"data#\".length);\n\nconst found = gcList.filter(name => Object.prototype.hasOwnProperty.call(map, name));\nconst remaining = gcList.filter(name => !Object.prototype.hasOwnProperty.call(map, name));\n\nconst remainingMsg = { ...msg };\nremainingMsg.gc = remaining;\n\nif (found.length === 0) {\n    return [remainingMsg, null, null, null];\n}\n\nconst hsetArgs = [dataKey];\nfound.forEach(name => {\n    hsetArgs.push(name, map[name]);\n    if (Object.prototype.hasOwnProperty.call(map, name + \":url\")) {\n        hsetArgs.push(name + \":url\", map[name + \":url\"]);\n    }\n});\nconst mergeMsg = { ...msg, topic: hsetArgs, payload: hsetArgs };\n\nconst perCache = found.map(name => {\n    const m = { ...msg };\n    m.cache = name;\n    m.payload = Number(map[name]);\n    delete m.topic;\n    return m;\n});\n\nconst cleanupMsg = { ...msg, topic: earlyKey, payload: earlyKey };\n\nreturn [remainingMsg, mergeMsg, perCache, cleanupMsg];\n",
+        "outputs": 4,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 1240,
+        "wires": [
+            [
+                "fecf26268d94e20b"
+            ],
+            [
+                "51b13013ca8545ec"
+            ],
+            [
+                "dcbea90184b0594c"
+            ],
+            [
+                "6de7bb9946995616"
+            ]
+        ]
+    },
+    {
+        "id": "51b13013ca8545ec",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "HSET",
+        "name": "HSET",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1210,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6de7bb9946995616",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "DEL",
+        "name": "DEL",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1210,
+        "y": 1300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cef2c72c82999154",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Del",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 650,
+        "y": 1300,
+        "wires": [
+            [
+                "808c53b19e7bb780",
+                "669a5db69fdb7581",
+                "9c0a69b57ce5d988",
+                "a93bb330271ec030"
+            ]
+        ]
+    },
+    {
+        "id": "62faa38b6e929de3",
+        "type": "link out",
+        "z": "9fcb3dc635318115",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "f59cb6e2efb0ba64"
+        ],
+        "x": 1435,
+        "y": 1740,
+        "wires": []
+    },
+    {
+        "id": "f59cb6e2efb0ba64",
+        "type": "link in",
+        "z": "9fcb3dc635318115",
+        "name": "link in 4",
+        "links": [
+            "62faa38b6e929de3"
+        ],
+        "x": 275,
+        "y": 1900,
+        "wires": [
+            [
+                "8bca6967b749d074"
+            ]
+        ]
+    },
+    {
+        "id": "669a5db69fdb7581",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Orig",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "orig",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 1280,
+        "wires": [
+            [
+                "d6b953d2c9b27373"
+            ]
+        ]
+    },
+    {
+        "id": "9c0a69b57ce5d988",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "All",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "hset_data",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 1320,
+        "wires": [
+            [
+                "f8a53d2a6ae7d288"
+            ]
+        ]
+    },
+    {
+        "id": "d6b953d2c9b27373",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "SET",
+        "name": "SET",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 910,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f8a53d2a6ae7d288",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "HSET",
+        "name": "HSET",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 910,
+        "y": 1320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fecf26268d94e20b",
+        "type": "split",
+        "z": "9fcb3dc635318115",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "gc",
+        "x": 1210,
+        "y": 1180,
+        "wires": [
+            [
+                "bcc8512c5ce7b36e"
+            ]
+        ]
+    },
+    {
+        "id": "bcc8512c5ce7b36e",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Store",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "[\t   \"scgc#\" & gc & \"#\" & centreid & \"#\" & dataid & \"#\" & pubtime ,\t   $millis(),\t   \"EX\",\t  $flowContext(\"timeout_cache\")\t]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1330,
+        "y": 1180,
+        "wires": [
+            [
+                "d55761a08ee6e3d8"
+            ]
+        ]
+    },
+    {
+        "id": "d55761a08ee6e3d8",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "SET",
+        "name": "SET",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1450,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a93bb330271ec030",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "WNM",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "hset_wnm",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 1360,
+        "wires": [
+            [
+                "f044c7490c8e792d"
+            ]
+        ]
+    },
+    {
+        "id": "f044c7490c8e792d",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "HSET",
+        "name": "HSET",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 910,
+        "y": 1360,
+        "wires": [
+            [
+                "2fc3adac5cab5d9d"
+            ]
+        ]
+    },
+    {
+        "id": "2fc3adac5cab5d9d",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Expire",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "[ hset_wnm[0], 86400 ]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1030,
+        "y": 1360,
+        "wires": [
+            [
+                "47e819a2f896a2be"
+            ]
+        ]
+    },
+    {
+        "id": "47e819a2f896a2be",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "EXPIRE",
+        "name": "EXPIRE",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1160,
+        "y": 1360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dcbea90184b0594c",
+        "type": "link out",
+        "z": "9fcb3dc635318115",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "157fbaa1b6ee931d"
+        ],
+        "x": 1175,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "157fbaa1b6ee931d",
+        "type": "link in",
+        "z": "9fcb3dc635318115",
+        "name": "link in 8",
+        "links": [
+            "dcbea90184b0594c"
+        ],
+        "x": 1315,
+        "y": 1500,
+        "wires": [
+            [
+                "299aa5b44f00a5e0",
+                "662ddb5376824c47",
+                "f9b62a35da0ee834"
             ]
         ]
     }

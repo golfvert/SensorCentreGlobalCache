@@ -511,87 +511,6 @@
         ]
     },
     {
-        "id": "b310c4753946b7db",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Init",
-        "rules": [
-            {
-                "t": "set",
-                "p": "delay1",
-                "pt": "flow",
-                "to": "$number($env(\"CACHE_DELAY_LOW\"))",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "delay2",
-                "pt": "flow",
-                "to": "$number($env(\"CACHE_DELAY_MED\"))",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "timeout_cache",
-                "pt": "flow",
-                "to": "$number($env(\"CACHE_DELAY_MAX\"))",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "timeout_orig",
-                "pt": "flow",
-                "to": "$number($env(\"CACHE_DELAY_MAX\")) + 10",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "flow",
-                "to": "MQTT_TOPIC",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "log",
-                "pt": "flow",
-                "to": "$eval($length($env(\"WNM_LOGGING\")) = 0 ? \"false\" : $env(\"WNM_LOGGING\"))",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "sensorid",
-                "pt": "flow",
-                "to": "SENSOR_CENTRE_ID",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "url",
-                "pt": "flow",
-                "to": "SENSOR_CENTRE_ID_URL",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "gc",
-                "pt": "flow",
-                "to": "$split($env(\"GLOBAL_CACHE\"),\",\")",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 330,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "22e263de01f5f52f",
         "type": "inject",
         "z": "9fcb3dc635318115",
@@ -866,13 +785,13 @@
         "y": 220,
         "wires": [
             [
-                "b310c4753946b7db",
                 "40a77dbbc723fe60",
                 "546305a3f542c340",
                 "ac10d56f38ce5e50",
                 "96c6c93b7eabf39a",
                 "9ff745c3dd5a2d92",
-                "cfb198e0e594ee16"
+                "cfb198e0e594ee16",
+                "f5b56187480483c3"
             ]
         ]
     },
@@ -3934,7 +3853,7 @@
         "pauseAtStartup": false,
         "topicDependent": false,
         "x": 450,
-        "y": 1620,
+        "y": 1660,
         "wires": [
             [],
             [
@@ -3953,7 +3872,7 @@
         "obj": true,
         "timeout": 0,
         "x": 320,
-        "y": 1620,
+        "y": 1660,
         "wires": [
             [
                 "6848aed8fc0576ef"
@@ -3987,7 +3906,7 @@
         "to": "",
         "reg": false,
         "x": 570,
-        "y": 1620,
+        "y": 1660,
         "wires": [
             [
                 "94b8e6879433ceb8"
@@ -4020,7 +3939,7 @@
         "repair": false,
         "outputs": 3,
         "x": 1470,
-        "y": 1540,
+        "y": 1600,
         "wires": [
             [
                 "1d9ee046916c5093"
@@ -4053,7 +3972,7 @@
         "to": "",
         "reg": false,
         "x": 1640,
-        "y": 1500,
+        "y": 1560,
         "wires": [
             [
                 "171c492628d9b58a"
@@ -4123,10 +4042,10 @@
         "to": "",
         "reg": false,
         "x": 870,
-        "y": 1620,
+        "y": 1660,
         "wires": [
             [
-                "e2f544e5d1f6455b"
+                "9ba4a782ac8e84c4"
             ]
         ]
     },
@@ -4156,7 +4075,7 @@
         "to": "",
         "reg": false,
         "x": 1470,
-        "y": 1660,
+        "y": 1720,
         "wires": [
             [
                 "1cdbb9cdb172d888"
@@ -4182,7 +4101,7 @@
         "repair": false,
         "outputs": 2,
         "x": 1260,
-        "y": 1620,
+        "y": 1660,
         "wires": [
             [
                 "9220ddbcf828c9e8",
@@ -4217,7 +4136,7 @@
         "to": "",
         "reg": false,
         "x": 1640,
-        "y": 1540,
+        "y": 1600,
         "wires": [
             [
                 "171c492628d9b58a"
@@ -4244,7 +4163,7 @@
         "to": "",
         "reg": false,
         "x": 1640,
-        "y": 1580,
+        "y": 1640,
         "wires": [
             [
                 "171c492628d9b58a"
@@ -4269,7 +4188,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 655,
-        "y": 1620,
+        "y": 1660,
         "wires": [
             [
                 "096102aedaba66a8"
@@ -4285,17 +4204,10 @@
         "rules": [
             {
                 "t": "set",
-                "p": "hset",
-                "pt": "msg",
-                "to": "$append(msg.hset, [   msg.cache & \":url\",   msg.url ])",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
                 "p": "topic",
                 "pt": "msg",
-                "to": "hset",
-                "tot": "msg"
+                "to": "$append(hset, [   cache & \":url\",   url ])",
+                "tot": "jsonata"
             },
             {
                 "t": "delete",
@@ -4309,7 +4221,7 @@
         "to": "",
         "reg": false,
         "x": 1470,
-        "y": 1620,
+        "y": 1680,
         "wires": [
             [
                 "68a901019451b22a"
@@ -4329,7 +4241,7 @@
         "payloadType": "json",
         "block": false,
         "x": 1600,
-        "y": 1660,
+        "y": 1720,
         "wires": [
             []
         ]
@@ -4347,7 +4259,7 @@
         "payloadType": "json",
         "block": false,
         "x": 1120,
-        "y": 1620,
+        "y": 1660,
         "wires": [
             [
                 "1bb29eabe5e41ef7"
@@ -4367,7 +4279,7 @@
         "payloadType": "json",
         "block": false,
         "x": 1610,
-        "y": 1620,
+        "y": 1680,
         "wires": [
             []
         ]
@@ -4379,7 +4291,7 @@
         "name": "Delay",
         "metric": "a7877619083a1ee3",
         "x": 1630,
-        "y": 1420,
+        "y": 1480,
         "wires": []
     },
     {
@@ -4389,7 +4301,7 @@
         "name": "Threshold",
         "metric": "5ff96cf14749d4c6",
         "x": 1820,
-        "y": 1540,
+        "y": 1600,
         "wires": []
     },
     {
@@ -4497,7 +4409,7 @@
             "21c28195bdcee16d"
         ],
         "x": 1435,
-        "y": 1700,
+        "y": 1760,
         "wires": []
     },
     {
@@ -4600,7 +4512,7 @@
         "repair": false,
         "outputs": 1,
         "x": 750,
-        "y": 1620,
+        "y": 1660,
         "wires": [
             [
                 "1b78be8146d340c5"
@@ -4884,35 +4796,6 @@
         ]
     },
     {
-        "id": "e2f544e5d1f6455b",
-        "type": "function",
-        "z": "9fcb3dc635318115",
-        "name": "200 ?",
-        "func": "const link = (msg.cache_links || []).find(l => l.rel === 'canonical' || l.rel === 'update');\nconst url = link ? link.href : null;\n\nif (!url) {\n    // No URL → stop flow\n    return null;\n}\n\nmsg.statusCode = 200;\nmsg.rel = link.rel;   // 'canonical' or 'update'\nmsg.url = url;\n\nreturn msg;;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "http",
-                "module": "http"
-            },
-            {
-                "var": "https",
-                "module": "https"
-            }
-        ],
-        "x": 990,
-        "y": 1620,
-        "wires": [
-            [
-                "efc9758439cc50e8"
-            ]
-        ]
-    },
-    {
         "id": "9743a79a96fdefbc",
         "type": "switch",
         "z": "9fcb3dc635318115",
@@ -4931,7 +4814,7 @@
         "repair": false,
         "outputs": 2,
         "x": 1190,
-        "y": 2140,
+        "y": 2120,
         "wires": [
             [
                 "3d2d7f0f1534dbae"
@@ -4946,7 +4829,7 @@
         "type": "function",
         "z": "9fcb3dc635318115",
         "name": "M & S",
-        "func": "const keys = flow.get(\"gc\");\nconst mixed = msg.payload;\nconst centreid = msg.centreid;\n\nlet complete = true;\nmsg.sampled = false;\n\n// Convert mixed array to key-value map\nconst resultMap = {};\nfor (let i = 0; i < mixed.length; i += 2) {\n    resultMap[mixed[i]] = mixed[i + 1];\n}\n\n// Add missing keys with value 9999999999999\nkeys.forEach(key => {\n    if (!(key in resultMap)) {\n        resultMap[key] = \"9999999999999\";\n        complete = false;\n    }\n});\n\n// Add centre-id\nresultMap[\"centre-id\"] = centreid;\n\n// Parse wnm\nconst parsedWnm = JSON.parse(resultMap[\"wnm\"]);\nresultMap[\"wnm\"] = parsedWnm;\n\nObject.freeze(parsedWnm);\nObject.freeze(resultMap);\n\nmsg.payload = resultMap;\n\n// Always maintain the rate limit window\nconst now = Date.now();\nconst current1min = Math.floor(now / 60000);\nlet periodCount = flow.get(\"samplePeriodCount\") || 0;\nlet periodSlot = flow.get(\"samplePeriodSlot\") || 0;\n\nif (current1min !== periodSlot) {\n    periodCount = 0;\n    flow.set(\"samplePeriodSlot\", current1min);\n    flow.set(\"samplePeriodCount\", periodCount);\n}\n\nif (complete) {\n    const integrity = parsedWnm?.properties?.integrity;\n    const canonicalLink = parsedWnm?.links?.find(\n        link => link.rel === \"canonical\" && link.length != null\n    );\n\n    if (periodCount < 5 && integrity?.method && integrity?.value && canonicalLink && canonicalLink.length <= 20000) {\n        msg.method = integrity.method;\n        msg.value = integrity.value;\n        msg.originlink = canonicalLink;\n        msg.sampled = true;\n        flow.set(\"samplePeriodCount\", periodCount + 1);\n    }\n}\n\nreturn msg;",
+        "func": "const keys = flow.get(\"gc\") || [];\nconst testKeys = flow.get(\"gc_test\") || [];\nconst mixed = msg.payload;\nconst centreid = msg.centreid;\n\nlet complete = true;\nmsg.sampled = false;\n\n// Convert mixed array to key-value map\nconst resultMap = {};\nfor (let i = 0; i < mixed.length; i += 2) {\n    resultMap[mixed[i]] = mixed[i + 1];\n}\n\n// Add missing keys with value 9999999999999\n// Test GCs are still recorded (for Download / metrics) but don't block completeness.\nkeys.forEach(key => {\n    if (!(key in resultMap)) {\n        resultMap[key] = \"9999999999999\";\n        if (!testKeys.includes(key)) {\n            complete = false;\n        }\n    }\n});\n\n// Add centre-id\nresultMap[\"centre-id\"] = centreid;\n\n// Parse wnm\nconst parsedWnm = JSON.parse(resultMap[\"wnm\"]);\nresultMap[\"wnm\"] = parsedWnm;\n\nObject.freeze(parsedWnm);\nObject.freeze(resultMap);\n\nmsg.payload = resultMap;\n\n// Always maintain the rate limit window\nconst now = Date.now();\nconst current1min = Math.floor(now / 60000);\nlet periodCount = flow.get(\"samplePeriodCount\") || 0;\nlet periodSlot = flow.get(\"samplePeriodSlot\") || 0;\n\nif (current1min !== periodSlot) {\n    periodCount = 0;\n    flow.set(\"samplePeriodSlot\", current1min);\n    flow.set(\"samplePeriodCount\", periodCount);\n}\n\nif (complete) {\n    const integrity = parsedWnm?.properties?.integrity;\n    const canonicalLink = parsedWnm?.links?.find(\n        link => link.rel === \"canonical\" && link.length != null\n    );\n\n    if (periodCount < 5 && integrity?.method && integrity?.value && canonicalLink && canonicalLink.length <= 20000) {\n        msg.method = integrity.method;\n        msg.value = integrity.value;\n        msg.originlink = canonicalLink;\n        msg.sampled = true;\n        flow.set(\"samplePeriodCount\", periodCount + 1);\n    }\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -4959,7 +4842,7 @@
             }
         ],
         "x": 1050,
-        "y": 2140,
+        "y": 2120,
         "wires": [
             [
                 "9743a79a96fdefbc"
@@ -4976,7 +4859,7 @@
             "c69a0969bac5aaf1"
         ],
         "x": 1360,
-        "y": 2120,
+        "y": 2100,
         "wires": [],
         "l": true
     },
@@ -5002,7 +4885,7 @@
         "type": "function",
         "z": "9fcb3dc635318115",
         "name": "Download",
-        "func": "const MAX_RETRIES = 3;\nconst RETRY_DELAY_MS = 1000;\n\nconst payload = msg.payload;\n\nconst urlEntries = Object.entries(payload)\n    .filter(([key]) => key.endsWith(\":url\"))\n    .map(([key, url]) => ({ cacheName: key.replace(/:url$/, \"\"), url }));\n\nasync function sleep(ms) {\n    return new Promise(resolve => setTimeout(resolve, ms));\n}\n\nasync function downloadAndHash(url) {\n    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {\n        try {\n            const result = await new Promise((resolve, reject) => {\n                const lib = url.startsWith(\"https\") ? https : http;\n                const req = lib.get(url, (res) => {\n                    if (res.statusCode < 200 || res.statusCode >= 300) {\n                        res.resume();\n                        return reject(new Error(`HTTP ${res.statusCode}`));\n                    }\n                    res.setTimeout(20000, () => res.destroy(new Error(\"Response body timeout\")));\n                    const chunks = [];\n                    res.on(\"data\", chunk => chunks.push(chunk));\n                    res.on(\"end\", () => resolve(Buffer.concat(chunks)));\n                    res.on(\"error\", reject);\n                });\n                req.setTimeout(20000, () => req.destroy(new Error(\"Connection timeout\")));\n                req.on(\"error\", reject);\n            });\n            return crypto.createHash(msg.method).update(result).digest(\"base64\");\n        } catch (err) {\n            if (attempt < MAX_RETRIES) await sleep(RETRY_DELAY_MS);\n        }\n    }\n    return null;\n}\n\n(async () => {\n    const sensorid = flow.get(\"sensorid\");\n\n    const results = await Promise.allSettled(urlEntries.map(async ({ cacheName, url }) => {\n        const hash = await downloadAndHash(url);\n        if (hash === null) return { cacheName, url, match: false, downloaded: false };\n        return { cacheName, url, match: hash === msg.value, downloaded: true };\n    }));\n\n    const sample = {};\n\n    results.forEach((result, i) => {\n        if (result.status === \"fulfilled\" && result.value !== null) {\n            const { cacheName, match, downloaded } = result.value;\n\n            sample[cacheName] = downloaded ? 1 : 0;\n\n            if (downloaded) {\n                node.send([{\n                    ...msg,\n                    payload: {\n                        op: \"inc\",\n                        labels: {\n                            global_cache: cacheName,\n                            report_by: sensorid\n                        },\n                        val: 1\n                    }\n                }, null]);\n            }\n        }\n    });\n\n    node.send([null, {\n        ...msg,\n        payload: msg.payload,\n        sample\n    }]);\n})();\n\nreturn null;",
+        "func": "const MAX_RETRIES = 3;\nconst RETRY_DELAY_MS = 1000;\n\nconst payload = msg.payload;\n\nconst urlEntries = Object.entries(payload)\n    .filter(([key]) => key.endsWith(\":url\"))\n    .map(([key, url]) => ({ cacheName: key.replace(/:url$/, \"\"), url }));\n\nif (!msg.method || !msg.value) {\n    return null;\n}\n\nasync function sleep(ms) {\n    return new Promise(resolve => setTimeout(resolve, ms));\n}\n\n// Bypass libuv's threadpool for DNS - dns.resolve4 uses c-ares (async I/O)\n// instead of the 4-thread pool that dns.lookup() (and fs.*) shares.\nfunction fastLookup(hostname, options, callback) {\n    if (typeof options === \"function\") {\n        callback = options;\n        options = {};\n    }\n    dns.resolve4(hostname, (err, addresses) => {\n        if (err || !addresses || addresses.length === 0) {\n            return dns.lookup(hostname, options, callback);\n        }\n        callback(null, addresses[0], 4);\n    });\n}\n\nasync function downloadAndHash(url) {\n    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {\n        try {\n            const result = await new Promise((resolve, reject) => {\n                let settled = false;\n                let req;\n\n                const timer = setTimeout(() => {\n                    if (settled) return;\n                    settled = true;\n                    if (req) req.destroy(new Error(\"Timed out after 15000ms\"));\n                    reject(new Error(\"Timed out after 15000ms\"));\n                }, 15000);\n\n                const lib = url.startsWith(\"https\") ? https : http;\n\n                req = lib.get(url, {\n                    family: 4,\n                    lookup: fastLookup,\n                    headers: { \"User-Agent\": \"wis2-sensor/1.0\" }\n                }, (res) => {\n                    if (settled) return;\n\n                    if (res.statusCode < 200 || res.statusCode >= 300) {\n                        res.resume();\n                        settled = true;\n                        clearTimeout(timer);\n                        return reject(new Error(`HTTP ${res.statusCode}`));\n                    }\n\n                    const chunks = [];\n                    res.on(\"data\", chunk => chunks.push(chunk));\n                    res.on(\"end\", () => {\n                        if (settled) return;\n                        settled = true;\n                        clearTimeout(timer);\n                        resolve(Buffer.concat(chunks));\n                    });\n                    res.on(\"error\", (err) => {\n                        if (settled) return;\n                        settled = true;\n                        clearTimeout(timer);\n                        reject(err);\n                    });\n                });\n\n                req.on(\"error\", (err) => {\n                    if (settled) return;\n                    settled = true;\n                    clearTimeout(timer);\n                    reject(err);\n                });\n            });\n            return crypto.createHash(msg.method).update(result).digest(\"base64\");\n        } catch (err) {\n            if (attempt < MAX_RETRIES) await sleep(RETRY_DELAY_MS);\n        }\n    }\n    return null;\n}\n\n(async () => {\n    const sensorid = flow.get(\"sensorid\");\n\n    const results = await Promise.allSettled(urlEntries.map(async ({ cacheName, url }) => {\n        const hash = await downloadAndHash(url);\n        if (hash === null) return { cacheName, url, match: false, downloaded: false };\n        return { cacheName, url, match: hash === msg.value, downloaded: true };\n    }));\n\n    const sample = {};\n\n    results.forEach((result, i) => {\n        if (result.status === \"fulfilled\" && result.value !== null) {\n            const { cacheName, match, downloaded } = result.value;\n\n            sample[cacheName] = downloaded ? 1 : 0;\n\n            node.send([{\n                ...msg,\n                payload: {\n                    op: \"inc\",\n                    labels: {\n                        global_cache: cacheName,\n                        report_by: sensorid\n                    },\n                    val: downloaded ? 1 : 0\n                }\n            }, null]);\n        }\n    });\n\n    node.send([null, {\n        ...msg,\n        payload: msg.payload,\n        sample\n    }]);\n})();\n\nreturn null;",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -5020,6 +4903,10 @@
             {
                 "var": "crypto",
                 "module": "crypto"
+            },
+            {
+                "var": "dns",
+                "module": "dns"
             }
         ],
         "x": 520,
@@ -5090,7 +4977,7 @@
             "6020dbf2b220391b"
         ],
         "x": 1350,
-        "y": 2160,
+        "y": 2140,
         "wires": [],
         "l": true
     },
@@ -5319,7 +5206,7 @@
         "to": "",
         "reg": false,
         "x": 1490,
-        "y": 1460,
+        "y": 1520,
         "wires": [
             [
                 "fd99a6a3ee832f09"
@@ -5333,7 +5220,7 @@
         "name": "Cached",
         "metric": "cefbe83260ed4899",
         "x": 1640,
-        "y": 1460,
+        "y": 1520,
         "wires": []
     },
     {
@@ -5356,7 +5243,7 @@
         "to": "",
         "reg": false,
         "x": 1490,
-        "y": 1420,
+        "y": 1480,
         "wires": [
             [
                 "06c3f4227bfc40f4"
@@ -6062,374 +5949,6 @@
         ]
     },
     {
-        "id": "76a4014a36c950a0",
-        "type": "redis-command",
-        "z": "9fcb3dc635318115",
-        "server": "bd6837434fd7b3cb",
-        "command": "HGETALL",
-        "name": "HGETALL",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 500,
-        "y": 1900,
-        "wires": [
-            [
-                "34ad05bbb1d11f34"
-            ]
-        ]
-    },
-    {
-        "id": "34ad05bbb1d11f34",
-        "type": "switch",
-        "z": "9fcb3dc635318115",
-        "name": "Seen?",
-        "property": "$count(payload)",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "0",
-                "vt": "num"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 630,
-        "y": 1900,
-        "wires": [
-            [
-                "8a298e65be0fa0a1",
-                "9a37e9f2ff601465"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "8a298e65be0fa0a1",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Early",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "[ \"early#\" & $substringAfter(hset[0], \"data#\"), cache, $millis(), cache & \":url\", ($exists(url) ? url : \"\") ]",
-                "tot": "jsonata"
-            },
-            {
-                "t": "delete",
-                "p": "payload",
-                "pt": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 770,
-        "y": 1880,
-        "wires": [
-            [
-                "21b055563588de51"
-            ]
-        ]
-    },
-    {
-        "id": "21b055563588de51",
-        "type": "redis-command",
-        "z": "9fcb3dc635318115",
-        "server": "bd6837434fd7b3cb",
-        "command": "HSET",
-        "name": "HSET",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 890,
-        "y": 1880,
-        "wires": [
-            [
-                "e715acf9f8d8219a"
-            ]
-        ]
-    },
-    {
-        "id": "e715acf9f8d8219a",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Expire",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "[ \"early#\" & $substringAfter(hset[0], \"data#\"), $flowContext(\"timeout_orig\") ]",
-                "tot": "jsonata"
-            },
-            {
-                "t": "delete",
-                "p": "payload",
-                "pt": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1010,
-        "y": 1880,
-        "wires": [
-            [
-                "d40ace1457c08ede"
-            ]
-        ]
-    },
-    {
-        "id": "d40ace1457c08ede",
-        "type": "redis-command",
-        "z": "9fcb3dc635318115",
-        "server": "bd6837434fd7b3cb",
-        "command": "EXPIRE",
-        "name": "EXPIRE",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 1140,
-        "y": 1880,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9a37e9f2ff601465",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Prometheus",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": cache,\t      \"centre_id\":  centreid,\t      \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\":1 \t}",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 790,
-        "y": 1920,
-        "wires": [
-            [
-                "66e07710f32c43b8"
-            ]
-        ]
-    },
-    {
-        "id": "66e07710f32c43b8",
-        "type": "prometheus-exporter",
-        "z": "9fcb3dc635318115",
-        "name": "Early",
-        "metric": "3e2a75606bc0774a",
-        "x": 930,
-        "y": 1920,
-        "wires": []
-    },
-    {
-        "id": "808c53b19e7bb780",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Early",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "\"early#\" & $substringAfter(hset_data[0], \"data#\")",
-                "tot": "jsonata"
-            },
-            {
-                "t": "delete",
-                "p": "payload",
-                "pt": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 790,
-        "y": 1240,
-        "wires": [
-            [
-                "f9a458956f14a381"
-            ]
-        ]
-    },
-    {
-        "id": "f9a458956f14a381",
-        "type": "redis-command",
-        "z": "9fcb3dc635318115",
-        "server": "bd6837434fd7b3cb",
-        "command": "HGETALL",
-        "name": "HGETALL",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 920,
-        "y": 1240,
-        "wires": [
-            [
-                "83c6714c6c5033d8"
-            ]
-        ]
-    },
-    {
-        "id": "83c6714c6c5033d8",
-        "type": "function",
-        "z": "9fcb3dc635318115",
-        "name": "Reconcile",
-        "func": "const gcList = flow.get(\"gc\") || [];\nconst arr = Array.isArray(msg.payload) ? msg.payload : [];\n\nconst map = {};\nfor (let i = 0; i < arr.length; i += 2) {\n    map[arr[i]] = arr[i + 1];\n}\n\nconst dataKey = msg.hset_data[0];\nconst earlyKey = \"early#\" + dataKey.slice(\"data#\".length);\n\nconst found = gcList.filter(name => Object.prototype.hasOwnProperty.call(map, name));\nconst remaining = gcList.filter(name => !Object.prototype.hasOwnProperty.call(map, name));\n\nconst remainingMsg = { ...msg };\nremainingMsg.gc = remaining;\n\nif (found.length === 0) {\n    return [remainingMsg, null, null, null];\n}\n\nconst hsetArgs = [dataKey];\nfound.forEach(name => {\n    hsetArgs.push(name, map[name]);\n    if (Object.prototype.hasOwnProperty.call(map, name + \":url\")) {\n        hsetArgs.push(name + \":url\", map[name + \":url\"]);\n    }\n});\nconst mergeMsg = { ...msg, topic: hsetArgs, payload: hsetArgs };\n\nconst perCache = found.map(name => {\n    const m = { ...msg };\n    m.cache = name;\n    m.payload = Number(map[name]);\n    delete m.topic;\n    return m;\n});\n\nconst cleanupMsg = { ...msg, topic: earlyKey, payload: earlyKey };\n\nreturn [remainingMsg, mergeMsg, perCache, cleanupMsg];\n",
-        "outputs": 4,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1060,
-        "y": 1240,
-        "wires": [
-            [
-                "fecf26268d94e20b"
-            ],
-            [
-                "51b13013ca8545ec"
-            ],
-            [
-                "dcbea90184b0594c"
-            ],
-            [
-                "6de7bb9946995616"
-            ]
-        ]
-    },
-    {
-        "id": "51b13013ca8545ec",
-        "type": "redis-command",
-        "z": "9fcb3dc635318115",
-        "server": "bd6837434fd7b3cb",
-        "command": "HSET",
-        "name": "HSET",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 1210,
-        "y": 1220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6de7bb9946995616",
-        "type": "redis-command",
-        "z": "9fcb3dc635318115",
-        "server": "bd6837434fd7b3cb",
-        "command": "DEL",
-        "name": "DEL",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 1210,
-        "y": 1300,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "cef2c72c82999154",
-        "type": "change",
-        "z": "9fcb3dc635318115",
-        "name": "Del",
-        "rules": [
-            {
-                "t": "delete",
-                "p": "topic",
-                "pt": "msg"
-            },
-            {
-                "t": "delete",
-                "p": "payload",
-                "pt": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 650,
-        "y": 1300,
-        "wires": [
-            [
-                "808c53b19e7bb780",
-                "669a5db69fdb7581",
-                "9c0a69b57ce5d988",
-                "a93bb330271ec030"
-            ]
-        ]
-    },
-    {
-        "id": "62faa38b6e929de3",
-        "type": "link out",
-        "z": "9fcb3dc635318115",
-        "name": "link out 2",
-        "mode": "link",
-        "links": [
-            "f59cb6e2efb0ba64"
-        ],
-        "x": 1435,
-        "y": 1740,
-        "wires": []
-    },
-    {
-        "id": "f59cb6e2efb0ba64",
-        "type": "link in",
-        "z": "9fcb3dc635318115",
-        "name": "link in 4",
-        "links": [
-            "62faa38b6e929de3"
-        ],
-        "x": 275,
-        "y": 1900,
-        "wires": [
-            [
-                "d9ccba363ddb5d4a"
-            ]
-        ]
-    },
-    {
         "id": "669a5db69fdb7581",
         "type": "change",
         "z": "9fcb3dc635318115",
@@ -6677,6 +6196,374 @@
         ]
     },
     {
+        "id": "76a4014a36c950a0",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "HGETALL",
+        "name": "HGETALL",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 500,
+        "y": 1900,
+        "wires": [
+            [
+                "34ad05bbb1d11f34"
+            ]
+        ]
+    },
+    {
+        "id": "34ad05bbb1d11f34",
+        "type": "switch",
+        "z": "9fcb3dc635318115",
+        "name": "Seen?",
+        "property": "$count(payload)",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 630,
+        "y": 1900,
+        "wires": [
+            [
+                "8a298e65be0fa0a1",
+                "9a37e9f2ff601465"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8a298e65be0fa0a1",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Early",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "[ \"early#\" & $substringAfter(hset[0], \"data#\"), cache, $millis(), cache & \":url\", ($exists(url) ? url : \"\") ]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 770,
+        "y": 1880,
+        "wires": [
+            [
+                "21b055563588de51"
+            ]
+        ]
+    },
+    {
+        "id": "21b055563588de51",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "HSET",
+        "name": "HSET",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 890,
+        "y": 1880,
+        "wires": [
+            [
+                "e715acf9f8d8219a"
+            ]
+        ]
+    },
+    {
+        "id": "e715acf9f8d8219a",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Expire",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "[ \"early#\" & $substringAfter(hset[0], \"data#\"), $flowContext(\"timeout_orig\") ]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1010,
+        "y": 1880,
+        "wires": [
+            [
+                "d40ace1457c08ede"
+            ]
+        ]
+    },
+    {
+        "id": "d40ace1457c08ede",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "EXPIRE",
+        "name": "EXPIRE",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1140,
+        "y": 1880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9a37e9f2ff601465",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Prometheus",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": cache,\t      \"centre_id\":  centreid,\t      \"report_by\": $flowContext(\"sensorid\")\t   },\t   \"val\":1 \t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 1920,
+        "wires": [
+            [
+                "66e07710f32c43b8"
+            ]
+        ]
+    },
+    {
+        "id": "66e07710f32c43b8",
+        "type": "prometheus-exporter",
+        "z": "9fcb3dc635318115",
+        "name": "Early",
+        "metric": "3e2a75606bc0774a",
+        "x": 930,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "808c53b19e7bb780",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Early",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "\"early#\" & $substringAfter(hset_data[0], \"data#\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 1240,
+        "wires": [
+            [
+                "f9a458956f14a381"
+            ]
+        ]
+    },
+    {
+        "id": "f9a458956f14a381",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "HGETALL",
+        "name": "HGETALL",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 920,
+        "y": 1240,
+        "wires": [
+            [
+                "83c6714c6c5033d8"
+            ]
+        ]
+    },
+    {
+        "id": "83c6714c6c5033d8",
+        "type": "function",
+        "z": "9fcb3dc635318115",
+        "name": "Reconcile",
+        "func": "const gcList = flow.get(\"gc\") || [];\nconst arr = Array.isArray(msg.payload) ? msg.payload : [];\n\nconst map = {};\nfor (let i = 0; i < arr.length; i += 2) {\n    map[arr[i]] = arr[i + 1];\n}\n\nconst dataKey = msg.hset_data[0];\nconst earlyKey = \"early#\" + dataKey.slice(\"data#\".length);\n\nconst found = gcList.filter(name => Object.prototype.hasOwnProperty.call(map, name));\nconst remaining = gcList.filter(name => !Object.prototype.hasOwnProperty.call(map, name));\n\n// Output 1: caches still needing a scgc# placeholder. payload must NOT\n// carry over the stale HGETALL result into the downstream SET.\nconst remainingMsg = { ...msg };\nremainingMsg.gc = remaining;\ndelete remainingMsg.payload;\n\nif (found.length === 0) {\n    return [remainingMsg, null, null, null];\n}\n\n// Output 2: merge the early confirmations into the data# hash.\n// topic carries the HSET args; payload must be absent, not duplicated.\nconst hsetArgs = [dataKey];\nfound.forEach(name => {\n    hsetArgs.push(name, map[name]);\n    if (Object.prototype.hasOwnProperty.call(map, name + \":url\")) {\n        hsetArgs.push(name + \":url\", map[name + \":url\"]);\n    }\n});\nconst mergeMsg = { ...msg, topic: hsetArgs };\ndelete mergeMsg.payload;\n\n// Output 3: one message per reconciled cache - payload IS the timestamp\n// here, on purpose, read directly by the delay/metric nodes downstream.\nconst perCache = found.map(name => {\n    const m = { ...msg };\n    m.cache = name;\n    m.payload = Number(map[name]);\n    delete m.topic;\n    return m;\n});\n\n// Output 4: clean up the early# hash - topic only, no payload.\nconst cleanupMsg = { ...msg, topic: earlyKey };\ndelete cleanupMsg.payload;\n\nreturn [remainingMsg, mergeMsg, perCache, cleanupMsg];",
+        "outputs": 4,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 1240,
+        "wires": [
+            [
+                "fecf26268d94e20b"
+            ],
+            [
+                "51b13013ca8545ec"
+            ],
+            [
+                "dcbea90184b0594c"
+            ],
+            [
+                "6de7bb9946995616"
+            ]
+        ]
+    },
+    {
+        "id": "51b13013ca8545ec",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "HSET",
+        "name": "HSET",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1210,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6de7bb9946995616",
+        "type": "redis-command",
+        "z": "9fcb3dc635318115",
+        "server": "bd6837434fd7b3cb",
+        "command": "DEL",
+        "name": "DEL",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 1210,
+        "y": 1300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cef2c72c82999154",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Del",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 650,
+        "y": 1300,
+        "wires": [
+            [
+                "808c53b19e7bb780",
+                "669a5db69fdb7581",
+                "9c0a69b57ce5d988",
+                "a93bb330271ec030"
+            ]
+        ]
+    },
+    {
+        "id": "62faa38b6e929de3",
+        "type": "link out",
+        "z": "9fcb3dc635318115",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "f59cb6e2efb0ba64"
+        ],
+        "x": 1435,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "f59cb6e2efb0ba64",
+        "type": "link in",
+        "z": "9fcb3dc635318115",
+        "name": "link in 4",
+        "links": [
+            "62faa38b6e929de3"
+        ],
+        "x": 275,
+        "y": 1900,
+        "wires": [
+            [
+                "d9ccba363ddb5d4a"
+            ]
+        ]
+    },
+    {
         "id": "dcbea90184b0594c",
         "type": "link out",
         "z": "9fcb3dc635318115",
@@ -6697,8 +6584,8 @@
         "links": [
             "dcbea90184b0594c"
         ],
-        "x": 1315,
-        "y": 1500,
+        "x": 1305,
+        "y": 1580,
         "wires": [
             [
                 "299aa5b44f00a5e0",
@@ -6744,7 +6631,7 @@
         "type": "function",
         "z": "9fcb3dc635318115",
         "name": "200 ?",
-        "func": "const link = (msg.cache_links || []).find(l => l.rel === 'canonical' || l.rel === 'update');\nconst url = link ? link.href : null;\n\nif (!url) {\n    // No URL → stop flow\n    return null;\n}\n\nreturn new Promise((resolve, reject) => {\n    const client = url.startsWith(\"https\") ? https : http;\n    let settled = false;\n\n    const req = client.request(url, { method: \"HEAD\", timeout: 10000 }, (res) => {\n        if (settled) return;\n        const code = res.statusCode;\n\n        if (code !== 200) {\n            // ❌ Not 200 → stop flow\n            settled = true;\n            resolve(null);\n            return;\n        }\n\n        // ✔ 200 → continue\n        settled = true;\n        msg.statusCode = code;\n        msg.url = url;\n        msg.rel = link.rel;   // 'canonical' or 'update'\n        resolve(msg);\n    });\n\n    req.on(\"timeout\", () => {\n        // ⏱ No response within 10s → mark as 404, stop flow\n        if (settled) return;\n        settled = true;\n        req.destroy();\n        msg.statusCode = 404;\n        resolve(null);\n    });\n\n    req.on(\"error\", (err) => {\n        // ❌ Error → stop flow\n        if (settled) return;\n        settled = true;\n        resolve(null);\n    });\n\n    req.end();\n});",
+        "func": "const gcTest = flow.get(\"gc_test\") || [];\nif (gcTest.includes(msg.cache)) {\n    // Test caches are never actually reachability-checked - always pass through.\n    msg.statusCode = 200;\n    return msg;\n}\n\nconst link = (msg.cache_links || []).find(l => l.rel === 'canonical' || l.rel === 'update');\nconst url = link ? link.href : null;\n\nif (!url) {\n    // No URL → stop flow\n    return null;\n}\n\n// Bypass libuv's threadpool for DNS - dns.resolve4 uses c-ares (async I/O)\n// instead of the 4-thread pool that dns.lookup() (and fs.*) shares.\nfunction fastLookup(hostname, options, callback) {\n    if (typeof options === \"function\") {\n        callback = options;\n        options = {};\n    }\n    dns.resolve4(hostname, (err, addresses) => {\n        if (err || !addresses || addresses.length === 0) {\n            return dns.lookup(hostname, options, callback);\n        }\n        callback(null, addresses[0], 4);\n    });\n}\n\nreturn new Promise((resolve, reject) => {\n    const client = url.startsWith(\"https\") ? https : http;\n    let settled = false;\n\n    const req = client.request(url, {\n        method: \"HEAD\",\n        timeout: 10000,\n        family: 4,\n        lookup: fastLookup\n    }, (res) => {\n        if (settled) return;\n        const code = res.statusCode;\n\n        if (code !== 200) {\n            // ❌ Not 200 → stop flow\n            settled = true;\n            resolve(null);\n            return;\n        }\n\n        // ✔ 200 → continue\n        settled = true;\n        msg.statusCode = code;\n        msg.url = url;\n        msg.rel = link.rel;   // 'canonical' or 'update'\n        resolve(msg);\n    });\n\n    req.on(\"timeout\", () => {\n        // ⏱ No response within 10s → mark as 404, stop flow\n        if (settled) return;\n        settled = true;\n        req.destroy();\n        msg.statusCode = 404;\n        resolve(null);\n    });\n\n    req.on(\"error\", (err) => {\n        // ❌ Error → stop flow\n        if (settled) return;\n        settled = true;\n        resolve(null);\n    });\n\n    req.end();\n});",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -6758,10 +6645,104 @@
             {
                 "var": "https",
                 "module": "https"
+            },
+            {
+                "var": "dns",
+                "module": "dns"
             }
         ],
         "x": 990,
-        "y": 1560,
+        "y": 1660,
+        "wires": [
+            [
+                "efc9758439cc50e8"
+            ]
+        ]
+    },
+    {
+        "id": "f5b56187480483c3",
+        "type": "change",
+        "z": "9fcb3dc635318115",
+        "name": "Init",
+        "rules": [
+            {
+                "t": "set",
+                "p": "delay1",
+                "pt": "flow",
+                "to": "$number($env(\"CACHE_DELAY_LOW\"))",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "delay2",
+                "pt": "flow",
+                "to": "$number($env(\"CACHE_DELAY_MED\"))",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "timeout_cache",
+                "pt": "flow",
+                "to": "$number($env(\"CACHE_DELAY_MAX\"))",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "timeout_orig",
+                "pt": "flow",
+                "to": "$number($env(\"CACHE_DELAY_MAX\")) + 10",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "flow",
+                "to": "MQTT_TOPIC",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "log",
+                "pt": "flow",
+                "to": "$eval($length($env(\"WNM_LOGGING\")) = 0 ? \"false\" : $env(\"WNM_LOGGING\"))",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "sensorid",
+                "pt": "flow",
+                "to": "SENSOR_CENTRE_ID",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "flow",
+                "to": "SENSOR_CENTRE_ID_URL",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "gc_test",
+                "pt": "flow",
+                "to": "$length($env(\"GLOBAL_CACHE_TEST\")) = 0 ? [] : $split($env(\"GLOBAL_CACHE_TEST\"),\",\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "gc",
+                "pt": "flow",
+                "to": "$distinct($append($split($env(\"GLOBAL_CACHE\"),\",\"), $flowContext(\"gc_test\")))",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 120,
         "wires": [
             []
         ]

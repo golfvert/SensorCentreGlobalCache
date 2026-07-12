@@ -277,7 +277,7 @@
         "type": "prometheus-metric-config",
         "name": "wmo_wis2_scgc_messages_cached_total",
         "help": "Number of data files cached for centre_id",
-        "labels": "global_cache,centre_id,report_by,rel",
+        "labels": "global_cache,centre_id,report_by,rel,status",
         "mtype": "counter"
     },
     {
@@ -921,7 +921,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1070,
+        "x": 950,
         "y": 440,
         "wires": [
             [],
@@ -947,7 +947,7 @@
         "y": 440,
         "wires": [
             [
-                "2d4daa951d924bcf"
+                "d25b573528bf41dd"
             ]
         ]
     },
@@ -1077,26 +1077,6 @@
         "wires": [
             [
                 "9b9c3b87553ee4b5"
-            ]
-        ]
-    },
-    {
-        "id": "2d4daa951d924bcf",
-        "type": "rbe",
-        "z": "9fcb3dc635318115",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 910,
-        "y": 440,
-        "wires": [
-            [
-                "d25b573528bf41dd"
             ]
         ]
     },
@@ -1465,7 +1445,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1730,
+        "x": 1610,
         "y": 440,
         "wires": [
             []
@@ -1495,7 +1475,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1600,
+        "x": 1480,
         "y": 440,
         "wires": [
             [
@@ -1629,7 +1609,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1130,
+        "x": 1010,
         "y": 500,
         "wires": [
             [],
@@ -1660,26 +1640,6 @@
         ]
     },
     {
-        "id": "007578fcc8005f1a",
-        "type": "rbe",
-        "z": "9fcb3dc635318115",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 970,
-        "y": 500,
-        "wires": [
-            [
-                "bf7a987450cb06f7"
-            ]
-        ]
-    },
-    {
         "id": "7157bb2dd11e8234",
         "type": "redis-command",
         "z": "9fcb3dc635318115",
@@ -1691,7 +1651,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1790,
+        "x": 1670,
         "y": 500,
         "wires": [
             []
@@ -1721,7 +1681,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1660,
+        "x": 1540,
         "y": 500,
         "wires": [
             [
@@ -1767,7 +1727,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1230,
+        "x": 1110,
         "y": 440,
         "wires": [
             [
@@ -1787,7 +1747,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1350,
+        "x": 1230,
         "y": 440,
         "wires": [
             [
@@ -1810,7 +1770,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1470,
+        "x": 1350,
         "y": 440,
         "wires": [
             [
@@ -1856,7 +1816,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1290,
+        "x": 1170,
         "y": 500,
         "wires": [
             [
@@ -1876,7 +1836,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1410,
+        "x": 1290,
         "y": 500,
         "wires": [
             [
@@ -1899,7 +1859,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1530,
+        "x": 1410,
         "y": 500,
         "wires": [
             [
@@ -1928,7 +1888,7 @@
         "y": 500,
         "wires": [
             [
-                "007578fcc8005f1a"
+                "bf7a987450cb06f7"
             ]
         ],
         "l": false
@@ -2564,7 +2524,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1130,
+        "x": 1010,
         "y": 560,
         "wires": [
             [],
@@ -2595,26 +2555,6 @@
         ]
     },
     {
-        "id": "9db24d3ad92f1147",
-        "type": "rbe",
-        "z": "9fcb3dc635318115",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 970,
-        "y": 560,
-        "wires": [
-            [
-                "99247b2068ea35f1"
-            ]
-        ]
-    },
-    {
         "id": "c9458520b8536694",
         "type": "redis-command",
         "z": "9fcb3dc635318115",
@@ -2626,7 +2566,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1790,
+        "x": 1670,
         "y": 560,
         "wires": [
             []
@@ -2656,7 +2596,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1660,
+        "x": 1540,
         "y": 560,
         "wires": [
             [
@@ -2682,7 +2622,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1130,
+        "x": 1010,
         "y": 620,
         "wires": [
             [],
@@ -2713,26 +2653,6 @@
         ]
     },
     {
-        "id": "e5a7bade62bbe00b",
-        "type": "rbe",
-        "z": "9fcb3dc635318115",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 970,
-        "y": 620,
-        "wires": [
-            [
-                "eb035dd355066b34"
-            ]
-        ]
-    },
-    {
         "id": "845d028fc41273dc",
         "type": "redis-command",
         "z": "9fcb3dc635318115",
@@ -2744,7 +2664,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1790,
+        "x": 1670,
         "y": 620,
         "wires": [
             []
@@ -2774,7 +2694,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1660,
+        "x": 1540,
         "y": 620,
         "wires": [
             [
@@ -2820,7 +2740,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1290,
+        "x": 1170,
         "y": 560,
         "wires": [
             [
@@ -2840,7 +2760,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1410,
+        "x": 1290,
         "y": 560,
         "wires": [
             [
@@ -2863,7 +2783,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1530,
+        "x": 1410,
         "y": 560,
         "wires": [
             [
@@ -2909,7 +2829,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1290,
+        "x": 1170,
         "y": 620,
         "wires": [
             [
@@ -2929,7 +2849,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1410,
+        "x": 1290,
         "y": 620,
         "wires": [
             [
@@ -2952,7 +2872,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1530,
+        "x": 1410,
         "y": 620,
         "wires": [
             [
@@ -2981,7 +2901,7 @@
         "y": 620,
         "wires": [
             [
-                "e5a7bade62bbe00b"
+                "eb035dd355066b34"
             ]
         ],
         "l": false
@@ -3007,7 +2927,7 @@
         "y": 560,
         "wires": [
             [
-                "9db24d3ad92f1147"
+                "99247b2068ea35f1"
             ]
         ],
         "l": false
@@ -3026,26 +2946,6 @@
         "rh": 0,
         "inputs": 1,
         "x": 790,
-        "y": 700,
-        "wires": [
-            [
-                "dd0478a83bff4961"
-            ]
-        ]
-    },
-    {
-        "id": "dd0478a83bff4961",
-        "type": "rbe",
-        "z": "9fcb3dc635318115",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 910,
         "y": 700,
         "wires": [
             [
@@ -3096,7 +2996,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1530,
+        "x": 1410,
         "y": 700,
         "wires": [
             []
@@ -3126,7 +3026,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1400,
+        "x": 1280,
         "y": 700,
         "wires": [
             [
@@ -3156,26 +3056,6 @@
         ]
     },
     {
-        "id": "c63be59788b2d805",
-        "type": "rbe",
-        "z": "9fcb3dc635318115",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 970,
-        "y": 760,
-        "wires": [
-            [
-                "6cde4b13e16412c2"
-            ]
-        ]
-    },
-    {
         "id": "a3db46acd86c6f27",
         "type": "redis-command",
         "z": "9fcb3dc635318115",
@@ -3187,7 +3067,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1610,
+        "x": 1470,
         "y": 760,
         "wires": [
             []
@@ -3217,7 +3097,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1480,
+        "x": 1340,
         "y": 760,
         "wires": [
             [
@@ -3263,7 +3143,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1030,
+        "x": 910,
         "y": 700,
         "wires": [
             [
@@ -3283,7 +3163,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1150,
+        "x": 1030,
         "y": 700,
         "wires": [
             [
@@ -3306,7 +3186,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1270,
+        "x": 1150,
         "y": 700,
         "wires": [
             [
@@ -3352,7 +3232,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1110,
+        "x": 970,
         "y": 760,
         "wires": [
             [
@@ -3372,7 +3252,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1230,
+        "x": 1090,
         "y": 760,
         "wires": [
             [
@@ -3395,7 +3275,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1350,
+        "x": 1210,
         "y": 760,
         "wires": [
             [
@@ -3424,7 +3304,7 @@
         "y": 760,
         "wires": [
             [
-                "c63be59788b2d805"
+                "6cde4b13e16412c2"
             ]
         ],
         "l": false
@@ -3451,26 +3331,6 @@
         ]
     },
     {
-        "id": "b5c5bcdedc1beafe",
-        "type": "rbe",
-        "z": "9fcb3dc635318115",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 970,
-        "y": 820,
-        "wires": [
-            [
-                "6a94f5e72ff0ad47"
-            ]
-        ]
-    },
-    {
         "id": "17671f18e35c0e8d",
         "type": "redis-command",
         "z": "9fcb3dc635318115",
@@ -3482,7 +3342,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1610,
+        "x": 1470,
         "y": 820,
         "wires": [
             []
@@ -3512,7 +3372,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1480,
+        "x": 1340,
         "y": 820,
         "wires": [
             [
@@ -3542,26 +3402,6 @@
         ]
     },
     {
-        "id": "12e815cf752c7442",
-        "type": "rbe",
-        "z": "9fcb3dc635318115",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 970,
-        "y": 880,
-        "wires": [
-            [
-                "c42c916af6051bcc"
-            ]
-        ]
-    },
-    {
         "id": "0c12637dbe70782d",
         "type": "redis-command",
         "z": "9fcb3dc635318115",
@@ -3573,7 +3413,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1610,
+        "x": 1470,
         "y": 880,
         "wires": [
             []
@@ -3603,7 +3443,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1480,
+        "x": 1340,
         "y": 880,
         "wires": [
             [
@@ -3649,7 +3489,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1110,
+        "x": 970,
         "y": 820,
         "wires": [
             [
@@ -3669,7 +3509,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1230,
+        "x": 1090,
         "y": 820,
         "wires": [
             [
@@ -3692,7 +3532,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1350,
+        "x": 1210,
         "y": 820,
         "wires": [
             [
@@ -3738,7 +3578,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1110,
+        "x": 970,
         "y": 880,
         "wires": [
             [
@@ -3758,7 +3598,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1230,
+        "x": 1090,
         "y": 880,
         "wires": [
             [
@@ -3781,7 +3621,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1350,
+        "x": 1210,
         "y": 880,
         "wires": [
             [
@@ -3810,7 +3650,7 @@
         "y": 880,
         "wires": [
             [
-                "12e815cf752c7442"
+                "c42c916af6051bcc"
             ]
         ],
         "l": false
@@ -3836,7 +3676,7 @@
         "y": 820,
         "wires": [
             [
-                "b5c5bcdedc1beafe"
+                "6a94f5e72ff0ad47"
             ]
         ],
         "l": false
@@ -4206,7 +4046,7 @@
                 "t": "set",
                 "p": "topic",
                 "pt": "msg",
-                "to": "$append(hset, [   cache & \":url\",   url ])",
+                "to": "$append(hset, [   cache & \":url\",   url,   cache & \":status\",   statusCode ])",
                 "tot": "jsonata"
             },
             {
@@ -4885,7 +4725,7 @@
         "type": "function",
         "z": "9fcb3dc635318115",
         "name": "Download",
-        "func": "const MAX_RETRIES = 3;\nconst RETRY_DELAY_MS = 1000;\n\nconst payload = msg.payload;\n\nconst urlEntries = Object.entries(payload)\n    .filter(([key]) => key.endsWith(\":url\"))\n    .map(([key, url]) => ({ cacheName: key.replace(/:url$/, \"\"), url }));\n\nif (!msg.method || !msg.value) {\n    return null;\n}\n\nasync function sleep(ms) {\n    return new Promise(resolve => setTimeout(resolve, ms));\n}\n\n// Bypass libuv's threadpool for DNS - dns.resolve4 uses c-ares (async I/O)\n// instead of the 4-thread pool that dns.lookup() (and fs.*) shares.\nfunction fastLookup(hostname, options, callback) {\n    if (typeof options === \"function\") {\n        callback = options;\n        options = {};\n    }\n    dns.resolve4(hostname, (err, addresses) => {\n        if (err || !addresses || addresses.length === 0) {\n            return dns.lookup(hostname, options, callback);\n        }\n        callback(null, addresses[0], 4);\n    });\n}\n\nasync function downloadAndHash(url) {\n    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {\n        try {\n            const result = await new Promise((resolve, reject) => {\n                let settled = false;\n                let req;\n\n                const timer = setTimeout(() => {\n                    if (settled) return;\n                    settled = true;\n                    if (req) req.destroy(new Error(\"Timed out after 15000ms\"));\n                    reject(new Error(\"Timed out after 15000ms\"));\n                }, 15000);\n\n                const lib = url.startsWith(\"https\") ? https : http;\n\n                req = lib.get(url, {\n                    family: 4,\n                    lookup: fastLookup,\n                    headers: { \"User-Agent\": \"wis2-sensor/1.0\" }\n                }, (res) => {\n                    if (settled) return;\n\n                    if (res.statusCode < 200 || res.statusCode >= 300) {\n                        res.resume();\n                        settled = true;\n                        clearTimeout(timer);\n                        return reject(new Error(`HTTP ${res.statusCode}`));\n                    }\n\n                    const chunks = [];\n                    res.on(\"data\", chunk => chunks.push(chunk));\n                    res.on(\"end\", () => {\n                        if (settled) return;\n                        settled = true;\n                        clearTimeout(timer);\n                        resolve(Buffer.concat(chunks));\n                    });\n                    res.on(\"error\", (err) => {\n                        if (settled) return;\n                        settled = true;\n                        clearTimeout(timer);\n                        reject(err);\n                    });\n                });\n\n                req.on(\"error\", (err) => {\n                    if (settled) return;\n                    settled = true;\n                    clearTimeout(timer);\n                    reject(err);\n                });\n            });\n            return crypto.createHash(msg.method).update(result).digest(\"base64\");\n        } catch (err) {\n            if (attempt < MAX_RETRIES) await sleep(RETRY_DELAY_MS);\n        }\n    }\n    return null;\n}\n\n(async () => {\n    const sensorid = flow.get(\"sensorid\");\n\n    const results = await Promise.allSettled(urlEntries.map(async ({ cacheName, url }) => {\n        const hash = await downloadAndHash(url);\n        if (hash === null) return { cacheName, url, match: false, downloaded: false };\n        return { cacheName, url, match: hash === msg.value, downloaded: true };\n    }));\n\n    const sample = {};\n\n    results.forEach((result, i) => {\n        if (result.status === \"fulfilled\" && result.value !== null) {\n            const { cacheName, match, downloaded } = result.value;\n\n            sample[cacheName] = downloaded ? 1 : 0;\n\n            node.send([{\n                ...msg,\n                payload: {\n                    op: \"inc\",\n                    labels: {\n                        global_cache: cacheName,\n                        report_by: sensorid\n                    },\n                    val: downloaded ? 1 : 0\n                }\n            }, null]);\n        }\n    });\n\n    node.send([null, {\n        ...msg,\n        payload: msg.payload,\n        sample\n    }]);\n})();\n\nreturn null;",
+        "func": "const MAX_RETRIES = 3;\nconst RETRY_DELAY_MS = 1000;\nconst MAX_DOWNLOAD_BYTES = 5 * 1024 * 1024; // hard ceiling, regardless of declared/actual size\n\nconst payload = msg.payload;\n\nconst urlEntries = Object.entries(payload)\n    .filter(([key]) => key.endsWith(\":url\"))\n    .map(([key, url]) => ({ cacheName: key.replace(/:url$/, \"\"), url }));\n\nif (!msg.method || !msg.value) {\n    return null;\n}\n\nif (!crypto.getHashes().includes(msg.method)) {\n    node.warn(`Unsupported hash method: ${msg.method}`);\n    return null;\n}\n\n// Bound per-download size to ~2x the WNM's declared canonical length,\n// clamped to a hard ceiling so a misbehaving mirror can't stream\n// unbounded data into process memory.\nconst declaredLength = Number(msg.originlink?.length);\nconst maxBytes = Number.isFinite(declaredLength) && declaredLength > 0\n    ? Math.min(Math.max(declaredLength * 2, 1024), MAX_DOWNLOAD_BYTES)\n    : MAX_DOWNLOAD_BYTES;\n\nasync function sleep(ms) {\n    return new Promise(resolve => setTimeout(resolve, ms));\n}\n\n// Bypass libuv's threadpool for DNS - dns.resolve4 uses c-ares (async I/O)\n// instead of the 4-thread pool that dns.lookup() (and fs.*) shares.\nfunction fastLookup(hostname, options, callback) {\n    if (typeof options === \"function\") {\n        callback = options;\n        options = {};\n    }\n    dns.resolve4(hostname, (err, addresses) => {\n        if (err || !addresses || addresses.length === 0) {\n            return dns.lookup(hostname, options, callback);\n        }\n        callback(null, addresses[0], 4);\n    });\n}\n\nasync function downloadAndHash(url) {\n    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {\n        try {\n            return await new Promise((resolve, reject) => {\n                let settled = false;\n                let req;\n                let bytesReceived = 0;\n                const hash = crypto.createHash(msg.method);\n\n                const timer = setTimeout(() => {\n                    if (settled) return;\n                    settled = true;\n                    if (req) req.destroy(new Error(\"Timed out after 15000ms\"));\n                    reject(new Error(\"Timed out after 15000ms\"));\n                }, 15000);\n\n                const lib = url.startsWith(\"https\") ? https : http;\n\n                req = lib.get(url, {\n                    family: 4,\n                    lookup: fastLookup,\n                    headers: { \"User-Agent\": \"wis2-sensor/1.0\" }\n                }, (res) => {\n                    if (settled) return;\n\n                    if (res.statusCode < 200 || res.statusCode >= 300) {\n                        res.resume();\n                        settled = true;\n                        clearTimeout(timer);\n                        return reject(new Error(`HTTP ${res.statusCode}`));\n                    }\n\n                    res.on(\"data\", chunk => {\n                        if (settled) return;\n                        bytesReceived += chunk.length;\n                        if (bytesReceived > maxBytes) {\n                            settled = true;\n                            clearTimeout(timer);\n                            req.destroy(new Error(`Response exceeded ${maxBytes} bytes`));\n                            reject(new Error(`Response exceeded ${maxBytes} bytes`));\n                            return;\n                        }\n                        hash.update(chunk);\n                    });\n                    res.on(\"end\", () => {\n                        if (settled) return;\n                        settled = true;\n                        clearTimeout(timer);\n                        resolve(hash.digest(\"base64\"));\n                    });\n                    res.on(\"error\", (err) => {\n                        if (settled) return;\n                        settled = true;\n                        clearTimeout(timer);\n                        reject(err);\n                    });\n                });\n\n                req.on(\"error\", (err) => {\n                    if (settled) return;\n                    settled = true;\n                    clearTimeout(timer);\n                    reject(err);\n                });\n            });\n        } catch (err) {\n            if (attempt < MAX_RETRIES) await sleep(RETRY_DELAY_MS);\n        }\n    }\n    return null;\n}\n\n(async () => {\n    const sensorid = flow.get(\"sensorid\");\n\n    const results = await Promise.allSettled(urlEntries.map(async ({ cacheName, url }) => {\n        const hash = await downloadAndHash(url);\n        if (hash === null) return { cacheName, url, match: false, downloaded: false };\n        return { cacheName, url, match: hash === msg.value, downloaded: true };\n    }));\n\n    const sample = {};\n\n    results.forEach((result) => {\n        if (result.status === \"fulfilled\" && result.value !== null) {\n            const { cacheName, downloaded } = result.value;\n\n            sample[cacheName] = downloaded ? 1 : 0;\n\n            node.send([{\n                ...msg,\n                payload: {\n                    op: \"inc\",\n                    labels: {\n                        global_cache: cacheName,\n                        report_by: sensorid\n                    },\n                    val: downloaded ? 1 : 0\n                }\n            }, null]);\n        }\n    });\n\n    node.send([null, { ...msg, sample }]);\n})();\n\nreturn null;",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -5146,7 +4986,7 @@
         "type": "function",
         "z": "9fcb3dc635318115",
         "name": "Normalize",
-        "func": "const payload = { ...msg.payload };  // unfreeze\nmsg.payload = payload;\nconst sample = msg.sample; \n\nconst globalCache = {};\n\nObject.keys(payload)\n    .filter(k => k.endsWith(\"-global-cache\"))\n    .forEach(cacheName => {\n        const entry = {\n            timestamp: payload[cacheName]\n        };\n\n        if (payload[`${cacheName}:url`] !== undefined) {\n            entry.url = payload[`${cacheName}:url`];\n        }\n        if (sample !== undefined) {\n            entry.downloaded = sample[cacheName] === 1;\n        }\n\n        globalCache[cacheName] = entry;\n\n        delete payload[cacheName];\n        delete payload[`${cacheName}:url`];\n    });\n\nmsg.payload[\"global-cache\"] = globalCache;\n\nreturn msg;",
+        "func": "const payload = { ...msg.payload };  // unfreeze\nmsg.payload = payload;\nconst sample = msg.sample;\n\nconst globalCache = {};\n\nObject.keys(payload)\n    .filter(k => k.endsWith(\"-global-cache\"))\n    .forEach(cacheName => {\n        const entry = {\n            timestamp: payload[cacheName]\n        };\n\n        if (payload[`${cacheName}:url`] !== undefined) {\n            entry.url = payload[`${cacheName}:url`];\n        }\n        if (payload[`${cacheName}:status`] !== undefined) {\n            entry.statusCode = payload[`${cacheName}:status`];\n        }\n        if (sample !== undefined) {\n            entry.downloaded = sample[cacheName] === 1;\n        }\n\n        globalCache[cacheName] = entry;\n\n        delete payload[cacheName];\n        delete payload[`${cacheName}:url`];\n        delete payload[`${cacheName}:status`];\n    });\n\nmsg.payload[\"global-cache\"] = globalCache;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5196,7 +5036,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": cache,\t      \"centre_id\":  centreid,\t      \"report_by\": $flowContext(\"sensorid\"),\t      \"rel\": rel\t   },\t   \"val\": 1\t}",
+                "to": "{\t   \"op\":\"inc\",\t   \"labels\":{\t      \"global_cache\": cache,\t      \"centre_id\":  centreid,\t      \"report_by\": $flowContext(\"sensorid\"),\t      \"rel\": rel,\t      \"status\": statusCode\t   },\t   \"val\": 1\t}",
                 "tot": "jsonata"
             }
         ],
@@ -5582,26 +5422,6 @@
         "y": 940,
         "wires": [
             [
-                "7757633b23adb398"
-            ]
-        ]
-    },
-    {
-        "id": "7757633b23adb398",
-        "type": "rbe",
-        "z": "9fcb3dc635318115",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 950,
-        "y": 940,
-        "wires": [
-            [
                 "d5696a6abb33ab65"
             ]
         ]
@@ -5644,7 +5464,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1070,
+        "x": 950,
         "y": 940,
         "wires": [
             [
@@ -5667,7 +5487,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1310,
+        "x": 1190,
         "y": 940,
         "wires": [
             [
@@ -5699,7 +5519,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1440,
+        "x": 1320,
         "y": 940,
         "wires": [
             [
@@ -5747,26 +5567,6 @@
         "y": 1000,
         "wires": [
             [
-                "1e3277b7c9290a7a"
-            ]
-        ]
-    },
-    {
-        "id": "1e3277b7c9290a7a",
-        "type": "rbe",
-        "z": "9fcb3dc635318115",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 950,
-        "y": 1000,
-        "wires": [
-            [
                 "c9c63ad5fcf4798c"
             ]
         ]
@@ -5809,7 +5609,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1070,
+        "x": 950,
         "y": 1000,
         "wires": [
             [
@@ -5832,7 +5632,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1310,
+        "x": 1190,
         "y": 1000,
         "wires": [
             [
@@ -5864,7 +5664,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1440,
+        "x": 1320,
         "y": 1000,
         "wires": [
             [
@@ -5884,7 +5684,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1190,
+        "x": 1070,
         "y": 940,
         "wires": [
             [
@@ -5904,7 +5704,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1570,
+        "x": 1450,
         "y": 940,
         "wires": [
             []
@@ -5922,7 +5722,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1570,
+        "x": 1450,
         "y": 1000,
         "wires": [
             []
@@ -5940,7 +5740,7 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1190,
+        "x": 1070,
         "y": 1000,
         "wires": [
             [
@@ -6631,7 +6431,7 @@
         "type": "function",
         "z": "9fcb3dc635318115",
         "name": "200 ?",
-        "func": "const gcTest = flow.get(\"gc_test\") || [];\n\nconst link = (msg.cache_links || []).find(l => l.rel === 'canonical' || l.rel === 'update');\nconst url = link ? link.href : null;\n\nif (!url) {\n    // No URL → stop flow\n    return null;\n}\n\nif (gcTest.includes(msg.cache)) {\n    // Test caches are never actually reachability-checked - always pass through.\n    msg.statusCode = 200;\n    msg.url = url;\n    msg.rel = link.rel;\n    return msg;\n}\n\n// Bypass libuv's threadpool for DNS - dns.resolve4 uses c-ares (async I/O)\n// instead of the 4-thread pool that dns.lookup() (and fs.*) shares.\nfunction fastLookup(hostname, options, callback) {\n    if (typeof options === \"function\") {\n        callback = options;\n        options = {};\n    }\n    dns.resolve4(hostname, (err, addresses) => {\n        if (err || !addresses || addresses.length === 0) {\n            return dns.lookup(hostname, options, callback);\n        }\n        callback(null, addresses[0], 4);\n    });\n}\n\nreturn new Promise((resolve, reject) => {\n    const client = url.startsWith(\"https\") ? https : http;\n    let settled = false;\n\n    const req = client.request(url, {\n        method: \"HEAD\",\n        timeout: 10000,\n        family: 4,\n        lookup: fastLookup\n    }, (res) => {\n        if (settled) return;\n        const code = res.statusCode;\n\n        if (code !== 200) {\n            settled = true;\n            resolve(null);\n            return;\n        }\n\n        settled = true;\n        msg.statusCode = code;\n        msg.url = url;\n        msg.rel = link.rel;\n        resolve(msg);\n    });\n\n    req.on(\"timeout\", () => {\n        if (settled) return;\n        settled = true;\n        req.destroy();\n        msg.statusCode = 404;\n        resolve(null);\n    });\n\n    req.on(\"error\", (err) => {\n        if (settled) return;\n        settled = true;\n        resolve(null);\n    });\n\n    req.end();\n});",
+        "func": "const gcTest = flow.get(\"gc_test\") || [];\n\nconst link = (msg.cache_links || []).find(l => l.rel === 'canonical' || l.rel === 'update');\nconst url = link ? link.href : null;\n\nif (!url) {\n    // No URL → nothing to check or record, stop flow\n    return null;\n}\n\nif (gcTest.includes(msg.cache)) {\n    // Test caches are never actually reachability-checked - always pass through.\n    msg.statusCode = 200;\n    msg.url = url;\n    msg.rel = link.rel;\n    return msg;\n}\n\n// Bypass libuv's threadpool for DNS - dns.resolve4 uses c-ares (async I/O)\n// instead of the 4-thread pool that dns.lookup() (and fs.*) shares.\nfunction fastLookup(hostname, options, callback) {\n    if (typeof options === \"function\") {\n        callback = options;\n        options = {};\n    }\n    dns.resolve4(hostname, (err, addresses) => {\n        if (err || !addresses || addresses.length === 0) {\n            return dns.lookup(hostname, options, callback);\n        }\n        callback(null, addresses[0], 4);\n    });\n}\n\nreturn new Promise((resolve) => {\n    const client = url.startsWith(\"https\") ? https : http;\n    let settled = false;\n    let req;\n\n    const timer = setTimeout(() => {\n        if (settled) return;\n        settled = true;\n        if (req) req.destroy(new Error(\"Timed out after 5000ms\"));\n        msg.url = url;\n        msg.rel = link.rel;\n        msg.timedOut = true;\n        msg.statusCode = 504; // no answer - client-side timeout\n        resolve(msg);\n    }, 5000);\n\n    req = client.request(url, {\n        method: \"HEAD\",\n        family: 4,\n        lookup: fastLookup\n    }, (res) => {\n        if (settled) return;\n        settled = true;\n        clearTimeout(timer);\n\n        const code = res.statusCode;\n        res.resume();\n\n        msg.url = url;\n        msg.rel = link.rel;\n        msg.statusCode = code;\n\n        if (code === 404) {\n            // Only a confirmed 404 counts as a genuine miss.\n            resolve(null);\n            return;\n        }\n\n        resolve(msg);\n    });\n\n    req.on(\"error\", (err) => {\n        if (settled) return;\n        settled = true;\n        clearTimeout(timer);\n        msg.url = url;\n        msg.rel = link.rel;\n        msg.timedOut = true;\n        msg.statusCode = 504; // no answer - connection/network error\n        resolve(msg);\n    });\n\n    req.end();\n});",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,

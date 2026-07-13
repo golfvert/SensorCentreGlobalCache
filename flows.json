@@ -6258,7 +6258,7 @@
                 "51b13013ca8545ec"
             ],
             [
-                "dcbea90184b0594c"
+                "12e3181cdfc4d11a"
             ],
             [
                 "6de7bb9946995616"
@@ -6372,7 +6372,7 @@
         "links": [
             "157fbaa1b6ee931d"
         ],
-        "x": 1175,
+        "x": 1295,
         "y": 1260,
         "wires": []
     },
@@ -6545,6 +6545,39 @@
         "y": 120,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "12e3181cdfc4d11a",
+        "type": "function",
+        "z": "9fcb3dc635318115",
+        "name": "200 ?",
+        "func": "// Shortened \"200 ?\" check for early cache confirmations.\n// The cache name and its URL are already known (carried over from\n// Reconcile), so we just need a fresh reachability status to label\n// the \"Cached\" counter with - no need to re-derive rel/link/cache_links.\nconst gcTest = flow.get(\"gc_test\") || [];\n\nif (!msg.url) {\n    // No URL was recorded with the early confirmation - nothing to check\n    return null;\n}\n\nif (gcTest.includes(msg.cache)) {\n    // Test caches are never actually reachability-checked - always pass through.\n    msg.statusCode = 200;\n    return msg;\n}\n\n// Bypass libuv's threadpool for DNS - dns.resolve4 uses c-ares (async I/O)\n// instead of the 4-thread pool that dns.lookup() (and fs.*) shares.\nfunction fastLookup(hostname, options, callback) {\n    if (typeof options === \"function\") {\n        callback = options;\n        options = {};\n    }\n    dns.resolve4(hostname, (err, addresses) => {\n        if (err || !addresses || addresses.length === 0) {\n            return dns.lookup(hostname, options, callback);\n        }\n        callback(null, addresses[0], 4);\n    });\n}\n\nreturn new Promise((resolve) => {\n    const client = msg.url.startsWith(\"https\") ? https : http;\n    let settled = false;\n    let req;\n\n    const timer = setTimeout(() => {\n        if (settled) return;\n        settled = true;\n        if (req) req.destroy(new Error(\"Timed out after 5000ms\"));\n        msg.timedOut = true;\n        msg.statusCode = 504; // no answer - client-side timeout\n        resolve(msg);\n    }, 5000);\n\n    req = client.request(msg.url, {\n        method: \"HEAD\",\n        family: 4,\n        lookup: fastLookup\n    }, (res) => {\n        if (settled) return;\n        settled = true;\n        clearTimeout(timer);\n\n        const code = res.statusCode;\n        res.resume();\n        msg.statusCode = code;\n\n        if (code === 404) {\n            // Only a confirmed 404 counts as a genuine miss.\n            resolve(null);\n            return;\n        }\n\n        resolve(msg);\n    });\n\n    req.on(\"error\", () => {\n        if (settled) return;\n        settled = true;\n        clearTimeout(timer);\n        msg.timedOut = true;\n        msg.statusCode = 504; // no answer - connection/network error\n        resolve(msg);\n    });\n\n    req.end();\n});",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "http",
+                "module": "http"
+            },
+            {
+                "var": "https",
+                "module": "https"
+            },
+            {
+                "var": "dns",
+                "module": "dns"
+            }
+        ],
+        "x": 1210,
+        "y": 1260,
+        "wires": [
+            [
+                "dcbea90184b0594c"
+            ]
         ]
     }
 ]
